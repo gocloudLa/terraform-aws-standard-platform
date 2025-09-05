@@ -30,7 +30,7 @@ module "wrapper_cloudmap" {
 }
 
 module "wrapper_notifications" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-notifications.git?ref=main"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-notifications.git?ref=feature/initial-release"
 
   metadata = var.metadata
 
