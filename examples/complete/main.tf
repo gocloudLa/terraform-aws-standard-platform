@@ -15,9 +15,9 @@ module "wrapper_base" {
     }
   }
 
-  vpc_parameters = {}
-  route53_parameters = {}
-  cloudmap_parameters = {}
+  vpc_parameters           = {}
+  route53_parameters       = {}
+  cloudmap_parameters      = {}
   notifications_parameters = {}
 }
 
@@ -42,16 +42,16 @@ module "wrapper_foundation" {
     }
   }
 
-  acm_parameters = {}
-  gitlab_runner_parameters = {}
-  aws_backup_parameters = {}
-  ses_parameters = {}
-  pritunl_parameters = {}
-  route53_parameters = {}
+  acm_parameters               = {}
+  gitlab_runner_parameters     = {}
+  aws_backup_parameters        = {}
+  ses_parameters               = {}
+  pritunl_parameters           = {}
+  route53_parameters           = {}
   service_scheduler_parameters = {}
-  waf_parameters = {}
-  health_events_parameters = {}
-  cost_control_parameters = {}
+  waf_parameters               = {}
+  health_events_parameters     = {}
+  cost_control_parameters      = {}
 }
 
 module "wrapper_project" {
@@ -73,18 +73,18 @@ module "wrapper_project" {
     }
   }
 
-  alb_parameters = {}
-  batch_parameters = {}
-  ecs_parameters = {}
+  alb_parameters         = {}
+  batch_parameters       = {}
+  ecs_parameters         = {}
   elasticache_parameters = {}
-  documentdb_parameters = {}
-  rds_parameters = {}
-  rds_aurora_parameters = {}
-  sqs_parameters = {}
-  dynamodb_parameters = {}
-  bucket_parameters = {}
-  efs_parameters = {}
-  memorydb_parameters = {}
+  documentdb_parameters  = {}
+  rds_parameters         = {}
+  rds_aurora_parameters  = {}
+  sqs_parameters         = {}
+  dynamodb_parameters    = {}
+  bucket_parameters      = {}
+  efs_parameters         = {}
+  memorydb_parameters    = {}
 }
 
 module "wrapper_workload" {
@@ -112,7 +112,7 @@ module "wrapper_workload" {
 
   static_site_parameters = {}
   ecs_service_parameters = {}
-  batch_job_parameters = {}
-  lambda_parameters = {}
+  batch_job_parameters   = {}
+  lambda_parameters      = {}
 }
 
