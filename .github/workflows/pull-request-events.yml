@@ -12,5 +12,7 @@ permissions:
 
 jobs:
   pull-request-events:
-    uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@main
+    uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@feature/conditional-excecution
+    with:
+      skip_readme_generator: true
     secrets: inherit
