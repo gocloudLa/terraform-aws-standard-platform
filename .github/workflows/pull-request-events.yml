@@ -14,5 +14,7 @@ jobs:
   pull-request-events:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@feature/conditional-excecution
     with:
+      skip_pull_request_validation: true
+      skip_terraform_validation: true  
       skip_readme_generator: true
     secrets: inherit
