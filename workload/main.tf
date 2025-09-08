@@ -1,5 +1,6 @@
 module "wrapper_static_site" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-static-site.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-static-site/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -12,7 +13,8 @@ module "wrapper_static_site" {
 }
 
 module "wrapper_ecs_service" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-ecs-service.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-ecs-service/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -22,7 +24,8 @@ module "wrapper_ecs_service" {
 }
 
 module "wrapper_batch_job" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-batch-job.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-batch-job/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -32,7 +35,8 @@ module "wrapper_batch_job" {
 }
 
 module "wrapper_lambda" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-lambda.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-lambda/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 

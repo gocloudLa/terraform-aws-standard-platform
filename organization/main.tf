@@ -1,5 +1,6 @@
 module "wrapper_organization" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-organization.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-organization/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -8,7 +9,8 @@ module "wrapper_organization" {
 }
 
 module "wrapper_identity_center" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-identity_center.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-identity_center/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -18,7 +20,8 @@ module "wrapper_identity_center" {
 }
 
 module "wrapper_s3_backend" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-s3_backend.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-s3_backend/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 

@@ -1,5 +1,6 @@
 module "wrapper_acm" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-acm.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-acm/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -12,7 +13,8 @@ module "wrapper_acm" {
 }
 
 module "wrapper_gitlab_runner" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-gitlab-runner.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-gitlab-runner/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -21,7 +23,8 @@ module "wrapper_gitlab_runner" {
 }
 
 module "wrapper_aws_backup" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-aws-backup.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-aws-backup/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -31,7 +34,8 @@ module "wrapper_aws_backup" {
 }
 
 module "wrapper_ses" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-ses.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-ses/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -41,7 +45,8 @@ module "wrapper_ses" {
 }
 
 module "wrapper_pritunl" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-pritunl.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-pritunl/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -51,7 +56,8 @@ module "wrapper_pritunl" {
 }
 
 module "wrapper_route53" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-route53-record.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-route53-record/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -61,7 +67,8 @@ module "wrapper_route53" {
 }
 
 module "wrapper_service_scheduler" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-service-scheduler.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-service-scheduler/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -71,7 +78,8 @@ module "wrapper_service_scheduler" {
 }
 
 module "wrapper_waf" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-waf.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-waf/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -84,7 +92,8 @@ module "wrapper_waf" {
 }
 
 module "wrapper_health_events" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-health-events.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-health-events/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -94,7 +103,8 @@ module "wrapper_health_events" {
 }
 
 module "wrapper_cost_control" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-cost-control.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-cost-control/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 

@@ -1,5 +1,6 @@
 module "wrapper_alb" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-alb.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-alb/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -8,7 +9,8 @@ module "wrapper_alb" {
 }
 
 module "wrapper_batch" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-batch.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-batch/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -17,7 +19,8 @@ module "wrapper_batch" {
 }
 
 module "wrapper_ecs" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-ecs.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-ecs/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -26,7 +29,8 @@ module "wrapper_ecs" {
 }
 
 module "wrapper_elasticache" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-elasticache.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-elasticache/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -35,7 +39,8 @@ module "wrapper_elasticache" {
 }
 
 module "wrapper_documentdb" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-documentdb.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-documentdb/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -44,7 +49,8 @@ module "wrapper_documentdb" {
 }
 
 module "wrapper_rds" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-rds.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-rds/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -53,7 +59,8 @@ module "wrapper_rds" {
 }
 
 module "wrapper_rds_aurora" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-rds-aurora.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-rds-aurora/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -62,7 +69,8 @@ module "wrapper_rds_aurora" {
 }
 
 module "wrapper_sqs" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-sqs.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-sqs/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -71,7 +79,8 @@ module "wrapper_sqs" {
 }
 
 module "wrapper_dynamodb" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-dynamodb.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-dynamodb/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -80,7 +89,8 @@ module "wrapper_dynamodb" {
 }
 
 module "wrapper_bucket" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-bucket.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-bucket/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -89,7 +99,8 @@ module "wrapper_bucket" {
 }
 
 module "wrapper_efs" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-efs.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-efs/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
@@ -98,7 +109,8 @@ module "wrapper_efs" {
 }
 
 module "wrapper_memorydb" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-memorydb.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-memorydb/aws"
+  version = "1.0.0"
 
   metadata = var.metadata
 
