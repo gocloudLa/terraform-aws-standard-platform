@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   pull-request-events:
-    uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@feature/conditional-excecution
+    uses: gocloudLa/.github/.github/workflows/shared-terraform-pull-request-events.yml@main
     with:
       # skip_pull_request_validation: false
       # skip_terraform_validation: false
