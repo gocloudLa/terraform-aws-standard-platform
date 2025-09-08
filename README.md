@@ -6,20 +6,6 @@
 
 GoCloud's Standard Platform - Enterprise-ready AWS infrastructure deployment solution
 
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Modules](#modules)
-- [Quick Start](#quick-start)
-- [Usage Examples](#usage-examples)
-- [Requirements](#requirements)
-- [Providers](#providers)
-- [Inputs](#inputs)
-- [Outputs](#outputs)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## 🎯 Overview
 
 The Terraform AWS Standard Platform is a comprehensive, enterprise-ready infrastructure-as-code solution that provides a standardized approach to deploying AWS resources across different environments. This platform is designed to accelerate cloud adoption while maintaining security, compliance, and operational excellence.
@@ -90,51 +76,6 @@ The platform follows a hierarchical architecture pattern with five distinct laye
 │  • Lambda Functions                                         │
 └─────────────────────────────────────────────────────────────┘
 ```
-
-## 📦 Modules
-
-### Organization Layer
-- **Organization Management**: AWS Organizations setup and account management
-- **Identity Center**: AWS SSO configuration and user management
-- **S3 Backend**: Centralized Terraform state management
-
-### Base Layer
-- **VPC**: Virtual Private Cloud networking
-- **Route53 Zones**: DNS zone management
-- **CloudMap**: Service discovery
-- **Notifications**: SNS topic management
-
-### Foundation Layer
-- **ACM**: SSL/TLS certificate management
-- **GitLab Runner**: CI/CD infrastructure
-- **AWS Backup**: Automated backup solutions
-- **SES**: Email service configuration
-- **Pritunl**: VPN infrastructure
-- **Route53**: DNS record management
-- **Service Scheduler**: Automated service scheduling
-- **WAF**: Web Application Firewall
-- **Health Events**: AWS Health monitoring
-- **Cost Control**: Budget and cost optimization
-
-### Project Layer
-- **ALB**: Application Load Balancer
-- **Batch**: Batch processing infrastructure
-- **ECS**: Container orchestration
-- **ElastiCache**: In-memory caching
-- **DocumentDB**: NoSQL database
-- **RDS**: Relational database services
-- **RDS Aurora**: Serverless database
-- **SQS**: Message queuing
-- **DynamoDB**: NoSQL database
-- **S3**: Object storage
-- **EFS**: File storage
-- **MemoryDB**: Redis-compatible database
-
-### Workload Layer
-- **Static Site**: CloudFront + S3 static websites
-- **ECS Service**: Container services
-- **Batch Job**: Batch job definitions
-- **Lambda**: Serverless functions
 
 ## 🚀 Quick Start
 
