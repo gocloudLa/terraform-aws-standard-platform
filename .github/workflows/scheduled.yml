@@ -13,4 +13,7 @@ permissions:
 jobs:
   scheduled:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-scheduled.yml@main
+    with:
+      skip_readme_generator: true
+      skip_maintenance: true
     secrets: inherit

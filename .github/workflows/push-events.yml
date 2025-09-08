@@ -12,4 +12,6 @@ permissions:
 jobs:
   push-events:
     uses: gocloudLa/.github/.github/workflows/shared-terraform-push-events.yml@main
+    # with:
+    #   skip_release: false
     secrets: inherit
