@@ -208,11 +208,11 @@ module "organization_s3_backend" {
   s3_backend_parameters = {
     name = "gcl-sha-s3-backend"
     aws_accounts = {
-      "root"            = { account_id = "111111111111" }
-      "prd"             = { account_id = "222222222222" }
-      "dev"             = { account_id = "333333333333" }
-      "sha"             = { account_id = "444444444444" }
-      "lab"             = { account_id = "555555555555" }
+      "root" = { account_id = "111111111111" }
+      "prd"  = { account_id = "222222222222" }
+      "dev"  = { account_id = "333333333333" }
+      "sha"  = { account_id = "444444444444" }
+      "lab"  = { account_id = "555555555555" }
     }
   }
 

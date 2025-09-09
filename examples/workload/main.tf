@@ -125,13 +125,13 @@ module "workload_core" {
       enable_execute_command = true
       # privileged             = true
 
-    capacity_provider_strategy = {
-      fargate_spot = {
-        base              = null
-        capacity_provider = "FARGATE_SPOT"
-        weight            = 100
+      capacity_provider_strategy = {
+        fargate_spot = {
+          base              = null
+          capacity_provider = "FARGATE_SPOT"
+          weight            = 100
+        }
       }
-    }
 
       containers = {
         "app" = {
