@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.1.0...v0.2.0) (2025-09-09)
+
+
+### Features
+
+* **module:** refactor for registry compatibility ([#3](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/3)) ([19d6dfc](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/19d6dfc9ea734b8b3bd0db1df4f0774b37f75bc4))
+
 ## 0.1.0 (2025-09-08)
 
 
