@@ -173,6 +173,10 @@ locals {
 }
 ```
 
+## 📋 Example Usage
+
+See the [foundation example](../../examples/foundation) for a complete implementation example.
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [contributing guidelines](../../CONTRIBUTING.md) for more details.

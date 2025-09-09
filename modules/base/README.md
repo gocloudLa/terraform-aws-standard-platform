@@ -136,6 +136,10 @@ locals {
 }
 ```
 
+## 📋 Example Usage
+
+See the [base example](../../examples/base) for a complete implementation example.
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [contributing guidelines](../../CONTRIBUTING.md) for more details.

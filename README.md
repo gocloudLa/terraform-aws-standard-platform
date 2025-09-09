@@ -33,6 +33,8 @@ Please refer to the AWS published [Well-Architected Framework](https://aws.amazo
 
 Creates AWS Organizations management, Identity Center (SSO), and S3 backend for Terraform state. Module instantiation is once per organization.
 
+📖 **[View Organization Module Documentation](modules/organization/README.md)**
+
 ```hcl
 module "organization" {
   source = "gocloudLa/standard-platform/aws//modules/organization"
@@ -56,6 +58,8 @@ module "organization" {
 ### Base Layer
 
 Creates foundational networking infrastructure including VPC, Route53 zones, CloudMap service discovery, and SNS notifications.
+
+📖 **[View Base Module Documentation](modules/base/README.md)**
 
 ```hcl
 module "base" {
@@ -85,6 +89,8 @@ module "base" {
 
 Creates security, compliance, backup, and operational services including ACM certificates, GitLab Runner, AWS Backup, SES, VPN, WAF, and monitoring.
 
+📖 **[View Foundation Module Documentation](modules/foundation/README.md)**
+
 ```hcl
 module "foundation" {
   source = "gocloudLa/standard-platform/aws//modules/foundation"
@@ -110,6 +116,8 @@ module "foundation" {
 ### Project Layer
 
 Creates core infrastructure services including load balancers, compute clusters, databases, storage, and messaging services.
+
+📖 **[View Project Module Documentation](modules/project/README.md)**
 
 ```hcl
 module "project" {
@@ -137,6 +145,8 @@ module "project" {
 
 Creates application-level services including static websites, containerized applications, serverless functions, and batch processing jobs.
 
+📖 **[View Workload Module Documentation](modules/workload/README.md)**
+
 ```hcl
 module "workload" {
   source = "gocloudLa/standard-platform/aws//modules/workload"
@@ -158,15 +168,6 @@ module "workload" {
   # ... other workload parameters
 }
 ```
-
-## Examples
-
-- [organization](examples/organization) - AWS Organizations, Identity Center, S3 Backend
-- [base](examples/base) - VPC, Route53, CloudMap, Notifications
-- [foundation](examples/foundation) - ACM, GitLab Runner, Backup, SES, VPN, WAF
-- [project](examples/project) - ALB, ECS, Databases, S3, SQS, DynamoDB
-- [workload](examples/workload) - Static Sites, ECS Services, Lambda, Batch Jobs
-- [complete](examples/complete) - Complete platform deployment (for validation and testing)
 
 ## Authors
 
