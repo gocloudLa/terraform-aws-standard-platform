@@ -1,3 +1,25 @@
+module "wrapper_organization" {
+  source = "../../modules/organization"
+
+  metadata = {
+    aws_region     = "us-east-1"
+    environment    = "Production"
+    public_domain  = "democorp.cloud"
+    private_domain = "democorp"
+
+    key = {
+      company = "dmc"
+      region  = "use1"
+      env     = "prd"
+      layer   = "foundation"
+    }
+  }
+
+  organization_parameters    = {}
+  identity_center_parameters = {}
+  s3_backend_parameters      = {}
+}
+
 module "wrapper_base" {
   source = "../../modules/base"
 

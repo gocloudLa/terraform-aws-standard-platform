@@ -9,7 +9,7 @@ module "wrapper_organization" {
 }
 
 module "wrapper_identity_center" {
-  source  = "gocloudLa/wrapper-identity_center/aws"
+  source  = "gocloudLa/wrapper-identity-center/aws"
   version = "1.0.0"
 
   metadata = var.metadata
@@ -20,7 +20,7 @@ module "wrapper_identity_center" {
 }
 
 module "wrapper_s3_backend" {
-  source  = "gocloudLa/wrapper-s3_backend/aws"
+  source  = "gocloudLa/wrapper-s3-backend/aws"
   version = "1.0.0"
 
   metadata = var.metadata
