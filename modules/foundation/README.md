@@ -104,14 +104,14 @@ locals {
 | Name | Version |
 |------|---------|
 | terraform | >= 1.10 |
-| aws | >= 5.0 |
+| aws | >= 6.0 |
 
 ## 🔧 Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 5.0 |
-| aws.use1 | >= 5.0 (for CloudFront resources) |
+| aws | >= 6.0 |
+| aws.use1 | >= 6.0 (for CloudFront resources) |
 
 ## 📥 Inputs
 
