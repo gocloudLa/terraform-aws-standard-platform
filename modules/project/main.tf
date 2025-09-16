@@ -1,6 +1,5 @@
 module "wrapper_alb" {
-  source  = "gocloudLa/wrapper-alb/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-alb.git"
 
   metadata = var.metadata
 
@@ -9,8 +8,7 @@ module "wrapper_alb" {
 }
 
 module "wrapper_batch" {
-  source  = "gocloudLa/wrapper-batch/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-batch.git"
 
   metadata = var.metadata
 
@@ -19,8 +17,7 @@ module "wrapper_batch" {
 }
 
 module "wrapper_ecs" {
-  source  = "gocloudLa/wrapper-ecs/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-ecs.git"
 
   metadata = var.metadata
 
@@ -29,8 +26,7 @@ module "wrapper_ecs" {
 }
 
 module "wrapper_elasticache" {
-  source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-elasticache.git"
 
   metadata = var.metadata
 
@@ -39,8 +35,7 @@ module "wrapper_elasticache" {
 }
 
 module "wrapper_documentdb" {
-  source  = "gocloudLa/wrapper-documentdb/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-documentdb.git"
 
   metadata = var.metadata
 
@@ -49,8 +44,7 @@ module "wrapper_documentdb" {
 }
 
 module "wrapper_rds" {
-  source  = "gocloudLa/wrapper-rds/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-rds.git"
 
   metadata = var.metadata
 
@@ -59,8 +53,7 @@ module "wrapper_rds" {
 }
 
 module "wrapper_rds_aurora" {
-  source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-rds-aurora.git"
 
   metadata = var.metadata
 
@@ -69,8 +62,7 @@ module "wrapper_rds_aurora" {
 }
 
 module "wrapper_sqs" {
-  source  = "gocloudLa/wrapper-sqs/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-sqs.git"
 
   metadata = var.metadata
 
@@ -79,8 +71,7 @@ module "wrapper_sqs" {
 }
 
 module "wrapper_dynamodb" {
-  source  = "gocloudLa/wrapper-dynamodb/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-dynamodb.git"
 
   metadata = var.metadata
 
@@ -89,8 +80,7 @@ module "wrapper_dynamodb" {
 }
 
 module "wrapper_bucket" {
-  source  = "gocloudLa/wrapper-bucket/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-bucket.git"
 
   metadata = var.metadata
 
@@ -99,8 +89,7 @@ module "wrapper_bucket" {
 }
 
 module "wrapper_efs" {
-  source  = "gocloudLa/wrapper-efs/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-efs.git"
 
   metadata = var.metadata
 
@@ -109,8 +98,7 @@ module "wrapper_efs" {
 }
 
 module "wrapper_memorydb" {
-  source  = "gocloudLa/wrapper-memorydb/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-memorydb.git"
 
   metadata = var.metadata
 

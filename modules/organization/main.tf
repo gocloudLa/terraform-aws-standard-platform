@@ -1,6 +1,5 @@
 module "wrapper_organization" {
-  source  = "gocloudLa/wrapper-organization/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-organization.git"
 
   metadata = var.metadata
 
@@ -9,8 +8,7 @@ module "wrapper_organization" {
 }
 
 module "wrapper_identity_center" {
-  source  = "gocloudLa/wrapper-identity-center/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-identity-center.git"
 
   metadata = var.metadata
 
@@ -20,8 +18,7 @@ module "wrapper_identity_center" {
 }
 
 module "wrapper_s3_backend" {
-  source  = "gocloudLa/wrapper-s3-backend/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-s3-backend.git"
 
   metadata = var.metadata
 

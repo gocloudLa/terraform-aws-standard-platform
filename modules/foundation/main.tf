@@ -1,6 +1,5 @@
 module "wrapper_acm" {
-  source  = "gocloudLa/wrapper-acm/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-acm.git"
 
   metadata = var.metadata
 
@@ -13,8 +12,7 @@ module "wrapper_acm" {
 }
 
 module "wrapper_gitlab_runner" {
-  source  = "gocloudLa/wrapper-gitlab-runner/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-gitlab-runner.git"
 
   metadata = var.metadata
 
@@ -23,8 +21,7 @@ module "wrapper_gitlab_runner" {
 }
 
 module "wrapper_aws_backup" {
-  source  = "gocloudLa/wrapper-aws-backup/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-aws-backup.git"
 
   metadata = var.metadata
 
@@ -34,8 +31,7 @@ module "wrapper_aws_backup" {
 }
 
 module "wrapper_ses" {
-  source  = "gocloudLa/wrapper-ses/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-ses.git"
 
   metadata = var.metadata
 
@@ -45,8 +41,7 @@ module "wrapper_ses" {
 }
 
 module "wrapper_pritunl" {
-  source  = "gocloudLa/wrapper-pritunl/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-pritunl.git"
 
   metadata = var.metadata
 
@@ -56,8 +51,7 @@ module "wrapper_pritunl" {
 }
 
 module "wrapper_route53" {
-  source  = "gocloudLa/wrapper-route53-record/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-route53-record.git"
 
   metadata = var.metadata
 
@@ -67,8 +61,7 @@ module "wrapper_route53" {
 }
 
 module "wrapper_service_scheduler" {
-  source  = "gocloudLa/wrapper-service-scheduler/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-service-scheduler.git"
 
   metadata = var.metadata
 
@@ -78,8 +71,7 @@ module "wrapper_service_scheduler" {
 }
 
 module "wrapper_waf" {
-  source  = "gocloudLa/wrapper-waf/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-waf.git"
 
   metadata = var.metadata
 
@@ -92,8 +84,7 @@ module "wrapper_waf" {
 }
 
 module "wrapper_health_events" {
-  source  = "gocloudLa/wrapper-health-events/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-health-events.git"
 
   metadata = var.metadata
 
@@ -103,8 +94,7 @@ module "wrapper_health_events" {
 }
 
 module "wrapper_cost_control" {
-  source  = "gocloudLa/wrapper-cost-control/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-cost-control.git"
 
   metadata = var.metadata
 

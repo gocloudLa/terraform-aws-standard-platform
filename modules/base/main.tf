@@ -1,6 +1,5 @@
 module "wrapper_vpc" {
-  source  = "gocloudLa/wrapper-vpc/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpc.git"
 
   metadata = var.metadata
 
@@ -9,8 +8,7 @@ module "wrapper_vpc" {
 }
 
 module "wrapper_route53" {
-  source  = "gocloudLa/wrapper-route53-zone/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-route53-zone.git"
 
   metadata = var.metadata
 
@@ -21,8 +19,7 @@ module "wrapper_route53" {
 }
 
 module "wrapper_cloudmap" {
-  source  = "gocloudLa/wrapper-cloudmap/aws"
-  version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-cloudmap.git"
 
   metadata = var.metadata
 
@@ -34,7 +31,6 @@ module "wrapper_cloudmap" {
 
 module "wrapper_notifications" {
   source  = "gocloudLa/wrapper-notifications/aws"
-  version = "1.0.1"
 
   metadata = var.metadata
 
