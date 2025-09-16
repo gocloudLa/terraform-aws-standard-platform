@@ -69,3 +69,19 @@ variable "lambda_defaults" {
   description = "Lambda default parameters to configure serverless functions"
   default     = {}
 }
+
+/*----------------------------------------------------------------------*/
+/* EC2 Instances | Variable Definition                                  */
+/*----------------------------------------------------------------------*/
+
+variable "ec2_instance_parameters" {
+  type        = any
+  description = "EC2 Instance parameters to configure EC2 instances"
+  default     = {}
+}
+
+variable "ec2_instance_defaults" {
+  type        = any
+  description = "EC2 Instance default parameters to configure EC2 instances"
+  default     = {}
+}

@@ -44,3 +44,12 @@ module "wrapper_lambda" {
   lambda_defaults   = var.lambda_defaults
 
 }
+
+module "wrapper_ec2_instance" {
+  source  = "gocloudLa/terraform-aws-wrapper-ec2-instance?ref=feature/initial-release"
+
+  metadata = var.metadata
+
+  ec2_instance_parameters = var.ec2_instance_parameters
+  ec2_instance_defaults   = var.ec2_instance_defaults
+}
