@@ -117,3 +117,12 @@ module "wrapper_memorydb" {
   memorydb_parameters = var.memorydb_parameters
   memorydb_defaults   = var.memorydb_defaults
 }
+
+module "wrapper_kms" {
+  source  = "gocloudLa/terraform-aws-wrapper-kms?ref=feature/initial-release"
+
+  metadata = var.metadata
+
+  kms_parameters = var.kms_parameters
+  kms_defaults   = var.kms_defaults
+}
