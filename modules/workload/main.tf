@@ -46,7 +46,7 @@ module "wrapper_lambda" {
 }
 
 module "wrapper_ec2_instance" {
-  source  = "gocloudLa/terraform-aws-wrapper-ec2-instance?ref=feature/initial-release"
+  source  = "git@github.com:gocloudLa/terraform-aws-wrapper-ec2-instance.git?ref=feature/initial-release"
 
   metadata = var.metadata
 
