@@ -33,7 +33,7 @@ This layer includes the following GoCloud wrapper modules:
 ```hcl
 module "foundation" {
   source = "gocloudLa/standard-platform/aws//modules/foundation"
-  version = "1.0.0"
+  # version = "{tag_specific_version}"
 
   metadata = local.metadata
 

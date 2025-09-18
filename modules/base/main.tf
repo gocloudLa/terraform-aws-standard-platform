@@ -1,6 +1,6 @@
 module "wrapper_vpc" {
   source  = "gocloudLa/wrapper-vpc/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 

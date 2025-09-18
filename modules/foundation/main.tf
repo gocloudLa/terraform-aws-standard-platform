@@ -1,6 +1,6 @@
 module "wrapper_acm" {
   source  = "gocloudLa/wrapper-acm/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
@@ -14,7 +14,7 @@ module "wrapper_acm" {
 
 module "wrapper_gitlab_runner" {
   source  = "gocloudLa/wrapper-gitlab-runner/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
@@ -68,7 +68,7 @@ module "wrapper_route53" {
 
 module "wrapper_service_scheduler" {
   source  = "gocloudLa/wrapper-service-scheduler/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 

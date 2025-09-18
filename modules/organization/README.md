@@ -26,7 +26,7 @@ This layer includes the following GoCloud wrapper modules:
 ```hcl
 module "organization" {
   source = "gocloudLa/standard-platform/aws//modules/organization"
-  version = "1.0.0"
+  # version = "{tag_specific_version}"
 
   metadata = local.metadata
 

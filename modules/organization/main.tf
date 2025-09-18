@@ -21,7 +21,7 @@ module "wrapper_identity_center" {
 
 module "wrapper_s3_backend" {
   source  = "gocloudLa/wrapper-s3-backend/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
