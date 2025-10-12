@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.3.0...v0.4.0) (2025-10-12)
+
+
+### Features
+
+* **modules:** upgrade external wrapper modules ([#8](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/8)) ([7e13cae](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7e13cae905cf4d7d847dcd7c4339e05bd0361f47))
+
 ## [0.3.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.2.0...v0.3.0) (2025-09-18)
 
 
