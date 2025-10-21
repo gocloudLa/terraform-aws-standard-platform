@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.4.0...v0.5.0) (2025-10-21)
+
+
+### Features
+
+* **module:** upgrade service_scheduler & rds ([#10](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/10)) ([ef504b5](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/ef504b529424fb2583023eeb91e03063d0c5aeb5))
+
 ## [0.4.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.3.0...v0.4.0) (2025-10-12)
 
 
