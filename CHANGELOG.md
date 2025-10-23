@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.5.0...v0.6.0) (2025-10-23)
+
+
+### Features
+
+* **modules:** upgrade memorydb external module ([#12](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/12)) ([1858440](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/18584404ad9b4e3bb4ce89c322c720295b39c06a))
+
 ## [0.5.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.4.0...v0.5.0) (2025-10-21)
 
 
