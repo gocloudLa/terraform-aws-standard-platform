@@ -30,7 +30,7 @@ module "wrapper_ecs" {
 
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.1.0"
+  version = "1.2.0"
 
   metadata = var.metadata
 
