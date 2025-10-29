@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.6.0...v0.7.0) (2025-10-29)
+
+
+### Features
+
+* **project:** update elasticache module ([#14](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/14)) ([1607b32](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/1607b32de02f80e99352a04c04449288c9524d66))
+
 ## [0.6.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.5.0...v0.6.0) (2025-10-23)
 
 
