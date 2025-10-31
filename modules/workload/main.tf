@@ -44,3 +44,13 @@ module "wrapper_lambda" {
   lambda_defaults   = var.lambda_defaults
 
 }
+
+module "wrapper_ec2_instance" {
+  source  = "gocloudLa/wrapper-ec2-instance/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  ec2_instance_parameters = var.ec2_instance_parameters
+  ec2_instance_defaults   = var.ec2_instance_defaults
+}
