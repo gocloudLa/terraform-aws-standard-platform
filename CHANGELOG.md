@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.7.0...v0.8.0) (2025-10-31)
+
+
+### Features
+
+* **ec2:** add ec2 wrapper module ([#16](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/16)) ([34e17e7](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/34e17e72d261b17c33232abcebc24dff3210a353))
+
 ## [0.7.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.6.0...v0.7.0) (2025-10-29)
 
 
