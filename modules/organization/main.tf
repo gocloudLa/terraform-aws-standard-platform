@@ -10,7 +10,7 @@ module "wrapper_organization" {
 
 module "wrapper_identity_center" {
   source  = "gocloudLa/wrapper-identity-center/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   metadata = var.metadata
 
