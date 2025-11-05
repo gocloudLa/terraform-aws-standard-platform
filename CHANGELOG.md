@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.8.0...v0.9.0) (2025-11-05)
+
+
+### Features
+
+* **module:** upgrade identity-center v1.1.0 ([#18](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/18)) ([fa7c002](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/fa7c002def5ac33cbd11a682257dc8dd5fb3e51b))
+
 ## [0.8.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.7.0...v0.8.0) (2025-10-31)
 
 
