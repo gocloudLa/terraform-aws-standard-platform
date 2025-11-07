@@ -14,7 +14,7 @@ module "wrapper_static_site" {
 
 module "wrapper_ecs_service" {
   source  = "gocloudLa/wrapper-ecs-service/aws"
-  version = "1.1.0"
+  version = "1.2.0"
 
   metadata = var.metadata
 
@@ -47,7 +47,7 @@ module "wrapper_lambda" {
 
 module "wrapper_ec2_instance" {
   source  = "gocloudLa/wrapper-ec2-instance/aws"
-  version = "0.1.0"
+  version = "0.1.1"
 
   metadata = var.metadata
 
