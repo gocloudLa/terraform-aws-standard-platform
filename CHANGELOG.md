@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.9.0...v0.10.0) (2025-11-07)
+
+
+### Features
+
+* **module:** upgrade elasticache to v1.3.0 & memorydb to v1.2.0 ([#20](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/20)) ([ef3793d](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/ef3793d5b35452631c123f8ba2b42b5673a3dc16))
+
 ## [0.9.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.8.0...v0.9.0) (2025-11-05)
 
 
