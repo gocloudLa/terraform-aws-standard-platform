@@ -22,6 +22,17 @@ module "wrapper_gitlab_runner" {
 
 }
 
+module "wrapper_iam" {
+  source  = "gocloudLa/wrapper-iam/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  iam_parameters = var.iam_parameters
+  iam_defaults   = var.iam_defaults
+
+}
+
 module "wrapper_aws_backup" {
   source  = "gocloudLa/wrapper-aws-backup/aws"
   version = "1.0.0"
