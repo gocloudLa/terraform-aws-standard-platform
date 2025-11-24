@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.11.0...v0.12.0) (2025-11-24)
+
+
+### Features
+
+* **iam:** add iam wrapper module ([#24](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/24)) ([b4a15fd](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/b4a15fd08ba946b1dbb8dc048d9faec3c7639a50))
+
 ## [0.11.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.10.0...v0.11.0) (2025-11-19)
 
 
