@@ -137,6 +137,10 @@ module "project" {
     # ECS cluster configuration
   }
 
+  ecr_parameters = {
+    # ECR repository configuration
+  }
+
   rds_parameters = {
     # RDS database configuration
   }
