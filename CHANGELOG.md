@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.12.1...v0.13.0) (2025-11-27)
+
+
+### Features
+
+* **ecr:** add ecr wrapper module ([#28](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/28)) ([745411d](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/745411da8786b5881df4577cb5cea8103bb6807a))
+
 ## [0.12.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.12.0...v0.12.1) (2025-11-24)
 
 
