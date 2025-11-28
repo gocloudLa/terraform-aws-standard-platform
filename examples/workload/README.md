@@ -1,6 +1,6 @@
 # Workload Example
 
-This example demonstrates a comprehensive setup of workload-level services including static sites, ECS services, and containerized applications using Terraform. This is a reference example for understanding how to configure the workload layer of the AWS Standard Platform.
+This example demonstrates a comprehensive setup of workload-level services including static sites, ECS services, containerized applications, and EC2 instances using Terraform. This is a reference example for understanding how to configure the workload layer of the AWS Standard Platform.
 
 ## 🔧 What's Included
 
@@ -12,6 +12,7 @@ The main purpose is to provide a complete and detailed configuration for deployi
 #### Key Features Demonstrated
 - **Static Sites**: CloudFront distribution with SSL certificates
 - **ECS Services**: Containerized applications (filebrowser, phpmyadmin) with Fargate Spot
+- **EC2 Instances**: Virtual server instances with custom configurations
 - **Load Balancer Integration**: ALB integration with ECS services
 - **EFS Integration**: File system mounting for persistent storage
 

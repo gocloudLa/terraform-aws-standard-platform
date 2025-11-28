@@ -1,10 +1,10 @@
 # Workload Layer
 
-The Workload layer provides application-level services including static websites, containerized applications, serverless functions, and batch processing jobs. This layer contains the actual applications and workloads that run on top of the infrastructure foundation.
+The Workload layer provides application-level services including static websites, containerized applications, serverless functions, batch processing jobs, and EC2 instances. This layer contains the actual applications and workloads that run on top of the infrastructure foundation.
 
 ## 🎯 Overview
 
-The Workload layer provides application-level services including static websites, containerized applications, serverless functions, and batch processing jobs. This layer contains the actual applications and workloads that run on top of the infrastructure foundation.
+The Workload layer provides application-level services including static websites, containerized applications, serverless functions, batch processing jobs, and EC2 instances. This layer contains the actual applications and workloads that run on top of the infrastructure foundation.
 
 This layer includes the following GoCloud wrapper modules:
 
@@ -12,6 +12,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-ecs-service](https://github.com/gocloudLa/terraform-aws-wrapper-ecs-service)** - Containerized application services
 - **[terraform-aws-wrapper-batch-job](https://github.com/gocloudLa/terraform-aws-wrapper-batch-job)** - Scheduled and on-demand batch processing
 - **[terraform-aws-wrapper-lambda](https://github.com/gocloudLa/terraform-aws-wrapper-lambda)** - Serverless compute and event processing
+- **[terraform-aws-wrapper-ec2-instance](https://github.com/gocloudLa/terraform-aws-wrapper-ec2-instance)** - EC2 instance management and configuration
 
 ## 🚀 Usage
 
@@ -45,6 +46,10 @@ module "workload" {
 
   lambda_parameters = {
     # Lambda function configuration
+  }
+
+  ec2_instance_parameters = {
+    # EC2 instance configuration
   }
 }
 ```
@@ -94,6 +99,7 @@ locals {
 | ecs_service_parameters | ECS service configuration | `object` | `{}` | no |
 | batch_job_parameters | Batch job configuration | `object` | `{}` | no |
 | lambda_parameters | Lambda function configuration | `object` | `{}` | no |
+| ec2_instance_parameters | EC2 instance configuration | `object` | `{}` | no |
 
 ## 🏷️ Resource Naming Convention
 

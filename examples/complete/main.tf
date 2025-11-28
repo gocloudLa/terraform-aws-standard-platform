@@ -137,5 +137,6 @@ module "wrapper_workload" {
   ecs_service_parameters = {}
   batch_job_parameters   = {}
   lambda_parameters      = {}
+  ec2_instance_parameters = {}
 }
 

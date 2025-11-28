@@ -151,7 +151,7 @@ module "project" {
 
 ### Workload Layer
 
-Creates application-level services including static websites, containerized applications, serverless functions, and batch processing jobs.
+Creates application-level services including static websites, containerized applications, serverless functions, batch processing jobs, and EC2 instances.
 
 📖 **[View Workload Module Documentation](modules/workload/README.md)**
 
@@ -171,6 +171,10 @@ module "workload" {
 
   lambda_parameters = {
     # Lambda function configuration
+  }
+
+  ec2_instance_parameters = {
+    # EC2 instance configuration
   }
 
   # ... other workload parameters
