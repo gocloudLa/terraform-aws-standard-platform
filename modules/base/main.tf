@@ -1,5 +1,5 @@
 module "wrapper_vpc" {
-  source  = "gocloudLa/terraform-aws-wrapper-vpc?ref=feature/add-custom-names"
+  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-vpc.git?ref=feature/add-custom-names"
   #version = "1.0.2"
 
   metadata = var.metadata
