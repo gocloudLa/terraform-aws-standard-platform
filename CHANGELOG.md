@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.13.0...v0.13.1) (2025-12-09)
+
+
+### Bug Fixes
+
+* **ecs-service:** md5 secrets per container ([#30](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/30)) ([5c9e1e8](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/5c9e1e8b005cca8de57b966e66b3d38d6c8933ee))
+
 ## [0.13.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.12.1...v0.13.0) (2025-11-27)
 
 
