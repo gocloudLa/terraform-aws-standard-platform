@@ -133,10 +133,10 @@ module "wrapper_workload" {
     }
   }
 
-  static_site_parameters = {}
-  ecs_service_parameters = {}
-  batch_job_parameters   = {}
-  lambda_parameters      = {}
+  static_site_parameters  = {}
+  ecs_service_parameters  = {}
+  batch_job_parameters    = {}
+  lambda_parameters       = {}
   ec2_instance_parameters = {}
 }
 
