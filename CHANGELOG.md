@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.2](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.13.1...v0.13.2) (2025-12-10)
+
+
+### Bug Fixes
+
+* **notifications:** upgrade module version 1.1.1 ([#32](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/32)) ([768a0d4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/768a0d43304585c0cdbe62f4dc1df927d82e31c9))
+
 ## [0.13.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.13.0...v0.13.1) (2025-12-09)
 
 
