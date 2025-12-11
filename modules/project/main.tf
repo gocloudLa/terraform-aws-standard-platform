@@ -89,8 +89,8 @@ module "wrapper_sqs" {
 }
 
 module "wrapper_dynamodb" {
-  source  = "gocloudLa/wrapper-dynamodb/aws"
-  version = "1.0.1"
+  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-dynamodb.git?ref=feature/add-custom-name"
+  #version = "1.0.1"
 
   metadata = var.metadata
 
