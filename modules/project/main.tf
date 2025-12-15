@@ -1,6 +1,6 @@
 module "wrapper_alb" {
-  source  = "gocloudLa/wrapper-alb/aws"
-  version = "1.0.1"
+  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-alb.git?ref=feature/add-custom-name"
+  #version = "1.0.1"
 
   metadata = var.metadata
 
