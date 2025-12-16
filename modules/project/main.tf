@@ -39,8 +39,8 @@ module "wrapper_ecr" {
 }
 
 module "wrapper_elasticache" {
-  source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.3.0"
+  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-elasticache.git?ref=feature/add-custom-name"
+  #version = "1.3.0"
 
   metadata = var.metadata
 
