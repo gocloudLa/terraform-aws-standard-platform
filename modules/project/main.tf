@@ -69,8 +69,8 @@ module "wrapper_rds" {
 }
 
 module "wrapper_rds_aurora" {
-  source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.0.1"
+  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-rds-aurora.git?ref=feature/add-custom-names" #"gocloudLa/wrapper-rds-aurora/aws"
+  # version = "1.0.1"
 
   metadata = var.metadata
 
