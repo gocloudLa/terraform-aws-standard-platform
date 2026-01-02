@@ -13,8 +13,8 @@ module "wrapper_static_site" {
 }
 
 module "wrapper_ecs_service" {
-  source  = "gocloudLa/wrapper-ecs-service/aws"
-  version = "1.3.0"
+  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-ecs_service.git?ref=feature/add-custom-security-group-rules" #"gocloudLa/wrapper-ecs-service/aws"
+  # version = "1.3.0"
 
   metadata = var.metadata
 
