@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.14.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.13.2...v0.14.0) (2026-01-07)
+
+
+### Features
+
+* **module:** update vpc, gitlabrunner, alb, elasticache, aurora, dynamo, s3 & ec2 instance modules ([#34](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/34)) ([2ea3e94](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2ea3e949c21eccadf760fe0af679f367ccc0724a))
+
 ## [0.13.2](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.13.1...v0.13.2) (2025-12-10)
 
 
