@@ -13,8 +13,8 @@ module "wrapper_acm" {
 }
 
 module "wrapper_gitlab_runner" {
-  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-gitlab-runner.git?ref=fix/condition-datasources"
-  #version = "1.0.2"
+  source  = "gocloudLa/wrapper-gitlab-runner/aws"
+  version = "1.1.0"
 
   metadata = var.metadata
 
