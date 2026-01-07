@@ -1,6 +1,6 @@
 module "wrapper_alb" {
-  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-alb.git?ref=feature/add-custom-name"
-  #version = "1.0.1"
+  source  = "gocloudLa/wrapper-alb/aws"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -39,8 +39,8 @@ module "wrapper_ecr" {
 }
 
 module "wrapper_elasticache" {
-  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-elasticache.git?ref=feature/add-custom-name"
-  #version = "1.3.0"
+  source  = "gocloudLa/wrapper-elasticache/aws"
+  version = "1.4.0"
 
   metadata = var.metadata
 
@@ -69,8 +69,8 @@ module "wrapper_rds" {
 }
 
 module "wrapper_rds_aurora" {
-  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-rds-aurora.git?ref=feature/add-custom-names" #"gocloudLa/wrapper-rds-aurora/aws"
-  # version = "1.0.1"
+  source  = "gocloudLa/wrapper-rds-aurora/aws"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -89,8 +89,8 @@ module "wrapper_sqs" {
 }
 
 module "wrapper_dynamodb" {
-  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-dynamodb.git?ref=feature/add-custom-name"
-  #version = "1.0.1"
+  source  = "gocloudLa/wrapper-dynamodb/aws"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -99,8 +99,8 @@ module "wrapper_dynamodb" {
 }
 
 module "wrapper_bucket" {
-  source  = "git::https://github.com/gocloudLa/terraform-aws-wrapper-bucket.git?ref=feature/add-custom-name"
-  #version = "1.0.1"
+  source  = "gocloudLa/wrapper-bucket/aws"
+  version = "1.1.0"
 
   metadata = var.metadata
 
