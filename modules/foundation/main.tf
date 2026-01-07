@@ -14,7 +14,7 @@ module "wrapper_acm" {
 
 module "wrapper_gitlab_runner" {
   source  = "gocloudLa/wrapper-gitlab-runner/aws"
-  version = "1.0.2"
+  version = "1.1.0"
 
   metadata = var.metadata
 

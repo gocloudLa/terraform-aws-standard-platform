@@ -1,6 +1,6 @@
 module "wrapper_alb" {
   source  = "gocloudLa/wrapper-alb/aws"
-  version = "1.0.1"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -40,7 +40,7 @@ module "wrapper_ecr" {
 
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.3.0"
+  version = "1.4.0"
 
   metadata = var.metadata
 
@@ -70,7 +70,7 @@ module "wrapper_rds" {
 
 module "wrapper_rds_aurora" {
   source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.0.1"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -90,7 +90,7 @@ module "wrapper_sqs" {
 
 module "wrapper_dynamodb" {
   source  = "gocloudLa/wrapper-dynamodb/aws"
-  version = "1.0.1"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -100,7 +100,7 @@ module "wrapper_dynamodb" {
 
 module "wrapper_bucket" {
   source  = "gocloudLa/wrapper-bucket/aws"
-  version = "1.0.1"
+  version = "1.1.0"
 
   metadata = var.metadata
 
