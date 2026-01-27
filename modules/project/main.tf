@@ -1,6 +1,6 @@
 module "wrapper_alb" {
-  source  = "gocloudLa/wrapper-alb/aws"
-  version = "1.1.0"
+  source  = "git@github.com:gocloudLa/terraform-aws-wrapper-alb.git?ref=feature/add-health_check_logs" #"gocloudLa/wrapper-alb/aws"
+  #version = "1.1.0"
 
   metadata = var.metadata
 
