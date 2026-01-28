@@ -1,6 +1,6 @@
 module "wrapper_alb" {
-  source  = "git@github.com:gocloudLa/terraform-aws-wrapper-alb.git?ref=feature/add-health_check_logs" #"gocloudLa/wrapper-alb/aws"
-  #version = "1.1.0"
+  source  = "gocloudLa/wrapper-alb/aws"
+  version = "1.2.0"
 
   metadata = var.metadata
 
@@ -39,8 +39,8 @@ module "wrapper_ecr" {
 }
 
 module "wrapper_elasticache" {
-  source  = "git@github.com:gocloudLa/terraform-aws-wrapper-elasticache.git?ref=feature/parameter-group-name" #"gocloudLa/wrapper-elasticache/aws"
-  #version = "1.4.0"
+  source  = "gocloudLa/wrapper-elasticache/aws"
+  version = "1.5.0"
 
   metadata = var.metadata
 
