@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.14.0...v0.15.0) (2026-01-28)
+
+
+### Features
+
+* **project/workload:** update ecs_service, alb & elasticache versions ([#36](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/36)) ([12e9332](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/12e9332ea3654a409c1113ab69a5d13793c58200))
+
 ## [0.14.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.13.2...v0.14.0) (2026-01-07)
 
 
