@@ -1,6 +1,6 @@
 module "wrapper_alb" {
   source  = "gocloudLa/wrapper-alb/aws"
-  version = "1.2.0"
+  version = "1.3.0"
 
   metadata = var.metadata
 
@@ -40,7 +40,7 @@ module "wrapper_ecr" {
 
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.5.0"
+  version = "1.6.0"
 
   metadata = var.metadata
 
@@ -70,7 +70,7 @@ module "wrapper_rds" {
 
 module "wrapper_rds_aurora" {
   source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.1.0"
+  version = "1.2.0"
 
   metadata = var.metadata
 
