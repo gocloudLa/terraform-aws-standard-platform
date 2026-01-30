@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.16.0...v0.17.0) (2026-01-30)
+
+
+### Features
+
+* **modules:** update vpc & acm modules versions ([#40](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/40)) ([3d506bb](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/3d506bb604cb3ed674eccac2cefbac59e3bc942c))
+
 ## [0.16.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.15.0...v0.16.0) (2026-01-29)
 
 
