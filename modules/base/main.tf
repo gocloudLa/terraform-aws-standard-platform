@@ -34,7 +34,7 @@ module "wrapper_cloudmap" {
 
 module "wrapper_notifications" {
   source  = "gocloudLa/wrapper-notifications/aws"
-  version = "1.1.1"
+  version = "1.1.2"
 
   metadata = var.metadata
 
