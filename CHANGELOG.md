@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.17.0...v0.18.0) (2026-02-02)
+
+
+### Features
+
+* **base:** update notifications module version ([#42](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/42)) ([cdbaaa9](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/cdbaaa915713013771af1446cda95d490aa906d5))
+
 ## [0.17.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.16.0...v0.17.0) (2026-01-30)
 
 
