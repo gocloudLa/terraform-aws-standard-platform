@@ -66,6 +66,7 @@ module "wrapper_foundation" {
 
   acm_parameters               = {}
   gitlab_runner_parameters     = {}
+  iam_parameters               = {}
   aws_backup_parameters        = {}
   ses_parameters               = {}
   pritunl_parameters           = {}
@@ -132,9 +133,10 @@ module "wrapper_workload" {
     }
   }
 
-  static_site_parameters = {}
-  ecs_service_parameters = {}
-  batch_job_parameters   = {}
-  lambda_parameters      = {}
+  static_site_parameters  = {}
+  ecs_service_parameters  = {}
+  batch_job_parameters    = {}
+  lambda_parameters       = {}
+  ec2_instance_parameters = {}
 }
 

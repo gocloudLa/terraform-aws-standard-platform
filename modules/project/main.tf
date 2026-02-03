@@ -1,6 +1,6 @@
 module "wrapper_alb" {
   source  = "gocloudLa/wrapper-alb/aws"
-  version = "1.0.0"
+  version = "1.3.0"
 
   metadata = var.metadata
 
@@ -20,7 +20,7 @@ module "wrapper_batch" {
 
 module "wrapper_ecs" {
   source  = "gocloudLa/wrapper-ecs/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
@@ -28,9 +28,19 @@ module "wrapper_ecs" {
   ecs_defaults   = var.ecs_defaults
 }
 
+module "wrapper_ecr" {
+  source  = "gocloudLa/wrapper-ecr/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  ecr_parameters = var.ecr_parameters
+  ecr_defaults   = var.ecr_defaults
+}
+
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.0.0"
+  version = "1.6.0"
 
   metadata = var.metadata
 
@@ -40,7 +50,7 @@ module "wrapper_elasticache" {
 
 module "wrapper_documentdb" {
   source  = "gocloudLa/wrapper-documentdb/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
@@ -50,7 +60,7 @@ module "wrapper_documentdb" {
 
 module "wrapper_rds" {
   source  = "gocloudLa/wrapper-rds/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -60,7 +70,7 @@ module "wrapper_rds" {
 
 module "wrapper_rds_aurora" {
   source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.0.0"
+  version = "1.2.0"
 
   metadata = var.metadata
 
@@ -70,7 +80,7 @@ module "wrapper_rds_aurora" {
 
 module "wrapper_sqs" {
   source  = "gocloudLa/wrapper-sqs/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
@@ -80,7 +90,7 @@ module "wrapper_sqs" {
 
 module "wrapper_dynamodb" {
   source  = "gocloudLa/wrapper-dynamodb/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -90,7 +100,7 @@ module "wrapper_dynamodb" {
 
 module "wrapper_bucket" {
   source  = "gocloudLa/wrapper-bucket/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -110,7 +120,7 @@ module "wrapper_efs" {
 
 module "wrapper_memorydb" {
   source  = "gocloudLa/wrapper-memorydb/aws"
-  version = "1.0.0"
+  version = "1.2.0"
 
   metadata = var.metadata
 

@@ -11,6 +11,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-alb](https://github.com/gocloudLa/terraform-aws-wrapper-alb)** - HTTP/HTTPS load balancing and routing
 - **[terraform-aws-wrapper-batch](https://github.com/gocloudLa/terraform-aws-wrapper-batch)** - Scalable batch computing infrastructure
 - **[terraform-aws-wrapper-ecs](https://github.com/gocloudLa/terraform-aws-wrapper-ecs)** - Container orchestration and management
+- **[terraform-aws-wrapper-ecr](https://github.com/gocloudLa/terraform-aws-wrapper-ecr)** - Container image registry and management
 - **[terraform-aws-wrapper-elasticache](https://github.com/gocloudLa/terraform-aws-wrapper-elasticache)** - In-memory caching and data stores
 - **[terraform-aws-wrapper-documentdb](https://github.com/gocloudLa/terraform-aws-wrapper-documentdb)** - MongoDB-compatible document database
 - **[terraform-aws-wrapper-rds](https://github.com/gocloudLa/terraform-aws-wrapper-rds)** - Relational database services
@@ -35,7 +36,7 @@ This layer includes the following GoCloud wrapper modules:
 ```hcl
 module "project" {
   source = "gocloudLa/standard-platform/aws//modules/project"
-  version = "1.0.0"
+  # version = "{tag_specific_version}"
 
   metadata = local.metadata
 
@@ -49,6 +50,10 @@ module "project" {
 
   ecs_parameters = {
     # ECS cluster configuration
+  }
+
+  ecr_parameters = {
+    # ECR repository configuration
   }
 
   elasticache_parameters = {
@@ -132,6 +137,7 @@ locals {
 | alb_parameters | Application Load Balancer configuration | `object` | `{}` | no |
 | batch_parameters | Batch processing configuration | `object` | `{}` | no |
 | ecs_parameters | ECS cluster configuration | `object` | `{}` | no |
+| ecr_parameters | ECR repository configuration | `object` | `{}` | no |
 | elasticache_parameters | ElastiCache configuration | `object` | `{}` | no |
 | documentdb_parameters | DocumentDB configuration | `object` | `{}` | no |
 | rds_parameters | RDS database configuration | `object` | `{}` | no |

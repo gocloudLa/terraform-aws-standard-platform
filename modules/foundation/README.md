@@ -10,6 +10,7 @@ This layer includes the following GoCloud wrapper modules:
 
 - **[terraform-aws-wrapper-acm](https://github.com/gocloudLa/terraform-aws-wrapper-acm)** - SSL/TLS certificate management and validation
 - **[terraform-aws-wrapper-gitlab-runner](https://github.com/gocloudLa/terraform-aws-wrapper-gitlab-runner)** - CI/CD infrastructure for automated deployments
+- **[terraform-aws-wrapper-iam](https://github.com/gocloudLa/terraform-aws-wrapper-iam)** - IAM roles and OIDC provider management for secure access control
 - **[terraform-aws-wrapper-aws-backup](https://github.com/gocloudLa/terraform-aws-wrapper-aws-backup)** - Centralized backup and disaster recovery
 - **[terraform-aws-wrapper-ses](https://github.com/gocloudLa/terraform-aws-wrapper-ses)** - Email delivery and management
 - **[terraform-aws-wrapper-pritunl](https://github.com/gocloudLa/terraform-aws-wrapper-pritunl)** - Secure remote access infrastructure
@@ -33,7 +34,7 @@ This layer includes the following GoCloud wrapper modules:
 ```hcl
 module "foundation" {
   source = "gocloudLa/standard-platform/aws//modules/foundation"
-  version = "1.0.0"
+  # version = "{tag_specific_version}"
 
   metadata = local.metadata
 
@@ -43,6 +44,10 @@ module "foundation" {
 
   gitlab_runner_parameters = {
     # GitLab Runner configuration
+  }
+
+  iam_parameters = {
+    # IAM role / oidc_provider configuration
   }
 
   aws_backup_parameters = {
@@ -120,6 +125,7 @@ locals {
 | metadata | Common metadata for all resources | `object` | n/a | yes |
 | acm_parameters | ACM certificate configuration | `object` | `{}` | no |
 | gitlab_runner_parameters | GitLab runner configuration | `object` | `{}` | no |
+| iam_parameters | IAM role / oidc_provider configuration | `object` | `{}` | no |
 | aws_backup_parameters | AWS Backup configuration | `object` | `{}` | no |
 | ses_parameters | SES email service configuration | `object` | `{}` | no |
 | pritunl_parameters | VPN infrastructure configuration | `object` | `{}` | no |

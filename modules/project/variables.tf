@@ -55,6 +55,22 @@ variable "ecs_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* ECR | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "ecr_parameters" {
+  type        = any
+  description = "ECR parameters to configure container image repositories"
+  default     = {}
+}
+
+variable "ecr_defaults" {
+  type        = any
+  description = "ECR default parameters to configure container image repositories"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* ElastiCache (Redis) | Variable Definition                            */
 /*----------------------------------------------------------------------*/
 

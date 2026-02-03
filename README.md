@@ -87,7 +87,7 @@ module "base" {
 
 ### Foundation Layer
 
-Creates security, compliance, backup, and operational services including ACM certificates, GitLab Runner, AWS Backup, SES, VPN, WAF, and monitoring.
+Creates security, compliance, backup, and operational services including ACM certificates, GitLab Runner, IAM, AWS Backup, SES, VPN, WAF, and monitoring.
 
 📖 **[View Foundation Module Documentation](modules/foundation/README.md)**
 
@@ -103,6 +103,10 @@ module "foundation" {
 
   gitlab_runner_parameters = {
     # GitLab Runner configuration
+  }
+
+  iam_parameters = {
+    # IAM role / oidc_provider configuration
   }
 
   aws_backup_parameters = {
@@ -133,6 +137,10 @@ module "project" {
     # ECS cluster configuration
   }
 
+  ecr_parameters = {
+    # ECR repository configuration
+  }
+
   rds_parameters = {
     # RDS database configuration
   }
@@ -143,7 +151,7 @@ module "project" {
 
 ### Workload Layer
 
-Creates application-level services including static websites, containerized applications, serverless functions, and batch processing jobs.
+Creates application-level services including static websites, containerized applications, serverless functions, batch processing jobs, and EC2 instances.
 
 📖 **[View Workload Module Documentation](modules/workload/README.md)**
 
@@ -163,6 +171,10 @@ module "workload" {
 
   lambda_parameters = {
     # Lambda function configuration
+  }
+
+  ec2_instance_parameters = {
+    # EC2 instance configuration
   }
 
   # ... other workload parameters

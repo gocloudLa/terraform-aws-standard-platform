@@ -25,6 +25,29 @@ module "foundation" {
   }
 
   /*----------------------------------------------------------------------*/
+  /* IAM Variables                                                        */
+  /*----------------------------------------------------------------------*/
+  iam_parameters = {
+    oidc_provider = {
+      github = {
+        url = "https://token.actions.githubusercontent.com"
+      }
+    }
+    role = {
+      github = {
+        enable_github_oidc = true
+        oidc_subjects = [
+          "repo:your-org/your-repo:pull_request",
+          "repo:your-org/your-repo:ref:refs/heads/main"
+        ]
+        policies = {
+          S3ReadOnly = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+        }
+      }
+    }
+  }
+
+  /*----------------------------------------------------------------------*/
   /* ACM Variables                                                        */
   /*----------------------------------------------------------------------*/
   acm_parameters = {
