@@ -119,7 +119,7 @@ module "foundation" {
 
 ### Project Layer
 
-Creates core infrastructure services including load balancers, compute clusters, databases, storage, and messaging services.
+Creates core infrastructure services including load balancers, compute clusters, databases, storage, messaging services, and encryption key management (KMS).
 
 📖 **[View Project Module Documentation](modules/project/README.md)**
 
@@ -143,6 +143,10 @@ module "project" {
 
   rds_parameters = {
     # RDS database configuration
+  }
+
+  kms_parameters = {
+    # KMS key configuration
   }
 
   # ... other project parameters

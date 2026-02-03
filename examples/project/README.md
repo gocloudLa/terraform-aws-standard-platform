@@ -1,6 +1,6 @@
 # Project Example
 
-This example demonstrates a comprehensive setup of project-level infrastructure including Application Load Balancer, ECS cluster, RDS database, ElastiCache, S3 buckets, and EFS file systems using Terraform. This is a reference example for understanding how to configure the project layer of the AWS Standard Platform.
+This example demonstrates a comprehensive setup of project-level infrastructure including Application Load Balancer, ECS cluster, RDS database, ElastiCache, S3 buckets, EFS file systems, and KMS encryption keys using Terraform. This is a reference example for understanding how to configure the project layer of the AWS Standard Platform.
 
 ## 🔧 What's Included
 

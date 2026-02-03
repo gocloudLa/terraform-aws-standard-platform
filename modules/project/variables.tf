@@ -220,12 +220,12 @@ variable "memorydb_defaults" {
 
 variable "kms_parameters" {
   type        = any
-  description = "KMS (Key Managment Service) parameters to configure KMS keys"
+  description = "KMS (Key Management Service) parameters to configure KMS keys"
   default     = {}
 }
 
 variable "kms_defaults" {
   type        = any
-  description = "KMS (Key Managment Service) default parameters to configure KMS keys"
+  description = "KMS (Key Management Service) default parameters to configure KMS keys"
   default     = {}
 }

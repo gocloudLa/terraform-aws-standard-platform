@@ -129,7 +129,8 @@ module "wrapper_memorydb" {
 }
 
 module "wrapper_kms" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-kms.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-kms/aws"
+  version = "0.1.0"
 
   metadata = var.metadata
 

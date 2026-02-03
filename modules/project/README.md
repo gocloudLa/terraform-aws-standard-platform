@@ -1,10 +1,10 @@
 # Project Layer
 
-The Project layer provides core infrastructure services including load balancers, compute clusters, databases, storage, and messaging services. This layer contains the foundational infrastructure components that applications depend on.
+The Project layer provides core infrastructure services including load balancers, compute clusters, databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
 
 ## 🎯 Overview
 
-The Project layer provides core infrastructure services including load balancers, compute clusters, databases, storage, and messaging services. This layer contains the foundational infrastructure components that applications depend on.
+The Project layer provides core infrastructure services including load balancers, compute clusters, databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
 
 This layer includes the following GoCloud wrapper modules:
 
@@ -21,6 +21,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-bucket](https://github.com/gocloudLa/terraform-aws-wrapper-bucket)** - Object storage and data lakes
 - **[terraform-aws-wrapper-efs](https://github.com/gocloudLa/terraform-aws-wrapper-efs)** - Shared file storage
 - **[terraform-aws-wrapper-memorydb](https://github.com/gocloudLa/terraform-aws-wrapper-memorydb)** - Redis-compatible in-memory database
+- **[terraform-aws-wrapper-kms](https://github.com/gocloudLa/terraform-aws-wrapper-kms)** - Encryption key management and rotation
 
 ## 🚀 Usage
 
@@ -91,6 +92,10 @@ module "project" {
   memorydb_parameters = {
     # MemoryDB configuration
   }
+
+  kms_parameters = {
+    # KMS key configuration
+  }
 }
 ```
 
@@ -147,6 +152,7 @@ locals {
 | bucket_parameters | S3 bucket configuration | `object` | `{}` | no |
 | efs_parameters | EFS file system configuration | `object` | `{}` | no |
 | memorydb_parameters | MemoryDB configuration | `object` | `{}` | no |
+| kms_parameters | KMS key configuration | `object` | `{}` | no |
 
 ## 🏷️ Resource Naming Convention
 
