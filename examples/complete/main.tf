@@ -108,6 +108,7 @@ module "wrapper_project" {
   bucket_parameters      = {}
   efs_parameters         = {}
   memorydb_parameters    = {}
+  kms_parameters         = {}
 }
 
 module "wrapper_workload" {

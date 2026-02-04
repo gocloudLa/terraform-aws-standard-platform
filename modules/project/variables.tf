@@ -213,3 +213,19 @@ variable "memorydb_defaults" {
   description = "MemoryDB default parameters to configure Redis-compatible databases"
   default     = {}
 }
+
+/*----------------------------------------------------------------------*/
+/* KMS | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "kms_parameters" {
+  type        = any
+  description = "KMS (Key Management Service) parameters to configure KMS keys"
+  default     = {}
+}
+
+variable "kms_defaults" {
+  type        = any
+  description = "KMS (Key Management Service) default parameters to configure KMS keys"
+  default     = {}
+}
