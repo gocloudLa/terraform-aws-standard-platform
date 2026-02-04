@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.19.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.18.0...v0.19.0) (2026-02-04)
+
+
+### Features
+
+* **project:** add kms wrapper module ([#5](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/5)) ([cdeaae5](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/cdeaae5402e798896f5669e647206dd3e39987f5))
+
 ## [0.18.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.17.0...v0.18.0) (2026-02-02)
 
 
