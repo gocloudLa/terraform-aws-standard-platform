@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.20.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.19.0...v0.20.0) (2026-02-09)
+
+
+### Features
+
+* **workload:** update ec2 module version to 0.1.3 ([#45](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/45)) ([35b1a46](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/35b1a4621266a5b49f7d879bed2d9d0a9686f451))
+
 ## [0.19.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.18.0...v0.19.0) (2026-02-04)
 
 
