@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.21.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.20.0...v0.21.0) (2026-02-10)
+
+
+### Features
+
+* **foundation:** update gitlab_runner version 1.2.0 ([#47](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/47)) ([262f1bd](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/262f1bdfd9967b6f60efbdab3c191cf16e3e9331))
+
 ## [0.20.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.19.0...v0.20.0) (2026-02-09)
 
 
