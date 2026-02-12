@@ -1,6 +1,6 @@
 # Project Example
 
-This example demonstrates a comprehensive setup of project-level infrastructure including Application Load Balancer, ECS cluster, RDS database, ElastiCache, S3 buckets, EFS file systems, and KMS encryption keys using Terraform. This is a reference example for understanding how to configure the project layer of the AWS Standard Platform.
+This example demonstrates a comprehensive setup of project-level infrastructure including Application Load Balancer, ECS cluster, EKS clusters, RDS database, ElastiCache, S3 buckets, EFS file systems, and KMS encryption keys using Terraform. This is a reference example for understanding how to configure the project layer of the AWS Standard Platform.
 
 ## 🔧 What's Included
 
@@ -12,6 +12,7 @@ The main purpose is to provide a complete and detailed configuration for deployi
 #### Key Features Demonstrated
 - **Application Load Balancer**: External ALB with HTTP to HTTPS redirect
 - **ECS Cluster**: Fargate-based ECS cluster with Fargate Spot
+- **EKS Cluster**: Managed Kubernetes clusters (optional via `eks_parameters`)
 - **RDS Database**: MariaDB database with management features
 - **EFS File Systems**: Elastic File System with access points
 

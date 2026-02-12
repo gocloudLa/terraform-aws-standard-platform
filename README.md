@@ -119,7 +119,7 @@ module "foundation" {
 
 ### Project Layer
 
-Creates core infrastructure services including load balancers, compute clusters, databases, storage, messaging services, and encryption key management (KMS).
+Creates core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, storage, messaging services, and encryption key management (KMS).
 
 📖 **[View Project Module Documentation](modules/project/README.md)**
 
@@ -139,6 +139,10 @@ module "project" {
 
   ecr_parameters = {
     # ECR repository configuration
+  }
+
+  eks_parameters = {
+    # EKS cluster configuration
   }
 
   rds_parameters = {

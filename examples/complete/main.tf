@@ -99,6 +99,7 @@ module "wrapper_project" {
   alb_parameters         = {}
   batch_parameters       = {}
   ecs_parameters         = {}
+  eks_parameters         = {}
   elasticache_parameters = {}
   documentdb_parameters  = {}
   rds_parameters         = {}
