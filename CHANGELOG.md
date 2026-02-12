@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.23.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.22.0...v0.23.0) (2026-02-12)
+
+
+### Features
+
+* **project:** update rds and rds aurora modules ([#51](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/51)) ([23a296c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/23a296c6374789fa30484a52ff58a9276358e578))
+
 ## [0.22.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.21.0...v0.22.0) (2026-02-12)
 
 
