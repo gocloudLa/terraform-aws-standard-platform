@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.22.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.21.0...v0.22.0) (2026-02-12)
+
+
+### Features
+
+* **project:** add eks wrapper module ([#49](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/49)) ([661e9a2](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/661e9a29ddfa96c3544dd0b70b275c7e1ed1f258))
+
 ## [0.21.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.20.0...v0.21.0) (2026-02-10)
 
 
