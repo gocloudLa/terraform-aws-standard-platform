@@ -71,6 +71,22 @@ variable "ecr_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* EKS | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "eks_parameters" {
+  type        = any
+  description = "EKS parameters to configure Kubernetes clusters"
+  default     = {}
+}
+
+variable "eks_defaults" {
+  type        = any
+  description = "EKS default parameters to configure Kubernetes clusters"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* ElastiCache (Redis) | Variable Definition                            */
 /*----------------------------------------------------------------------*/
 

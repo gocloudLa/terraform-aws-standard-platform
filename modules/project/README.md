@@ -1,10 +1,10 @@
 # Project Layer
 
-The Project layer provides core infrastructure services including load balancers, compute clusters, databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
+The Project layer provides core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
 
 ## 🎯 Overview
 
-The Project layer provides core infrastructure services including load balancers, compute clusters, databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
+The Project layer provides core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
 
 This layer includes the following GoCloud wrapper modules:
 
@@ -12,6 +12,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-batch](https://github.com/gocloudLa/terraform-aws-wrapper-batch)** - Scalable batch computing infrastructure
 - **[terraform-aws-wrapper-ecs](https://github.com/gocloudLa/terraform-aws-wrapper-ecs)** - Container orchestration and management
 - **[terraform-aws-wrapper-ecr](https://github.com/gocloudLa/terraform-aws-wrapper-ecr)** - Container image registry and management
+- **[terraform-aws-wrapper-eks](https://github.com/gocloudLa/terraform-aws-wrapper-eks)** - Managed Kubernetes clusters
 - **[terraform-aws-wrapper-elasticache](https://github.com/gocloudLa/terraform-aws-wrapper-elasticache)** - In-memory caching and data stores
 - **[terraform-aws-wrapper-documentdb](https://github.com/gocloudLa/terraform-aws-wrapper-documentdb)** - MongoDB-compatible document database
 - **[terraform-aws-wrapper-rds](https://github.com/gocloudLa/terraform-aws-wrapper-rds)** - Relational database services
@@ -55,6 +56,10 @@ module "project" {
 
   ecr_parameters = {
     # ECR repository configuration
+  }
+
+  eks_parameters = {
+    # EKS cluster configuration
   }
 
   elasticache_parameters = {
@@ -143,6 +148,7 @@ locals {
 | batch_parameters | Batch processing configuration | `object` | `{}` | no |
 | ecs_parameters | ECS cluster configuration | `object` | `{}` | no |
 | ecr_parameters | ECR repository configuration | `object` | `{}` | no |
+| eks_parameters | EKS cluster configuration | `object` | `{}` | no |
 | elasticache_parameters | ElastiCache configuration | `object` | `{}` | no |
 | documentdb_parameters | DocumentDB configuration | `object` | `{}` | no |
 | rds_parameters | RDS database configuration | `object` | `{}` | no |

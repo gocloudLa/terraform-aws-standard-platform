@@ -38,6 +38,16 @@ module "wrapper_ecr" {
   ecr_defaults   = var.ecr_defaults
 }
 
+module "wrapper_eks" {
+  source  = "gocloudLa/wrapper-eks/aws"
+  version = "1.0.0"
+
+  metadata = var.metadata
+
+  eks_parameters = var.eks_parameters
+  eks_defaults   = var.eks_defaults
+}
+
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
   version = "1.6.0"
