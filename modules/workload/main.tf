@@ -1,6 +1,6 @@
 module "wrapper_static_site" {
   source  = "gocloudLa/wrapper-static-site/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   metadata = var.metadata
 
@@ -25,7 +25,7 @@ module "wrapper_ecs_service" {
 
 module "wrapper_batch_job" {
   source  = "gocloudLa/wrapper-batch-job/aws"
-  version = "1.0.2"
+  version = "1.0.3"
 
   metadata = var.metadata
 

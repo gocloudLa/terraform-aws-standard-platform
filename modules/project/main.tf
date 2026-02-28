@@ -20,7 +20,7 @@ module "wrapper_batch" {
 
 module "wrapper_ecs" {
   source  = "gocloudLa/wrapper-ecs/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   metadata = var.metadata
 
@@ -40,7 +40,7 @@ module "wrapper_ecr" {
 
 module "wrapper_eks" {
   source  = "gocloudLa/wrapper-eks/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
@@ -50,7 +50,7 @@ module "wrapper_eks" {
 
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.6.0"
+  version = "1.6.1"
 
   metadata = var.metadata
 
@@ -60,7 +60,7 @@ module "wrapper_elasticache" {
 
 module "wrapper_documentdb" {
   source  = "gocloudLa/wrapper-documentdb/aws"
-  version = "1.0.1"
+  version = "1.0.2"
 
   metadata = var.metadata
 
@@ -90,7 +90,7 @@ module "wrapper_rds_aurora" {
 
 module "wrapper_sqs" {
   source  = "gocloudLa/wrapper-sqs/aws"
-  version = "1.0.1"
+  version = "1.0.3"
 
   metadata = var.metadata
 
@@ -120,7 +120,7 @@ module "wrapper_bucket" {
 
 module "wrapper_efs" {
   source  = "gocloudLa/wrapper-efs/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
