@@ -1,6 +1,6 @@
 module "wrapper_alb" {
   source  = "gocloudLa/wrapper-alb/aws"
-  version = "1.3.0"
+  version = "1.3.1"
 
   metadata = var.metadata
 
