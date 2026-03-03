@@ -130,7 +130,7 @@ module "wrapper_efs" {
 
 module "wrapper_memorydb" {
   source  = "gocloudLa/wrapper-memorydb/aws"
-  version = "1.2.0"
+  version = "1.2.1"
 
   metadata = var.metadata
 
