@@ -30,7 +30,7 @@ module "wrapper_ecs" {
 
 module "wrapper_ecr" {
   source  = "gocloudLa/wrapper-ecr/aws"
-  version = "0.1.0"
+  version = "0.1.1"
 
   metadata = var.metadata
 
