@@ -90,7 +90,7 @@ module "wrapper_service_scheduler" {
 
 module "wrapper_waf" {
   source  = "gocloudLa/wrapper-waf/aws"
-  version = "1.0.0"
+  version = "1.0.1"
 
   metadata = var.metadata
 
