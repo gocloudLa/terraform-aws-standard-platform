@@ -1,6 +1,6 @@
 module "wrapper_static_site" {
   source  = "gocloudLa/wrapper-static-site/aws"
-  version = "1.0.2"
+  version = "1.0.3"
 
   metadata = var.metadata
 
