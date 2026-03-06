@@ -110,7 +110,7 @@ module "wrapper_dynamodb" {
 
 module "wrapper_bucket" {
   source  = "gocloudLa/wrapper-bucket/aws"
-  version = "1.1.0"
+  version = "1.1.1"
 
   metadata = var.metadata
 
