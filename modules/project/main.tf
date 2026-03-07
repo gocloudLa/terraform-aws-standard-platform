@@ -100,7 +100,7 @@ module "wrapper_sqs" {
 
 module "wrapper_dynamodb" {
   source  = "gocloudLa/wrapper-dynamodb/aws"
-  version = "1.1.0"
+  version = "1.1.1"
 
   metadata = var.metadata
 
