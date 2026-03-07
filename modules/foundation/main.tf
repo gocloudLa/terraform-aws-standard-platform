@@ -79,7 +79,7 @@ module "wrapper_route53" {
 
 module "wrapper_service_scheduler" {
   source  = "gocloudLa/wrapper-service-scheduler/aws"
-  version = "1.1.2"
+  version = "1.1.3"
 
   metadata = var.metadata
 
