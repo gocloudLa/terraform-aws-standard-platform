@@ -1,6 +1,6 @@
 module "wrapper_vpc" {
   source  = "gocloudLa/wrapper-vpc/aws"
-  version = "1.2.0"
+  version = "1.2.1"
 
   metadata = var.metadata
 
@@ -34,7 +34,7 @@ module "wrapper_cloudmap" {
 
 module "wrapper_notifications" {
   source  = "gocloudLa/wrapper-notifications/aws"
-  version = "1.1.2"
+  version = "1.1.4"
 
   metadata = var.metadata
 
