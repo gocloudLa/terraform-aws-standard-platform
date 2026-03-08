@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.24.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.23.0...v0.24.0) (2026-03-08)
+
+
+### Features
+
+* **modules:** external modules upgrade 20260307 ([#53](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/53)) ([ce11f5a](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/ce11f5a915818238165419876d8ab27468b8f80d))
+
 ## [0.23.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.22.0...v0.23.0) (2026-02-12)
 
 
