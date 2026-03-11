@@ -20,7 +20,7 @@ module "wrapper_batch" {
 
 module "wrapper_ecs" {
   source  = "gocloudLa/wrapper-ecs/aws"
-  version = "1.0.2"
+  version = "1.0.3"
 
   metadata = var.metadata
 
