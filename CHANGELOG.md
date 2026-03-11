@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.24.2](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.24.1...v0.24.2) (2026-03-11)
+
+
+### Bug Fixes
+
+* **ecs-service:** update module v1.4.2 ([#58](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/58)) ([a25e70b](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/a25e70b6e7eeed2910ce3af667bee2cc55dd260b))
+* **ecs:** update module v1.0.3 ([#60](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/60)) ([7b387e1](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7b387e1e32ee8fc77f84132f63344cedba1aed5d))
+
 ## [0.24.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.24.0...v0.24.1) (2026-03-08)
 
 
