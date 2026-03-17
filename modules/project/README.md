@@ -23,6 +23,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-efs](https://github.com/gocloudLa/terraform-aws-wrapper-efs)** - Shared file storage
 - **[terraform-aws-wrapper-memorydb](https://github.com/gocloudLa/terraform-aws-wrapper-memorydb)** - Redis-compatible in-memory database
 - **[terraform-aws-wrapper-kms](https://github.com/gocloudLa/terraform-aws-wrapper-kms)** - Encryption key management and rotation
+- **[terraform-aws-wrapper-kinesis-stream](https://github.com/gocloudLa/terraform-aws-wrapper-kinesis-stream)** - Real-time data streaming and processing
 
 ## 🚀 Usage
 
@@ -101,6 +102,10 @@ module "project" {
   kms_parameters = {
     # KMS key configuration
   }
+
+  kinesis_stream_parameters = {
+    # Kinesis Stream configuration
+  }
 }
 ```
 
@@ -159,6 +164,7 @@ locals {
 | efs_parameters | EFS file system configuration | `object` | `{}` | no |
 | memorydb_parameters | MemoryDB configuration | `object` | `{}` | no |
 | kms_parameters | KMS key configuration | `object` | `{}` | no |
+| kinesis_stream_parameters | Kinesis Stream configuration | `object` | `{}` | no |
 
 ## 🏷️ Resource Naming Convention
 

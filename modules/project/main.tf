@@ -147,3 +147,13 @@ module "wrapper_kms" {
   kms_parameters = var.kms_parameters
   kms_defaults   = var.kms_defaults
 }
+
+module "wrapper_kinesis_stream" {
+  source  = "gocloudLa/wrapper-kinesis-stream/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  kinesis_stream_parameters = var.kinesis_stream_parameters
+  kinesis_stream_defaults   = var.kinesis_stream_defaults
+}
