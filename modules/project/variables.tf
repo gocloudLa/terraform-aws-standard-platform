@@ -245,3 +245,19 @@ variable "kms_defaults" {
   description = "KMS (Key Management Service) default parameters to configure KMS keys"
   default     = {}
 }
+
+/*----------------------------------------------------------------------*/
+/* Kinesis Stream | Variable Definition                                 */
+/*----------------------------------------------------------------------*/
+
+variable "kinesis_stream_parameters" {
+  type        = any
+  description = "KMS (Key Management Service) parameters to configure KMS keys"
+  default     = {}
+}
+
+variable "kinesis_stream_defaults" {
+  type        = any
+  description = "KMS (Key Management Service) default parameters to configure KMS keys"
+  default     = {}
+}
