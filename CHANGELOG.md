@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.25.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.24.2...v0.25.0) (2026-03-17)
+
+
+### Features
+
+* **project:** add kinesis stream module ([#61](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/61)) ([cdb9c1c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/cdb9c1ca3632c401d2109ff27a32889b97c08e9f))
+
 ## [0.24.2](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.24.1...v0.24.2) (2026-03-11)
 
 
