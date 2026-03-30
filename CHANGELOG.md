@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.26.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.25.0...v0.26.0) (2026-03-30)
+
+
+### Features
+
+* **project:** update version to rds_aurora, elasticache & memorydb modules ([#64](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/64)) ([bd92e3b](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/bd92e3bdb31f2d30249cae67a8a18eb79bcae3f0))
+
 ## [0.25.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.24.2...v0.25.0) (2026-03-17)
 
 
