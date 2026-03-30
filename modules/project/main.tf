@@ -50,7 +50,7 @@ module "wrapper_eks" {
 
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.6.1"
+  version = "1.6.2"
 
   metadata = var.metadata
 
@@ -80,7 +80,7 @@ module "wrapper_rds" {
 
 module "wrapper_rds_aurora" {
   source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.2.2"
+  version = "1.3.0"
 
   metadata = var.metadata
 
@@ -130,7 +130,7 @@ module "wrapper_efs" {
 
 module "wrapper_memorydb" {
   source  = "gocloudLa/wrapper-memorydb/aws"
-  version = "1.2.1"
+  version = "1.2.2"
 
   metadata = var.metadata
 
