@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.27.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.26.0...v0.27.0) (2026-04-03)
+
+
+### Features
+
+* **org:** update organization module v1.1.0 ([#67](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/67)) ([1df2d35](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/1df2d351e703b9d20b54d27faa628c021790b650))
+
 ## [0.26.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.25.0...v0.26.0) (2026-03-30)
 
 
