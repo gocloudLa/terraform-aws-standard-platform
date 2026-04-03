@@ -1,7 +1,7 @@
 module "wrapper_vpc" {
   # source  = "gocloudLa/wrapper-vpc/aws"
   # version = "1.2.1"
-  source = "git@github.com:gocloudLa/terraform-aws-standard-platform.git?ref=feature/module-upgrade"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpc.git?ref=feature/module-upgrade"
 
   metadata = var.metadata
 
