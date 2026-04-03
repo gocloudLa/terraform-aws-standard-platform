@@ -1,6 +1,6 @@
 module "wrapper_organization" {
   source  = "gocloudLa/wrapper-organization/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   metadata = var.metadata
 
