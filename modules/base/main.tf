@@ -9,6 +9,19 @@ module "wrapper_vpc" {
   vpc_defaults   = var.vpc_defaults
 }
 
+module "wrapper_tgw" {
+  # source  = "gocloudLa/wrapper-tgw/aws"
+  # version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-tgw.git?ref=feature/initial-release"
+
+  metadata = var.metadata
+
+  tgw_parameters = var.tgw_parameters
+  tgw_defaults   = var.tgw_defaults
+
+  vpc_parameter = module.wrapper_vpc
+}
+
 module "wrapper_route53" {
   source  = "gocloudLa/wrapper-route53-zone/aws"
   version = "1.0.0"

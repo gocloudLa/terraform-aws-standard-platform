@@ -23,6 +23,22 @@ variable "vpc_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* TGW | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "tgw_parameters" {
+  type        = any
+  description = "TGW parameters to configure TGW module"
+  default     = {}
+}
+
+variable "tgw_defaults" {
+  type        = any
+  description = "TGW default parameters to configure TGW module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* Route53 | Variable Definition                                        */
 /*----------------------------------------------------------------------*/
 variable "route53_parameters" {
