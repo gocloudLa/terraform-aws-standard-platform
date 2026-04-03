@@ -18,7 +18,8 @@ module "wrapper_route53" {
   route53_parameters = var.route53_parameters
   route53_defaults   = var.route53_defaults
 
-  vpc_id = module.wrapper_vpc.vpc.vpc_id
+  # vpc_id = module.wrapper_vpc.vpc.vpc_id
+  vpc_id = ""
 }
 
 module "wrapper_cloudmap" {
@@ -30,7 +31,8 @@ module "wrapper_cloudmap" {
   cloudmap_parameters = var.cloudmap_parameters
   cloudmap_defaults   = var.cloudmap_defaults
 
-  vpc_id = module.wrapper_vpc.vpc.vpc_id
+  # vpc_id = module.wrapper_vpc.vpc.vpc_id
+  vpc_id = ""
 }
 
 module "wrapper_notifications" {
