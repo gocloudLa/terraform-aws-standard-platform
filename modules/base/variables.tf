@@ -39,6 +39,22 @@ variable "tgw_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* VPN | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "vpn_parameters" {
+  type        = any
+  description = "VPN parameters to configure VPN module"
+  default     = {}
+}
+
+variable "vpn_defaults" {
+  type        = any
+  description = "VPN default parameters to configure VPN module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* Route53 | Variable Definition                                        */
 /*----------------------------------------------------------------------*/
 variable "route53_parameters" {
