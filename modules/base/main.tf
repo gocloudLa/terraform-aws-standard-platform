@@ -37,29 +37,29 @@ module "wrapper_vpn" {
 }
 
 module "wrapper_route53" {
-  source  = "gocloudLa/wrapper-route53-zone/aws"
-  version = "1.0.0"
+  # source  = "gocloudLa/wrapper-route53-zone/aws"
+  # version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-route53-zone.git?ref=feature/upgrade-vpc-module"
 
   metadata = var.metadata
 
   route53_parameters = var.route53_parameters
   route53_defaults   = var.route53_defaults
 
-  # vpc_id = module.wrapper_vpc.vpc.vpc_id
-  vpc_id = ""
+  vpc_parameter = module.wrapper_vpc
 }
 
 module "wrapper_cloudmap" {
-  source  = "gocloudLa/wrapper-cloudmap/aws"
-  version = "1.0.0"
+  # source  = "gocloudLa/wrapper-cloudmap/aws"
+  # version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-cloudmap.git?ref=feature/upgrade-vpc-module"
 
   metadata = var.metadata
 
   cloudmap_parameters = var.cloudmap_parameters
   cloudmap_defaults   = var.cloudmap_defaults
 
-  # vpc_id = module.wrapper_vpc.vpc.vpc_id
-  vpc_id = ""
+  vpc_parameter = module.wrapper_vpc
 }
 
 module "wrapper_notifications" {
