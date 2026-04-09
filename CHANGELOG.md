@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.28.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.27.0...v0.28.0) (2026-04-09)
+
+
+### Features
+
+* **project:** add opensearch module ([#69](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/69)) ([5e4862c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/5e4862cc180b7c276e924c7bfb89dc38c180bb2c))
+
 ## [0.27.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.26.0...v0.27.0) (2026-04-03)
 
 
