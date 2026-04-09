@@ -138,6 +138,16 @@ module "wrapper_memorydb" {
   memorydb_defaults   = var.memorydb_defaults
 }
 
+module "wrapper_opensearch" {
+  source  = "gocloudLa/wrapper-opensearch/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  opensearch_parameters = var.opensearch_parameters
+  opensearch_defaults   = var.opensearch_defaults
+}
+
 module "wrapper_kms" {
   source  = "gocloudLa/wrapper-kms/aws"
   version = "0.1.0"
