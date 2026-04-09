@@ -109,6 +109,7 @@ module "wrapper_project" {
   bucket_parameters      = {}
   efs_parameters         = {}
   memorydb_parameters    = {}
+  opensearch_parameters  = {}
   kms_parameters         = {}
 }
 

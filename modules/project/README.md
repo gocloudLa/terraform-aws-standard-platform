@@ -1,10 +1,10 @@
 # Project Layer
 
-The Project layer provides core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
+The Project layer provides core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, OpenSearch, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
 
 ## 🎯 Overview
 
-The Project layer provides core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
+The Project layer provides core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, OpenSearch, storage, messaging services, and encryption key management. This layer contains the foundational infrastructure components that applications depend on.
 
 This layer includes the following GoCloud wrapper modules:
 
@@ -22,6 +22,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-bucket](https://github.com/gocloudLa/terraform-aws-wrapper-bucket)** - Object storage and data lakes
 - **[terraform-aws-wrapper-efs](https://github.com/gocloudLa/terraform-aws-wrapper-efs)** - Shared file storage
 - **[terraform-aws-wrapper-memorydb](https://github.com/gocloudLa/terraform-aws-wrapper-memorydb)** - Redis-compatible in-memory database
+- **[terraform-aws-wrapper-opensearch](https://github.com/gocloudLa/terraform-aws-wrapper-opensearch)** - OpenSearch Service
 - **[terraform-aws-wrapper-kms](https://github.com/gocloudLa/terraform-aws-wrapper-kms)** - Encryption key management and rotation
 - **[terraform-aws-wrapper-kinesis-stream](https://github.com/gocloudLa/terraform-aws-wrapper-kinesis-stream)** - Real-time data streaming and processing
 
@@ -99,6 +100,10 @@ module "project" {
     # MemoryDB configuration
   }
 
+  opensearch_parameters = {
+    # OpenSearch Service configuration
+  }
+
   kms_parameters = {
     # KMS key configuration
   }
@@ -163,6 +168,7 @@ locals {
 | bucket_parameters | S3 bucket configuration | `object` | `{}` | no |
 | efs_parameters | EFS file system configuration | `object` | `{}` | no |
 | memorydb_parameters | MemoryDB configuration | `object` | `{}` | no |
+| opensearch_parameters | OpenSearch Service configuration | `object` | `{}` | no |
 | kms_parameters | KMS key configuration | `object` | `{}` | no |
 | kinesis_stream_parameters | Kinesis Stream configuration | `object` | `{}` | no |
 

@@ -231,6 +231,22 @@ variable "memorydb_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* OpenSearch | Variable Definition                                     */
+/*----------------------------------------------------------------------*/
+
+variable "opensearch_parameters" {
+  type        = any
+  description = "OpenSearch parameters to configure OpenSearch Service resources"
+  default     = {}
+}
+
+variable "opensearch_defaults" {
+  type        = any
+  description = "OpenSearch default parameters to configure OpenSearch Service resources"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* KMS | Variable Definition                                            */
 /*----------------------------------------------------------------------*/
 
@@ -252,12 +268,12 @@ variable "kms_defaults" {
 
 variable "kinesis_stream_parameters" {
   type        = any
-  description = "KMS (Key Management Service) parameters to configure KMS keys"
+  description = "Kinesis Data Stream parameters to configure stream resources"
   default     = {}
 }
 
 variable "kinesis_stream_defaults" {
   type        = any
-  description = "KMS (Key Management Service) default parameters to configure KMS keys"
+  description = "Kinesis Data Stream default parameters to configure stream resources"
   default     = {}
 }

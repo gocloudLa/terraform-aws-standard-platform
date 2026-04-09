@@ -119,7 +119,7 @@ module "foundation" {
 
 ### Project Layer
 
-Creates core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, storage, messaging services, and encryption key management (KMS).
+Creates core infrastructure services including load balancers, compute clusters, Kubernetes (EKS), databases, OpenSearch, storage, messaging services, and encryption key management (KMS).
 
 📖 **[View Project Module Documentation](modules/project/README.md)**
 
@@ -147,6 +147,10 @@ module "project" {
 
   rds_parameters = {
     # RDS database configuration
+  }
+
+  opensearch_parameters = {
+    # OpenSearch Service configuration
   }
 
   kms_parameters = {
