@@ -4,8 +4,8 @@ module "wrapper_cloudtrail" {
   source = "git@github.com:gocloudLa/terraform-aws-wrapper-cloudtrail.git?ref=feature/initial-release"
 
   providers = {
-    aws.log = aws.org
-    aws.log = aws.sec
+    aws.org = aws.org
+    aws.sec = aws.sec
     aws.log = aws.log
     aws.kms = aws.kms
   }
