@@ -13,3 +13,7 @@ output "group_ids" {
 output "permission_set_ids" {
   value = module.wrapper_identity_center.permission_set_ids
 }
+
+output "service_delegation" {
+  value = module.wrapper_service_delegation
+}
