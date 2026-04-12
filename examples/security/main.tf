@@ -3,7 +3,8 @@ module "security" {
   source = "../../modules/security"
 
   providers = {
-    aws     = aws
+    aws.org = aws
+    aws.sec = aws
     aws.log = aws
     aws.kms = aws
   }
