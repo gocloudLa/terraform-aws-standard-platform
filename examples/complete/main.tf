@@ -15,9 +15,10 @@ module "wrapper_organization" {
     }
   }
 
-  organization_parameters    = {}
-  identity_center_parameters = {}
-  s3_backend_parameters      = {}
+  organization_parameters       = {}
+  identity_center_parameters    = {}
+  s3_backend_parameters         = {}
+  service_delegation_parameters = {}
 }
 
 module "wrapper_security" {

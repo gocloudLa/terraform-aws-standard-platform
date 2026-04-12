@@ -1,18 +1,19 @@
 # Organization Example
 
-This example demonstrates a comprehensive setup of AWS Organizations, Identity Center (SSO), and S3 backend configuration using Terraform. This is a reference example for understanding how to configure the organization layer of the AWS Standard Platform.
+This example demonstrates a comprehensive setup of AWS Organizations, Identity Center (SSO), S3 backend configuration, and service delegation for security accounts using Terraform. This is a reference example for understanding how to configure the organization layer of the AWS Standard Platform.
 
 ## 🔧 What's Included
 
 ### Analysis of Terraform Configuration
 
 #### Main Purpose
-The main purpose is to provide a complete and detailed configuration for deploying AWS Organizations with Identity Center (SSO) and S3 backend for Terraform state management.
+The main purpose is to provide a complete and detailed configuration for deploying AWS Organizations with Identity Center (SSO), S3 backend for Terraform state management, and delegated administrators for security services.
 
 #### Key Features Demonstrated
 - **AWS Organizations**: Organization setup with OUs and AWS accounts
 - **Identity Center (SSO)**: User and group management with permission sets
 - **S3 Backend**: Terraform state backend for multi-account architecture
+- **Service delegation**: Delegated administration for GuardDuty, Security Hub, CloudTrail, and related organization services
 
 ## 🚀 Quick Start
 

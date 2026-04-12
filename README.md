@@ -31,7 +31,7 @@ Please refer to the AWS published [Well-Architected Framework](https://aws.amazo
 
 ### Organization Layer
 
-Creates AWS Organizations management, Identity Center (SSO), and S3 backend for Terraform state. Module instantiation is once per organization.
+Creates AWS Organizations management, Identity Center (SSO), S3 backend for Terraform state, and optional delegated administration for security services (GuardDuty, Security Hub, CloudTrail). Module instantiation is once per organization.
 
 📖 **[View Organization Module Documentation](modules/organization/README.md)**
 
@@ -51,6 +51,10 @@ module "organization" {
 
   s3_backend_parameters = {
     # S3 Backend configuration
+  }
+
+  service_delegation_parameters = {
+    # Delegated administrator configuration
   }
 }
 ```
