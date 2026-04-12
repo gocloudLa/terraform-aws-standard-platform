@@ -12,7 +12,7 @@ Built by GoCloud's team of AWS experts, this platform provides everything you ne
 
 ### ✨ Why Choose Our Standard Platform?
 
-- **🏗️ Layered Architecture**: Five distinct layers (Organization → Base → Foundation → Project → Workload) for maximum flexibility and governance
+- **🏗️ Layered Architecture**: Six distinct layers (Organization → Security → Base → Foundation → Project → Workload) for maximum flexibility and governance
 - **🔧 50+ AWS Services**: Pre-configured integrations with all major AWS services through our battle-tested wrapper modules
 - **🛡️ Security by Design**: Enterprise-grade security controls, compliance standards, and best practices built-in
 - **📊 Cost Optimized**: Built-in cost control, monitoring, and optimization features
@@ -52,6 +52,25 @@ module "organization" {
   s3_backend_parameters = {
     # S3 Backend configuration
   }
+}
+```
+
+### Security Layer
+
+Creates centralized security and audit services—starting with AWS CloudTrail—typically deployed in a log or security account, separate from general operational services in Foundation. In the platform ordering, Security comes immediately after Organization.
+
+📖 **[View Security Module Documentation](modules/security/README.md)**
+
+```hcl
+module "security" {
+  source = "gocloudLa/standard-platform/aws//modules/security"
+
+  metadata = local.metadata
+
+  cloudtrail_parameters = {
+    # CloudTrail configuration
+  }
+
 }
 ```
 

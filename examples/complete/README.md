@@ -1,16 +1,16 @@
 # Complete Example
 
-This example demonstrates a comprehensive setup of the entire AWS Standard Platform with all five layers (Organization, Base, Foundation, Project, and Workload) configured together using Terraform. **This example is designed ONLY for testing and validation purposes - it is NOT how the module should be used in production.**
+This example demonstrates a comprehensive setup of the entire AWS Standard Platform with all six layers (Organization, Security, Base, Foundation, Project, and Workload) configured together using Terraform. **This example is designed ONLY for testing and validation purposes - it is NOT how the module should be used in production.**
 
 ## 🔧 What's Included
 
 ### Analysis of Terraform Configuration
 
 #### Main Purpose
-The main purpose is to provide a complete testing and validation template that demonstrates the integration of all five layers of the AWS Standard Platform to ensure proper module functionality and dependencies.
+The main purpose is to provide a complete testing and validation template that demonstrates the integration of all six layers of the AWS Standard Platform to ensure proper module functionality and dependencies.
 
 #### Key Features Demonstrated
-- **Complete Platform Integration**: All five layers (Organization, Base, Foundation, Project, Workload) deployed together
+- **Complete Platform Integration**: All six layers (Organization, Security, Base, Foundation, Project, Workload) deployed together
 - **Layer Dependencies**: Demonstrates proper dependency management between layers
 - **End-to-End Testing**: Validates the complete platform functionality
 - **Integration Validation**: Tests the interaction between all platform components
