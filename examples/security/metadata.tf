@@ -12,7 +12,7 @@ locals {
       company = "dmc"
       region  = "use1"
       env     = "prd"
-      layer   = "base"
+      layer   = "security"
     }
   }
 

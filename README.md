@@ -57,7 +57,7 @@ module "organization" {
 
 ### Security Layer
 
-Creates centralized security and audit services—starting with AWS CloudTrail—typically deployed in a log or security account, separate from general operational services in Foundation. In the platform ordering, Security comes immediately after Organization.
+Creates centralized security and audit services—starting with AWS CloudTrail—typically deployed in a log or security account, separate from general operational services in Foundation.
 
 📖 **[View Security Module Documentation](modules/security/README.md)**
 
@@ -65,12 +65,17 @@ Creates centralized security and audit services—starting with AWS CloudTrail�
 module "security" {
   source = "gocloudLa/standard-platform/aws//modules/security"
 
+  providers = {
+    aws     = aws
+    aws.log = aws
+    aws.kms = aws
+  }
+
   metadata = local.metadata
 
   cloudtrail_parameters = {
     # CloudTrail configuration
   }
-
 }
 ```
 

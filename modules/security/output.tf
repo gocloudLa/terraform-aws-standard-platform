@@ -1,4 +1,4 @@
 output "cloudtrail" {
-  description = ""
+  description = "CloudTrail wrapper module outputs"
   value       = module.wrapper_cloudtrail
 }
