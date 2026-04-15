@@ -3,6 +3,11 @@ output "wrapper_vpc" {
   value       = module.wrapper_vpc
 }
 
+output "wrapper_peering" {
+  description = ""
+  value       = module.wrapper_peering
+}
+
 output "wrapper_tgw" {
   description = ""
   value       = module.wrapper_tgw

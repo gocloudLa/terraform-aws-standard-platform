@@ -9,6 +9,19 @@ module "wrapper_vpc" {
   vpc_defaults   = var.vpc_defaults
 }
 
+module "wrapper_peering" {
+  # source  = "gocloudLa/wrapper-peering/aws"
+  # version = "1.0.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-peering.git?ref=feature/initial-release"
+
+  metadata = var.metadata
+
+  peering_parameters = var.peering_parameters
+  peering_defaults   = var.peering_defaults
+
+  vpc_parameter = module.wrapper_vpc
+}
+
 module "wrapper_tgw" {
   # source  = "gocloudLa/wrapper-tgw/aws"
   # version = "1.0.0"
