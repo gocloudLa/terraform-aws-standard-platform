@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.29.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.28.0...v0.29.0) (2026-04-21)
+
+
+### Features
+
+* **modules:** update modules ecs-service, rds, rds-aurora ([#71](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/71)) ([579043e](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/579043ea4439850bf0eea22362dd9221674e0d3d))
+
 ## [0.28.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.27.0...v0.28.0) (2026-04-09)
 
 
