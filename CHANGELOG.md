@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.30.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.29.0...v0.30.0) (2026-04-24)
+
+
+### Features
+
+* **project:** update rds module v1.2.0 ([#73](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/73)) ([8fb4146](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8fb4146f2070ad1bf8dbfabcb5d100731183d67c))
+
 ## [0.29.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.28.0...v0.29.0) (2026-04-21)
 
 
