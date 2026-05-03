@@ -1,0 +1,171 @@
+# Manual bumps for Terraform registry modules (same spirit as gocloudLa/.github terraform-readme-generator:
+# checkout + setup-python + bash + gh; a single Python helper script for registry/scan logic).
+# Run from any branch to test the workflow; PRs target the branch you choose (default main).
+name: Terraform module bump PRs (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_branch:
+        description: "Branch to branch off and open PRs against (e.g. main)"
+        required: true
+        default: "main"
+        type: string
+      dry_run:
+        description: "If true, only print actions (no commit / push / PR)"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: terraform-module-bumps-${{ github.repository }}-${{ inputs.base_branch }}
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      has_updates: ${{ steps.set-matrix.outputs.has_updates }}
+    steps:
+      - name: Checkout (workflow ref)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - id: set-matrix
+        name: Build matrix JSON
+        run: |
+          set -euo pipefail
+          python3 scripts/check-outdated-deps.py --github-matrix > .github-matrix.json
+          COUNT="$(jq '.include | length' .github-matrix.json)"
+          echo "Found ${COUNT} outdated module bump(s) on this ref."
+          if [[ "${COUNT}" -eq 0 ]]; then
+            echo "has_updates=false" >> "$GITHUB_OUTPUT"
+            echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "has_updates=true" >> "$GITHUB_OUTPUT"
+          {
+            echo 'matrix<<MATRIX_EOF'
+            cat .github-matrix.json
+            echo 'MATRIX_EOF'
+          } >> "$GITHUB_OUTPUT"
+
+  open-prs:
+    needs: prepare
+    if: needs.prepare.outputs.has_updates == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
+    steps:
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.base_branch }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Configure git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Bump module, push branch, open PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          BASE_BRANCH: ${{ inputs.base_branch }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          MODULE_SOURCE: ${{ matrix.source }}
+          MODULE_CURRENT: ${{ matrix.current }}
+          MODULE_LATEST: ${{ matrix.latest }}
+          MODULE_PATHS: ${{ matrix.paths_join }}
+        run: |
+          set -euo pipefail
+          SLUG='${{ matrix.slug }}'
+          BRANCH="deps/terraform-${SLUG}-${{ matrix.latest }}"
+          MARKER="<!-- terraform-deps:${MODULE_SOURCE}|${MODULE_CURRENT}|${MODULE_LATEST} -->"
+
+          echo "→ Module: ${MODULE_SOURCE}  ${MODULE_CURRENT} → ${MODULE_LATEST}"
+          echo "→ Branch: ${BRANCH}"
+
+          # Skip if an open PR already has this bump marker (any head)
+          if gh pr list --repo "${{ github.repository }}" --base "${BASE_BRANCH}" --state open --json number,body \
+            | jq -e --arg m "${MARKER}" '[.[] | select(.body != null and (.body | index($m) != null))] | length > 0' >/dev/null; then
+            echo "Skip: open PR already exists for this bump (marker match)."
+            exit 0
+          fi
+
+          # Skip if open PR already exists for this head branch
+          if gh pr list --repo "${{ github.repository }}" --base "${BASE_BRANCH}" --head "${BRANCH}" --state open --json number \
+            | jq -e 'length > 0' >/dev/null 2>&1; then
+            echo "Skip: open PR already exists for head ${BRANCH}."
+            exit 0
+          fi
+
+          # Skip if remote branch already exists (avoid duplicate work)
+          if git ls-remote --exit-code origin "refs/heads/${BRANCH}" >/dev/null 2>&1; then
+            echo "Skip: branch ${BRANCH} already exists on origin."
+            exit 0
+          fi
+
+          git pull --ff-only origin "${BASE_BRANCH}"
+
+          META="$(MODULE_SOURCE="${MODULE_SOURCE}" MODULE_CURRENT="${MODULE_CURRENT}" MODULE_LATEST="${MODULE_LATEST}" MODULE_PATHS="${MODULE_PATHS}" \
+            python3 scripts/check-outdated-deps.py --pr-meta-json)"
+          TITLE="$(echo "${META}" | jq -r .title)"
+          echo "${META}" | jq -r .body > /tmp/pr-body.md
+
+          if [[ "${DRY_RUN}" == "true" ]]; then
+            echo "DRY_RUN: would create branch ${BRANCH}, apply bump, commit, push, PR:"
+            echo "  title: ${TITLE}"
+            MODULE_SOURCE="${MODULE_SOURCE}" MODULE_CURRENT="${MODULE_CURRENT}" MODULE_LATEST="${MODULE_LATEST}" MODULE_PATHS="${MODULE_PATHS}" \
+              python3 scripts/check-outdated-deps.py --write-bump || true
+            git diff --stat || true
+            git checkout -- . || true
+            exit 0
+          fi
+
+          git checkout -b "${BRANCH}"
+          MODULE_SOURCE="${MODULE_SOURCE}" MODULE_CURRENT="${MODULE_CURRENT}" MODULE_LATEST="${MODULE_LATEST}" MODULE_PATHS="${MODULE_PATHS}" \
+            python3 scripts/check-outdated-deps.py --write-bump
+
+          # Stage only listed paths
+          IFS='|' read -ra FILES <<< "${MODULE_PATHS}"
+          for f in "${FILES[@]}"; do
+            git add -- "${f}"
+          done
+
+          printf '%s\n' "${TITLE}" > /tmp/commit-subject.txt
+          git commit -F /tmp/commit-subject.txt
+
+          git push origin "${BRANCH}"
+
+          gh label create terraform-module-deps --color 0E8A16 --description "Terraform registry module version bumps" 2>/dev/null || true
+
+          PR_TITLE="$(git log -1 --pretty=%s)"
+          gh pr create --repo "${{ github.repository }}" \
+            --base "${BASE_BRANCH}" \
+            --head "${BRANCH}" \
+            --title "${PR_TITLE}" \
+            --body-file /tmp/pr-body.md \
+            --label terraform-module-deps
+
+          echo "✅ Opened PR for ${MODULE_SOURCE} (${MODULE_CURRENT} → ${MODULE_LATEST})"
