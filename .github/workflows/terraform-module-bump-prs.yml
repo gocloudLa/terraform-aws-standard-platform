@@ -1,6 +1,15 @@
 # Manual bumps for Terraform registry modules (same spirit as gocloudLa/.github terraform-readme-generator:
 # checkout + setup-python + bash + gh; a single Python helper script for registry/scan logic).
-# Run from any branch to test the workflow; PRs target the branch you choose (default main).
+#
+# --- Sin mergear a main: cómo probar ---
+# 1) Abrí un PR draft feature → main (no hace falta mergear). Eso suele registrar el workflow para
+#    `gh workflow run` y a veces para la UI. Ver: https://stackoverflow.com/questions/63362126
+# 2) O dejá el bloque `push:` de abajo: cada push a esa rama dispara el workflow (dry_run forzado).
+# 3) Stub mínimo en main con el MISMO nombre de archivo + "Run workflow" eligiendo esta rama (truco SO).
+# 4) Local: python3 scripts/check-outdated-deps.py --json-outdated
+#
+# workflow_dispatch en la UI exige que el archivo exista en la rama default:
+# https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
 name: Terraform module bump PRs (manual)
 
 on:
@@ -16,13 +25,23 @@ on:
         required: false
         default: false
         type: boolean
+  # Quitá este bloque cuando termines de probar: dispara el workflow en la rama sin pasar por main.
+  # En push, dry_run queda siempre en true (no crea PRs ni push de ramas deps/).
+  push:
+    branches:
+      - "feature/ci-module-bump-prs"
 
 permissions:
   contents: write
   pull-requests: write
 
+env:
+  # workflow_dispatch: inputs. push: siempre main + dry_run (ver on: push arriba).
+  BASE_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.base_branch || 'main' }}
+  DRY_RUN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+
 concurrency:
-  group: terraform-module-bumps-${{ github.repository }}-${{ inputs.base_branch }}
+  group: terraform-module-bumps-${{ github.repository }}-${{ github.event_name == 'workflow_dispatch' && inputs.base_branch || 'main' }}
   cancel-in-progress: false
 
 jobs:
@@ -73,7 +92,7 @@ jobs:
       - name: Checkout base branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.base_branch }}
+          ref: ${{ env.BASE_BRANCH }}
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -91,8 +110,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
-          BASE_BRANCH: ${{ inputs.base_branch }}
-          DRY_RUN: ${{ inputs.dry_run }}
+          BASE_BRANCH: ${{ env.BASE_BRANCH }}
+          DRY_RUN: ${{ env.DRY_RUN }}
           MODULE_SOURCE: ${{ matrix.source }}
           MODULE_CURRENT: ${{ matrix.current }}
           MODULE_LATEST: ${{ matrix.latest }}
