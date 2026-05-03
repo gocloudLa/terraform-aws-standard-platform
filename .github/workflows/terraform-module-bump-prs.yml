@@ -28,7 +28,7 @@ permissions:
 
 env:
   BASE_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.base_branch || 'main' }}
-  DRY_RUN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+  DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
 
 concurrency:
   group: terraform-module-bumps-${{ github.repository }}-${{ github.event_name == 'workflow_dispatch' && inputs.base_branch || 'main' }}
