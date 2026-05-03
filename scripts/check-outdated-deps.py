@@ -7,7 +7,8 @@ Reports what is outdated. Private modules (e.g. gocloudLa/*) will show as
 Run from repo root:
   python3 scripts/check-outdated-deps.py
   python3 scripts/check-outdated-deps.py --json-outdated
-  python3 scripts/check-outdated-deps.py --github-matrix   # matrix JSON (+ commits_json per row)
+  # CI: solo análisis → JSON (el workflow hace el for en bash + git/gh)
+  python3 scripts/check-outdated-deps.py --bump-plan-json > bump-plan.json
   MODULE_SOURCE=... MODULE_CURRENT=... MODULE_LATEST=... MODULE_PATHS='a.tf|b.tf' \\
     python3 scripts/check-outdated-deps.py --write-bump
   (same env) python3 scripts/check-outdated-deps.py --pr-meta-json
@@ -20,6 +21,7 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 from urllib.parse import urlparse
 
 try:
@@ -366,6 +368,39 @@ def github_matrix_payload() -> dict[str, list[dict[str, str]]]:
     return {"include": include}
 
 
+def build_bump_plan() -> dict[str, Any]:
+    """
+    Full plan for CI/bash: each item has versions, paths, branch name, PR title/body/marker,
+    and upstream_commit_titles (info messages between current and latest).
+    """
+    items: list[dict[str, Any]] = []
+    for row in list_outdated_modules():
+        source = str(row["source"])
+        cur = str(row["current"])
+        latest = str(row["latest"])
+        paths = [str(p) for p in row["paths"]]
+        assert isinstance(row["paths"], list)
+        titles = row.get("upstream_commit_titles") or []
+        assert isinstance(titles, list)
+        meta = build_pr_meta(source, cur, latest, paths)
+        slug = source.replace("/", "-")
+        branch = f"deps/terraform-{slug}-{latest}"
+        items.append(
+            {
+                "source": source,
+                "current": cur,
+                "latest": latest,
+                "paths": paths,
+                "branch": branch,
+                "pr_title": meta["title"],
+                "pr_body": meta["body"],
+                "marker": meta["marker"],
+                "upstream_commit_titles": [str(t) for t in titles],
+            }
+        )
+    return {"items": items}
+
+
 def _human_report() -> None:
     modules, providers = collect_tf_deps()
 
@@ -427,6 +462,10 @@ def _human_report() -> None:
 
 
 def main() -> None:
+    if "--bump-plan-json" in sys.argv:
+        json.dump(build_bump_plan(), sys.stdout, indent=2)
+        sys.stdout.write("\n")
+        sys.exit(0)
     if "--json-outdated" in sys.argv:
         data = list_outdated_modules()
         json.dump(data, sys.stdout, indent=2)
