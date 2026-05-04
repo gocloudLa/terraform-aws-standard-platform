@@ -1,7 +1,7 @@
-# 1) gocloud module deps check --bump-plan genera bump-plan.json (qué actualizar, PR title/body, rama, etc.)
-# 2) Bash hace un for: si ya hay PR (marker / rama), skip; si no, bump + commit + push + gh pr create
+# 1) `gocloud module deps check --bump-plan` writes bump-plan.json (what to bump, PR title/body, branch, etc.)
+# 2) Bash loops each item: skip if a PR already exists (marker / branch); otherwise bump + commit + push + gh pr create
 #
-# workflow_dispatch en la UI requiere que este archivo exista en la rama default:
+# Manual workflow_dispatch in the UI requires this file on the default branch:
 # https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
 name: Terraform module bump PRs (manual)
 
@@ -9,29 +9,26 @@ on:
   workflow_dispatch:
     inputs:
       base_branch:
-        description: "Rama base (checkout + PR target), ej. main"
+        description: "Base branch (checkout + PR target), e.g. main"
         required: true
         default: "main"
         type: string
       dry_run:
-        description: "true = solo listar / saltar sin push ni PR"
+        description: "true = list only / skip push and PR creation"
         required: false
         default: false
         type: boolean
-  push:
-    branches:
-      - "feature/ci-module-bump-prs"
 
 permissions:
   contents: write
   pull-requests: write
 
 env:
-  BASE_BRANCH: ${{ github.event_name == 'workflow_dispatch' && inputs.base_branch || 'main' }}
-  DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+  BASE_BRANCH: ${{ inputs.base_branch }}
+  DRY_RUN: ${{ inputs.dry_run }}
 
 concurrency:
-  group: terraform-module-bumps-${{ github.repository }}-${{ github.event_name == 'workflow_dispatch' && inputs.base_branch || 'main' }}
+  group: terraform-module-bumps-${{ github.repository }}-${{ inputs.base_branch }}
   cancel-in-progress: false
 
 jobs:
@@ -44,7 +41,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install GoCloud CLI (si no está en PATH)
+      - name: Install GoCloud CLI (if not on PATH)
         run: |
           set -euo pipefail
           if command -v gocloud >/dev/null 2>&1; then
@@ -59,13 +56,13 @@ jobs:
           sudo mv /tmp/gocloud /usr/local/bin/gocloud
           gocloud version
 
-      - name: Analizar dependencias → bump-plan.json
+      - name: Analyze dependencies → bump-plan.json
         run: |
           set -euo pipefail
           gocloud module deps check --bump-plan > bump-plan.json
-          jq '.items | length' bump-plan.json | xargs -I{} echo "Módulos a bump: {}"
+          jq '.items | length' bump-plan.json | xargs -I{} echo "Modules to bump: {}"
 
-      - name: Por cada ítem — PR si no existe (bash)
+      - name: For each item — open PR if missing (bash)
         env:
           GH_TOKEN: ${{ github.token }}
           GITHUB_TOKEN: ${{ github.token }}
@@ -80,7 +77,7 @@ jobs:
 
           COUNT="$(jq '.items | length' bump-plan.json)"
           if [[ "${COUNT}" -eq 0 ]]; then
-            echo "Nada que actualizar."
+            echo "Nothing to update."
             exit 0
           fi
 
@@ -101,28 +98,28 @@ jobs:
             echo "=== [${i}] ${SOURCE}  ${CURRENT} → ${LATEST}  (${BRANCH}) ==="
 
             if [[ -z "${FILE}" ]]; then
-              echo "::error::Item [${i}]: sin .path en bump-plan."
+              echo "::error::Item [${i}]: missing .path in bump-plan."
               echo "${ITEM}" | jq .
               exit 1
             fi
 
             if gh pr list --repo "${REPO}" --base "${BASE_BRANCH}" --state open --json number,body \
               | jq -e --arg m "${MARKER}" '[.[] | select(.body != null and (.body | index($m) != null))] | length > 0' >/dev/null; then
-              echo "Skip: ya hay PR abierto con el mismo marker."
+              echo "Skip: an open PR already has this marker in the body."
               continue
             fi
             if gh pr list --repo "${REPO}" --base "${BASE_BRANCH}" --head "${REPO_OWNER}:${BRANCH}" --state open --json number \
               | jq -e 'length > 0' >/dev/null 2>&1; then
-              echo "Skip: ya hay PR abierto para head ${REPO_OWNER}:${BRANCH}."
+              echo "Skip: an open PR already exists for head ${REPO_OWNER}:${BRANCH}."
               continue
             fi
             if git ls-remote --exit-code origin "refs/heads/${BRANCH}" >/dev/null 2>&1; then
-              echo "Skip: la rama ${BRANCH} ya existe en origin."
+              echo "Skip: branch ${BRANCH} already exists on origin."
               continue
             fi
 
             if [[ "${DRY_RUN}" == "true" ]]; then
-              echo "DRY_RUN: no se crea rama ni PR."
+              echo "DRY_RUN: not creating branch or PR."
               echo "${ITEM}" | jq .
               continue
             fi
@@ -149,10 +146,10 @@ jobs:
               --body-file /tmp/pr-body.md \
               --label terraform-module-deps
 
-            echo "OK: PR creado para ${SOURCE}"
+            echo "OK: created draft PR for ${SOURCE}"
             git checkout "${BASE_BRANCH}"
             git branch -D "${BRANCH}" 2>/dev/null || true
             git reset --hard "origin/${BASE_BRANCH}"
           done
 
-          echo "Listo."
+          echo "Done."
