@@ -186,6 +186,24 @@ def _parse_github_repo(source_url: str) -> tuple[str, str] | None:
     return None
 
 
+# Upstream repos often tag with automated "chore(branch): release x.y (#n)" — not useful in PR text.
+_UPSTREAM_RELEASE_CHORE_RE = re.compile(
+    r"^chore(\([^)]*\))?\s*:\s*release\b",
+    re.IGNORECASE,
+)
+
+
+def _upstream_subject_kept(first: str) -> bool:
+    if not first:
+        return False
+    s = first.strip()
+    if s.lower().startswith("merge branch"):
+        return False
+    if _UPSTREAM_RELEASE_CHORE_RE.match(s):
+        return False
+    return True
+
+
 def _compare_commits_subjects(owner: str, repo: str, old_ver: str, new_ver: str) -> list[str]:
     """Return first-line commit messages between tags (tries v-prefixed tags)."""
     subjects: list[str] = []
@@ -199,7 +217,7 @@ def _compare_commits_subjects(owner: str, repo: str, old_ver: str, new_ver: str)
             for c in commits:
                 msg = (c.get("commit") or {}).get("message") or ""
                 first = msg.split("\n")[0].strip()
-                if first and not first.lower().startswith("merge branch"):
+                if _upstream_subject_kept(first):
                     subjects.append(first)
             if subjects:
                 return subjects
@@ -276,8 +294,8 @@ def build_pr_meta(source: str, current: str, latest: str, paths: list[str]) -> d
         if gh:
             owner, repo = gh
             body_lines.append(
-                f"_No commits listed via [compare](https://github.com/{owner}/{repo}/compare) "
-                f"(tags may differ from registry)._"
+                f"_No substantive commits to list via [compare](https://github.com/{owner}/{repo}/compare) "
+                f"(tags may differ from registry, or only automated `chore: release` commits in range)._"
             )
         else:
             body_lines.append("_Could not resolve GitHub source from registry._")
