@@ -23,6 +23,21 @@ variable "vpc_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* Peering | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+variable "peering_parameters" {
+  type        = any
+  description = "VPC Peering parameters to configure VPC Peering module"
+  default     = {}
+}
+
+variable "peering_defaults" {
+  type        = any
+  description = "VPC Peering default parameters to configure VPC Peering module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* TGW | Variable Definition                                            */
 /*----------------------------------------------------------------------*/
 
