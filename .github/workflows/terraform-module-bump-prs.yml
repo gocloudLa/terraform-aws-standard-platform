@@ -95,10 +95,16 @@ jobs:
             SOURCE="$(echo "${ITEM}" | jq -r .source)"
             CURRENT="$(echo "${ITEM}" | jq -r .current)"
             LATEST="$(echo "${ITEM}" | jq -r .latest)"
-            FILE="$(echo "${ITEM}" | jq -r '.paths[0]')"
+            FILE="$(echo "${ITEM}" | jq -r '.path // empty')"
 
             echo ""
             echo "=== [${i}] ${SOURCE}  ${CURRENT} → ${LATEST}  (${BRANCH}) ==="
+
+            if [[ -z "${FILE}" ]]; then
+              echo "::error::Item [${i}]: sin .path en bump-plan."
+              echo "${ITEM}" | jq .
+              exit 1
+            fi
 
             if gh pr list --repo "${REPO}" --base "${BASE_BRANCH}" --state open --json number,body \
               | jq -e --arg m "${MARKER}" '[.[] | select(.body != null and (.body | index($m) != null))] | length > 0' >/dev/null; then
