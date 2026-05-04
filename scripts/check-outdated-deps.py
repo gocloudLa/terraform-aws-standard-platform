@@ -248,17 +248,103 @@ _CONVENTIONAL = re.compile(
 )
 
 
-def _primary_dep_prefix(subjects: list[str]) -> str:
-    order = ["feat", "fix", "perf", "refactor", "docs", "chore"]
-    found: set[str] = set()
+def _semver_bump_level(current: str, latest: str) -> str:
+    """Return major / minor / patch / same comparing X.Y.Z (pre-release stripped)."""
+    c, l = parse_semver(current), parse_semver(latest)
+    c_t = (c[0] if len(c) > 0 else 0, c[1] if len(c) > 1 else 0, c[2] if len(c) > 2 else 0)
+    l_t = (l[0] if len(l) > 0 else 0, l[1] if len(l) > 1 else 0, l[2] if len(l) > 2 else 0)
+    if l_t <= c_t:
+        return "same"
+    if l_t[0] != c_t[0]:
+        return "major"
+    if l_t[1] != c_t[1]:
+        return "minor"
+    return "patch"
+
+
+def _upstream_indicates_breaking(subjects: list[str]) -> bool:
     for s in subjects:
-        m = _CONVENTIONAL.match(s.strip())
-        if m:
-            found.add(m.group("type").lower())
-    for t in order:
-        if t in found:
-            return f"{t}(deps)"
+        st = s.strip()
+        m = _CONVENTIONAL.match(st)
+        if m and m.group("bang"):
+            return True
+        if "breaking change" in st.lower():
+            return True
+    return False
+
+
+def _pr_type_prefix_for_bump(current: str, latest: str, subjects: list[str]) -> str:
+    """
+    Conventional prefix for squash → release-please (terraform-module).
+    Aligns with semver of the pin: patch → fix(deps), minor → feat(deps),
+    major or upstream breaking → feat(deps)! (breaking).
+    """
+    level = _semver_bump_level(current, latest)
+    breaking = level == "major" or _upstream_indicates_breaking(subjects)
+    if breaking:
+        return "feat(deps)!"
+    if level == "minor":
+        return "feat(deps)"
+    if level == "patch":
+        return "fix(deps)"
     return "chore(deps)"
+
+
+def _best_title_headline(subjects: list[str], bump_level: str) -> str:
+    """
+    First line of changelog text: prefer upstream description (after type(scope):).
+    For patch bumps prefer first fix: subject; for minor prefer first feat:.
+    """
+    if not subjects:
+        return "update module pin"
+
+    def first_line_preferring(commit_type: str | None) -> str | None:
+        for s in subjects:
+            st = s.strip()
+            m = _CONVENTIONAL.match(st)
+            if not m:
+                continue
+            t = m.group("type").lower()
+            if commit_type is not None and t != commit_type:
+                continue
+            rest = st[m.end() :].strip()
+            out = rest if rest else st
+            return out[:200]
+        return None
+
+    if bump_level == "major":
+        hit = first_line_preferring("feat")
+        if hit:
+            return hit
+    if bump_level == "patch":
+        hit = first_line_preferring("fix")
+        if hit:
+            return hit
+    if bump_level == "minor":
+        hit = first_line_preferring("feat")
+        if hit:
+            return hit
+    hit = first_line_preferring(None)
+    if hit:
+        return hit
+    return subjects[0].strip()[:200]
+
+
+def _build_squash_title(
+    prefix: str, headline: str, short: str, current: str, latest: str, max_len: int = 250
+) -> str:
+    """prefix is e.g. feat(deps) or feat(deps)! — colon added here (feat(deps)!: …)."""
+    bump = f"({short} {current}→{latest})"
+    core = f"{prefix}: {headline} {bump}"
+    if len(core) <= max_len:
+        return core
+    room = max_len - len(f"{prefix}:  {bump}")
+    if room < 24:
+        return f"{prefix}: {bump}"[:max_len]
+    trimmed = headline[:room].rstrip()
+    if len(trimmed) < len(headline):
+        trimmed = trimmed.rstrip(".,; ") + "…"
+    return f"{prefix}: {trimmed} {bump}"[:max_len]
 
 
 def _short_module_label(source: str) -> str:
@@ -302,21 +388,14 @@ def build_pr_meta(source: str, current: str, latest: str, paths: list[str]) -> d
     else:
         body_lines.append("_Could not resolve module source._")
 
-    prefix = _primary_dep_prefix(subjects)
     short = _short_module_label(source)
-    tail_parts: list[str] = []
-    for s in subjects[:5]:
-        tail_parts.append(s[:120])
-    tail = " · ".join(tail_parts) if tail_parts else f"release {latest}"
-    title = f"{prefix}: bump {short} {current} → {latest}"
-    if tail:
-        extra = f" — {tail}"
-        if len(title) + len(extra) <= 250:
-            title += extra
-        elif len(title) < 250:
-            title = (title + extra)[:250]
-    if len(title) > 250:
-        title = title[:247] + "..."
+    bump_level = _semver_bump_level(current, latest)
+    breaking_upstream = _upstream_indicates_breaking(subjects)
+    prefix = _pr_type_prefix_for_bump(current, latest, subjects)
+    # Breaking PR on a patch semver: still prefer feat-like upstream lines for the title.
+    hl_level = "minor" if (breaking_upstream and bump_level == "patch") else bump_level
+    headline = _best_title_headline(subjects, hl_level)
+    title = _build_squash_title(prefix, headline, short, current, latest)
 
     return {"title": title, "body": "\n".join(body_lines), "marker": marker}
 
