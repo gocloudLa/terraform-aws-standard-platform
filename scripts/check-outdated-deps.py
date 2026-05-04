@@ -31,7 +31,18 @@ except ImportError:
     from urllib2 import HTTPError, Request, URLError, urlopen  # type: ignore
 
 REGISTRY = "https://registry.terraform.io"
-ROOT = Path(__file__).resolve().parent.parent
+
+
+def _repo_root() -> Path:
+    """Repo root for scanning *.tf. In GHA the script may live under /tmp, so __file__ is not enough."""
+    for key in ("GITHUB_WORKSPACE", "TERRAFORM_DEPS_ROOT"):
+        v = os.environ.get(key, "").strip()
+        if v:
+            return Path(v).resolve()
+    return Path(__file__).resolve().parent.parent
+
+
+ROOT = _repo_root()
 
 
 def parse_semver(v: str) -> tuple[int, ...]:
