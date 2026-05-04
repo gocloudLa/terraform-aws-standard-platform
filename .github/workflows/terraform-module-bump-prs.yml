@@ -37,6 +37,9 @@ concurrency:
 jobs:
   bumps:
     runs-on: ubuntu-latest
+    # Fuera del repo: tras checkout a main el árbol ya no tiene scripts/ de la feature.
+    env:
+      DEPS_SCRIPT: /tmp/check-outdated-deps.py
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -49,10 +52,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Copiar script de deps a /tmp
+        run: |
+          set -euo pipefail
+          cp scripts/check-outdated-deps.py "${DEPS_SCRIPT}"
+          echo "Script en ${DEPS_SCRIPT} (reutilizable tras git checkout a la rama base)."
+
       - name: Analizar dependencias → bump-plan.json
         run: |
           set -euo pipefail
-          python3 scripts/check-outdated-deps.py --bump-plan-json > bump-plan.json
+          python3 "${DEPS_SCRIPT}" --bump-plan-json > bump-plan.json
           jq '.items | length' bump-plan.json | xargs -I{} echo "Módulos a bump: {}"
 
       - name: Por cada ítem — PR si no existe (bash)
@@ -118,7 +127,7 @@ jobs:
             git checkout -b "${BRANCH}"
 
             MODULE_SOURCE="${SOURCE}" MODULE_CURRENT="${CURRENT}" MODULE_LATEST="${LATEST}" MODULE_PATHS="${PATHS_JOIN}" \
-              python3 scripts/check-outdated-deps.py --write-bump
+              python3 "${DEPS_SCRIPT}" --write-bump
 
             echo "${ITEM}" | jq -r .pr_body > /tmp/pr-body.md
             echo "${ITEM}" | jq -r .pr_title > /tmp/pr-title.txt
