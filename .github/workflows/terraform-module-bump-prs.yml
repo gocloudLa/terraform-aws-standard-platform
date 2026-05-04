@@ -1,4 +1,4 @@
-# 1) Python solo genera bump-plan.json (qué actualizar, títulos de commits upstream, PR title/body, rama, etc.)
+# 1) gocloud module deps check --bump-plan genera bump-plan.json (qué actualizar, PR title/body, rama, etc.)
 # 2) Bash hace un for: si ya hay PR (marker / rama), skip; si no, bump + commit + push + gh pr create
 #
 # workflow_dispatch en la UI requiere que este archivo exista en la rama default:
@@ -37,9 +37,6 @@ concurrency:
 jobs:
   bumps:
     runs-on: ubuntu-latest
-    # Fuera del repo: tras checkout a main el árbol ya no tiene scripts/ de la feature.
-    env:
-      DEPS_SCRIPT: /tmp/check-outdated-deps.py
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,21 +44,25 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Copiar script de deps a /tmp
+      - name: Install GoCloud CLI (si no está en PATH)
         run: |
           set -euo pipefail
-          cp scripts/check-outdated-deps.py "${DEPS_SCRIPT}"
-          echo "Script en ${DEPS_SCRIPT} (reutilizable tras git checkout a la rama base)."
+          if command -v gocloud >/dev/null 2>&1; then
+            gocloud version
+            exit 0
+          fi
+          VERSION=$(curl -sL -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/gocloudLa/gocloud-cli/releases/latest | jq -r .tag_name)
+          curl -sSL -o /tmp/gocloud \
+            "https://github.com/gocloudLa/gocloud-cli/releases/download/${VERSION}/gocloud-${VERSION}-linux-amd64"
+          chmod +x /tmp/gocloud
+          sudo mv /tmp/gocloud /usr/local/bin/gocloud
+          gocloud version
 
       - name: Analizar dependencias → bump-plan.json
         run: |
           set -euo pipefail
-          python3 "${DEPS_SCRIPT}" --bump-plan-json > bump-plan.json
+          gocloud module deps check --bump-plan > bump-plan.json
           jq '.items | length' bump-plan.json | xargs -I{} echo "Módulos a bump: {}"
 
       - name: Por cada ítem — PR si no existe (bash)
@@ -94,7 +95,7 @@ jobs:
             SOURCE="$(echo "${ITEM}" | jq -r .source)"
             CURRENT="$(echo "${ITEM}" | jq -r .current)"
             LATEST="$(echo "${ITEM}" | jq -r .latest)"
-            PATHS_JOIN="$(echo "${ITEM}" | jq -r '.paths | join("|")')"
+            FILE="$(echo "${ITEM}" | jq -r '.paths[0]')"
 
             echo ""
             echo "=== [${i}] ${SOURCE}  ${CURRENT} → ${LATEST}  (${BRANCH}) ==="
@@ -126,17 +127,12 @@ jobs:
             git branch -D "${BRANCH}" 2>/dev/null || true
             git checkout -b "${BRANCH}"
 
-            MODULE_SOURCE="${SOURCE}" MODULE_CURRENT="${CURRENT}" MODULE_LATEST="${LATEST}" MODULE_PATHS="${PATHS_JOIN}" \
-              python3 "${DEPS_SCRIPT}" --write-bump
+            gocloud module deps update "${SOURCE}" "${CURRENT}" "${LATEST}" "${FILE}"
 
             echo "${ITEM}" | jq -r .pr_body > /tmp/pr-body.md
             echo "${ITEM}" | jq -r .pr_title > /tmp/pr-title.txt
 
-            IFS='|' read -ra FILES <<< "${PATHS_JOIN}"
-            for f in "${FILES[@]}"; do
-              [[ -n "${f}" ]] || continue
-              git add -- "${f}"
-            done
+            git add -- "${FILE}"
 
             git commit -F /tmp/pr-title.txt
             git push -u origin "${BRANCH}"
