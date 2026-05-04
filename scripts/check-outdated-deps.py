@@ -12,6 +12,7 @@ Run from repo root:
   MODULE_SOURCE=... MODULE_CURRENT=... MODULE_LATEST=... MODULE_PATHS='a.tf|b.tf' \\
     python3 scripts/check-outdated-deps.py --write-bump
   (same env) python3 scripts/check-outdated-deps.py --pr-meta-json
+  PR titles use paths for scope: modules/base → foundation/<module-name>, modules/workload → workload/<module-name>.
 """
 from __future__ import annotations
 
@@ -273,21 +274,62 @@ def _upstream_indicates_breaking(subjects: list[str]) -> bool:
     return False
 
 
-def _pr_type_prefix_for_bump(current: str, latest: str, subjects: list[str]) -> str:
+# modules/base → changelog scope "foundation" (platform base stack)
+_SCOPE_LAYER_ALIAS = {"base": "foundation"}
+
+
+def _module_middle_name(source: str) -> str:
+    parts = source.split("/")
+    return parts[1] if len(parts) == 3 else source.replace("/", "-")
+
+
+def _pr_scope_from_paths(source: str, paths: list[str]) -> str:
+    """e.g. modules/base/main.tf + gocloudLa/wrapper-notifications/aws → foundation/wrapper-notifications."""
+    middle = _module_middle_name(source)
+    if not paths:
+        return f"deps/{middle}"
+    first = sorted(paths)[0].replace("\\", "/").strip("/")
+    seg = Path(first).parts
+    if len(seg) >= 2 and seg[0] in ("modules", "examples"):
+        layer = _SCOPE_LAYER_ALIAS.get(seg[1], seg[1])
+        return f"{layer}/{middle}"
+    if len(seg) >= 1:
+        return f"{seg[0]}/{middle}"
+    return f"deps/{middle}"
+
+
+def _commit_kind_and_breaking(current: str, latest: str, subjects: list[str]) -> tuple[str, bool]:
     """
-    Conventional prefix for squash → release-please (terraform-module).
-    Aligns with semver of the pin: patch → fix(deps), minor → feat(deps),
-    major or upstream breaking → feat(deps)! (breaking).
+    Conventional type + breaking flag for squash → release-please (terraform-module).
+    Semver of pin: patch → fix, minor → feat, major or upstream breaking → feat + breaking.
     """
     level = _semver_bump_level(current, latest)
     breaking = level == "major" or _upstream_indicates_breaking(subjects)
     if breaking:
-        return "feat(deps)!"
+        return "feat", True
     if level == "minor":
-        return "feat(deps)"
+        return "feat", False
     if level == "patch":
-        return "fix(deps)"
-    return "chore(deps)"
+        return "fix", False
+    return "chore", False
+
+
+def _clean_headline_for_title(headline: str) -> str:
+    """Drop trailing GitHub PR refs like (#19) from upstream subject lines."""
+    s = headline.strip()
+    while True:
+        t = re.sub(r"\s*\(#\d+\)\s*$", "", s).strip()
+        if t == s:
+            break
+        s = t
+    return s
+
+
+def _pr_type_prefix_for_bump(current: str, latest: str, subjects: list[str]) -> str:
+    """Backward-compatible single string for tests/logging; prefer _commit_kind_and_breaking + scope."""
+    kind, breaking = _commit_kind_and_breaking(current, latest, subjects)
+    bang = "!" if breaking else ""
+    return f"{kind}(deps){bang}"
 
 
 def _best_title_headline(subjects: list[str], bump_level: str) -> str:
@@ -331,27 +373,34 @@ def _best_title_headline(subjects: list[str], bump_level: str) -> str:
 
 
 def _build_squash_title(
-    prefix: str, headline: str, short: str, current: str, latest: str, max_len: int = 250
+    kind: str,
+    breaking: bool,
+    scope: str,
+    headline: str,
+    current: str,
+    latest: str,
+    max_len: int = 250,
 ) -> str:
-    """prefix is e.g. feat(deps) or feat(deps)! — colon added here (feat(deps)!: …)."""
-    bump = f"({short} {current}→{latest})"
-    core = f"{prefix}: {headline} {bump}"
+    """Squash title: feat(layer/module): (cur→latest) description — matches release-please/changelog style."""
+    headline = _clean_headline_for_title(headline)
+    ver = f"({current}→{latest})"
+    if breaking and kind == "feat":
+        prefix_part = f"feat({scope})!"
+    elif breaking:
+        prefix_part = f"{kind}({scope})!"
+    else:
+        prefix_part = f"{kind}({scope})"
+    fixed = f"{prefix_part}: {ver} "
+    core = f"{fixed}{headline}"
     if len(core) <= max_len:
         return core
-    room = max_len - len(f"{prefix}:  {bump}")
-    if room < 24:
-        return f"{prefix}: {bump}"[:max_len]
+    room = max_len - len(fixed)
+    if room < 12:
+        return fixed.strip()[:max_len]
     trimmed = headline[:room].rstrip()
     if len(trimmed) < len(headline):
         trimmed = trimmed.rstrip(".,; ") + "…"
-    return f"{prefix}: {trimmed} {bump}"[:max_len]
-
-
-def _short_module_label(source: str) -> str:
-    parts = source.split("/")
-    if len(parts) == 3:
-        return f"{parts[1]}/{parts[2]}"
-    return source
+    return f"{fixed}{trimmed}"[:max_len]
 
 
 def build_pr_meta(source: str, current: str, latest: str, paths: list[str]) -> dict[str, str]:
@@ -388,14 +437,14 @@ def build_pr_meta(source: str, current: str, latest: str, paths: list[str]) -> d
     else:
         body_lines.append("_Could not resolve module source._")
 
-    short = _short_module_label(source)
+    scope = _pr_scope_from_paths(source, paths)
     bump_level = _semver_bump_level(current, latest)
     breaking_upstream = _upstream_indicates_breaking(subjects)
-    prefix = _pr_type_prefix_for_bump(current, latest, subjects)
+    kind, breaking = _commit_kind_and_breaking(current, latest, subjects)
     # Breaking PR on a patch semver: still prefer feat-like upstream lines for the title.
     hl_level = "minor" if (breaking_upstream and bump_level == "patch") else bump_level
     headline = _best_title_headline(subjects, hl_level)
-    title = _build_squash_title(prefix, headline, short, current, latest)
+    title = _build_squash_title(kind, breaking, scope, headline, current, latest)
 
     return {"title": title, "body": "\n".join(body_lines), "marker": marker}
 
