@@ -138,7 +138,7 @@ jobs:
             git push -u origin "${BRANCH}"
 
             PR_TITLE="$(git log -1 --pretty=%s)"
-            gh pr create --repo "${REPO}" --base "${BASE_BRANCH}" --head "${REPO_OWNER}:${BRANCH}" \
+            gh pr create --draft --repo "${REPO}" --base "${BASE_BRANCH}" --head "${REPO_OWNER}:${BRANCH}" \
               --title "${PR_TITLE}" \
               --body-file /tmp/pr-body.md \
               --label terraform-module-deps
