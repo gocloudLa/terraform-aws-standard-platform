@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.31.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.30.0...v0.31.0) (2026-05-04)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.1.4→1.2.0) add cost anomaly alarm & fix unknown message process ([#85](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/85)) ([dd04b97](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/dd04b97ffcc3b04ed2fa44af4001cc4167e9b14b))
+* **workload/wrapper-ec2-instance:** (0.1.4→0.2.0) update examples, readme & add loadbalancer integration ([#84](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/84)) ([2a117d0](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2a117d055c72cff51a3a42f004ea604269dfb0fe))
+
 ## [0.30.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.29.0...v0.30.0) (2026-04-24)
 
 
