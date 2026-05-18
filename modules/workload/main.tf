@@ -47,7 +47,7 @@ module "wrapper_lambda" {
 
 module "wrapper_ec2_instance" {
   source  = "gocloudLa/wrapper-ec2-instance/aws"
-  version = "0.2.0"
+  version = "0.2.1"
 
   metadata = var.metadata
 
