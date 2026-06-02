@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.31.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.0...v0.31.1) (2026-05-18)
+
+
+### Bug Fixes
+
+* **project/wrapper-rds:** (1.2.0→1.2.1) update final_snapshot_identifier_prefix variable ([#89](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/89)) ([35f30f9](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/35f30f9d99fd75b9f07f97cb44ebe75098fd87de))
+* **workload/wrapper-ec2-instance:** (0.2.0→0.2.1) update custom policy to avoid deprecated message ([#88](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/88)) ([6d58798](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/6d58798e54f6c760256cc9e88cea9961da348c68))
+
 ## [0.31.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.30.0...v0.31.0) (2026-05-04)
 
 
