@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.32.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.1...v0.32.0) (2026-06-02)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.2.0→1.3.0) update status code for teams messages ([#91](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/91)) ([1eb10d4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/1eb10d4f317af8c702a65835731a6a5cee171d14))
+
 ## [0.31.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.0...v0.31.1) (2026-05-18)
 
 
