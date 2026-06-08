@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.33.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.32.0...v0.33.0) (2026-06-08)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.3.0→1.4.0) add alarm link in cw alarms notifications ([#93](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/93)) ([4167fab](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/4167fabb08a3efa747d96615470afbf199cff586))
+
 ## [0.32.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.1...v0.32.0) (2026-06-02)
 
 
