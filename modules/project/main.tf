@@ -69,8 +69,8 @@ module "wrapper_documentdb" {
 }
 
 module "wrapper_rds" {
-  source  = "git@github.com:gocloudLa/terraform-aws-wrapper-rds.git?ref=feature/add-parameter-store-tier"
-  # version = "1.3.0"
+  source  = "gocloudLa/wrapper-rds/aws"
+  version = "1.3.0"
 
   metadata = var.metadata
 
