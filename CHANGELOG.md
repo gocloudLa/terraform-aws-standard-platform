@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.34.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.33.0...v0.34.0) (2026-06-14)
+
+
+### Features
+
+* **project/wrapper-rds-aurora:** (1.3.1→1.4.0) add parameter store tier variable ([#97](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/97)) ([948127a](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/948127ae0fb4c9f5b91b5a780c96716ab5ee4df8))
+* **project/wrapper-rds:** (1.2.1→1.3.0) add parameter store tier variable ([#98](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/98)) ([03c3647](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/03c3647149329c8dd126e3183220efb9636d4fba))
+
+
+### Bug Fixes
+
+* **foundation/wrapper-notifications:** (1.4.0→1.4.1) add multiple embeds for long discord messages ([#96](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/96)) ([1373f90](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/1373f90873f42f3d03e738a4301fac4d0e15af47))
+
+## [0.33.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.32.0...v0.33.0) (2026-06-08)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.3.0→1.4.0) add alarm link in cw alarms notifications ([#93](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/93)) ([4167fab](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/4167fabb08a3efa747d96615470afbf199cff586))
+
+## [0.32.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.1...v0.32.0) (2026-06-02)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.2.0→1.3.0) update status code for teams messages ([#91](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/91)) ([1eb10d4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/1eb10d4f317af8c702a65835731a6a5cee171d14))
+
 ## [0.31.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.0...v0.31.1) (2026-05-18)
 
 
