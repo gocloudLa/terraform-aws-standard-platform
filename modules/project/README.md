@@ -25,6 +25,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-opensearch](https://github.com/gocloudLa/terraform-aws-wrapper-opensearch)** - OpenSearch Service
 - **[terraform-aws-wrapper-kms](https://github.com/gocloudLa/terraform-aws-wrapper-kms)** - Encryption key management and rotation
 - **[terraform-aws-wrapper-kinesis-stream](https://github.com/gocloudLa/terraform-aws-wrapper-kinesis-stream)** - Real-time data streaming and processing
+- **[terraform-aws-wrapper-cognito](https://github.com/gocloudLa/terraform-aws-wrapper-cognito)** - User authentication and identity management
 
 ## 🚀 Usage
 
@@ -111,6 +112,10 @@ module "project" {
   kinesis_stream_parameters = {
     # Kinesis Stream configuration
   }
+
+  cognito_parameters = {
+    # Cognito user pool configuration
+  }
 }
 ```
 
@@ -171,6 +176,7 @@ locals {
 | opensearch_parameters | OpenSearch Service configuration | `object` | `{}` | no |
 | kms_parameters | KMS key configuration | `object` | `{}` | no |
 | kinesis_stream_parameters | Kinesis Stream configuration | `object` | `{}` | no |
+| cognito_parameters | Cognito user pool configuration | `object` | `{}` | no |
 
 ## 🏷️ Resource Naming Convention
 
