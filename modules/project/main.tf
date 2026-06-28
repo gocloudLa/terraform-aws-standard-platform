@@ -180,7 +180,7 @@ module "wrapper_cognito" {
 
 module "wrapper_msk" {
   source  = "gocloudLa/wrapper-msk/aws"
-  version = "1.0.0"
+  version = "0.1.0"
 
   metadata = var.metadata
 
