@@ -277,3 +277,35 @@ variable "kinesis_stream_defaults" {
   description = "Kinesis Data Stream default parameters to configure stream resources"
   default     = {}
 }
+
+/*----------------------------------------------------------------------*/
+/* Cognito | Variable Definition                                        */
+/*----------------------------------------------------------------------*/
+
+variable "cognito_parameters" {
+  type        = any
+  description = "Cognito parameters to configure user pool resources"
+  default     = {}
+}
+
+variable "cognito_defaults" {
+  type        = any
+  description = "Cognito default parameters to configure user pool resources"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
+/* MSK | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "msk_parameters" {
+  type        = any
+  description = "MSK parameters to configure Managed Streaming for Apache Kafka resources"
+  default     = {}
+}
+
+variable "msk_defaults" {
+  type        = any
+  description = "MSK default parameters to configure Managed Streaming for Apache Kafka resources"
+  default     = {}
+}

@@ -167,3 +167,23 @@ module "wrapper_kinesis_stream" {
   kinesis_stream_parameters = var.kinesis_stream_parameters
   kinesis_stream_defaults   = var.kinesis_stream_defaults
 }
+
+module "wrapper_cognito" {
+  source  = "gocloudLa/wrapper-cognito/aws"
+  version = "1.0.0"
+
+  metadata = var.metadata
+
+  cognito_parameters = var.cognito_parameters
+  cognito_defaults   = var.cognito_defaults
+}
+
+module "wrapper_msk" {
+  source  = "gocloudLa/wrapper-msk/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  msk_parameters = var.msk_parameters
+  msk_defaults   = var.msk_defaults
+}
