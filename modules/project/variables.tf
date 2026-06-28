@@ -293,3 +293,19 @@ variable "cognito_defaults" {
   description = "Cognito default parameters to configure user pool resources"
   default     = {}
 }
+
+/*----------------------------------------------------------------------*/
+/* MSK | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "msk_parameters" {
+  type        = any
+  description = "MSK parameters to configure Managed Streaming for Apache Kafka resources"
+  default     = {}
+}
+
+variable "msk_defaults" {
+  type        = any
+  description = "MSK default parameters to configure Managed Streaming for Apache Kafka resources"
+  default     = {}
+}

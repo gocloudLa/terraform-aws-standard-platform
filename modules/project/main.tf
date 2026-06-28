@@ -177,3 +177,13 @@ module "wrapper_cognito" {
   cognito_parameters = var.cognito_parameters
   cognito_defaults   = var.cognito_defaults
 }
+
+module "wrapper_msk" {
+  source  = "gocloudLa/wrapper-msk/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  msk_parameters = var.msk_parameters
+  msk_defaults   = var.msk_defaults
+}
