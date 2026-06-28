@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.36.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.35.0...v0.36.0) (2026-06-28)
+
+
+### Features
+
+* **project:** add msk module ([#102](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/102)) ([f6750fc](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/f6750fc36796192d82c20a05aa4a8461cf774502))
+
 ## [0.35.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.34.0...v0.35.0) (2026-06-19)
 
 
