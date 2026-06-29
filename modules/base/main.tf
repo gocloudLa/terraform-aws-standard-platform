@@ -1,7 +1,6 @@
 module "wrapper_vpc" {
-  # source  = "gocloudLa/wrapper-vpc/aws"
-  # version = "1.2.1"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpc.git?ref=feature/module-upgrade"
+  source  = "gocloudLa/wrapper-vpc/aws"
+  version = "2.0.0"
 
   metadata = var.metadata
 
@@ -12,7 +11,7 @@ module "wrapper_vpc" {
 module "wrapper_peering" {
   # source  = "gocloudLa/wrapper-peering/aws"
   # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-peering.git?ref=feature/initial-release"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-peering.git?ref=main"
 
   metadata = var.metadata
 
@@ -25,7 +24,7 @@ module "wrapper_peering" {
 module "wrapper_tgw" {
   # source  = "gocloudLa/wrapper-tgw/aws"
   # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-tgw.git?ref=feature/initial-release"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-tgw.git?ref=main"
 
   metadata = var.metadata
 
@@ -38,7 +37,7 @@ module "wrapper_tgw" {
 module "wrapper_vpn" {
   # source  = "gocloudLa/wrapper-vpn/aws"
   # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpn.git?ref=feature/initial-release"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpn.git?ref=main"
 
   metadata = var.metadata
 
@@ -50,9 +49,8 @@ module "wrapper_vpn" {
 }
 
 module "wrapper_route53" {
-  # source  = "gocloudLa/wrapper-route53-zone/aws"
-  # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-route53-zone.git?ref=feature/upgrade-vpc-module"
+  source  = "gocloudLa/wrapper-route53-zone/aws"
+  version = "2.0.0"
 
   metadata = var.metadata
 
@@ -63,9 +61,8 @@ module "wrapper_route53" {
 }
 
 module "wrapper_cloudmap" {
-  # source  = "gocloudLa/wrapper-cloudmap/aws"
-  # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-cloudmap.git?ref=feature/upgrade-vpc-module"
+  source  = "gocloudLa/wrapper-cloudmap/aws"
+  version = "2.0.0"
 
   metadata = var.metadata
 
