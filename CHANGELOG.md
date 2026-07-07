@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.37.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.36.0...v0.37.0) (2026-07-07)
+
+
+### Features
+
+* **workload/wrapper-batch-job:** (1.0.4→1.1.0) add ephemeral_storage_size_in_gib support ([#104](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/104)) ([5af65d4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/5af65d484bedba4f8937ec1ff65c1bae6212dcf3))
+
+
+### Bug Fixes
+
+* **workload/wrapper-static-site:** (1.0.4→1.0.5) change origin access name ([#107](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/107)) ([a31b507](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/a31b507a118fcc4c11700274fab291348be2802b))
+
 ## [0.36.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.35.0...v0.36.0) (2026-06-28)
 
 
