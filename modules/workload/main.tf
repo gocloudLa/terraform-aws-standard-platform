@@ -25,7 +25,7 @@ module "wrapper_ecs_service" {
 
 module "wrapper_batch_job" {
   source  = "gocloudLa/wrapper-batch-job/aws"
-  version = "1.0.4"
+  version = "1.1.0"
 
   metadata = var.metadata
 
