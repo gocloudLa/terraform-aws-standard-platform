@@ -10,7 +10,7 @@ module "wrapper_vpc" {
 
 module "wrapper_route53" {
   source  = "gocloudLa/wrapper-route53-zone/aws"
-  version = "1.0.0"
+  version = "2.0.0"
 
   metadata = var.metadata
 
