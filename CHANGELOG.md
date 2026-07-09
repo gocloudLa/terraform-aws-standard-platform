@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.37.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.0...v0.37.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* **workload/wrapper-static-site:** (1.0.5→1.0.6) change OAC key ([#111](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/111)) ([abc9255](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/abc92558b28755d18ae9246e219b72eb5bfed724))
+
 ## [0.37.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.36.0...v0.37.0) (2026-07-07)
 
 
