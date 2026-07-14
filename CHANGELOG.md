@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.39.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.38.0...v0.39.0) (2026-07-14)
+
+
+### Features
+
+* **project/wrapper-apigateway-rest:** (0.1.0→0.2.0) decouple custom domains from route53 dns_records ([#116](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/116)) ([7486e19](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7486e19a45843763f9421cb12aead88a8ec41154))
+
 ## [0.38.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.1...v0.38.0) (2026-07-14)
 
 
