@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.38.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.1...v0.38.0) (2026-07-14)
+
+
+### Features
+
+* **module:** add apigateway-rest module ([#115](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/115)) ([8b3969b](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8b3969b98a4d902a2b6da8bad81367e3211d477e))
+* **workload/wrapper-lambda:** (1.0.1→1.1.0) add apigateway rest support ([#113](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/113)) ([e68c317](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/e68c3176219870efa214411e1ded9435828203d7))
+
 ## [0.37.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.0...v0.37.1) (2026-07-09)
 
 
