@@ -309,3 +309,19 @@ variable "msk_defaults" {
   description = "MSK default parameters to configure Managed Streaming for Apache Kafka resources"
   default     = {}
 }
+
+/*----------------------------------------------------------------------*/
+/* API Gateway REST | Variable Definition                               */
+/*----------------------------------------------------------------------*/
+
+variable "apigateway_rest_parameters" {
+  type        = any
+  description = "API Gateway REST parameters to configure REST API resources"
+  default     = {}
+}
+
+variable "apigateway_rest_defaults" {
+  type        = any
+  description = "API Gateway REST default parameters to configure REST API resources"
+  default     = {}
+}

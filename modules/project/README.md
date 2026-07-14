@@ -27,6 +27,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-kinesis-stream](https://github.com/gocloudLa/terraform-aws-wrapper-kinesis-stream)** - Real-time data streaming and processing
 - **[terraform-aws-wrapper-cognito](https://github.com/gocloudLa/terraform-aws-wrapper-cognito)** - User authentication and identity management
 - **[terraform-aws-wrapper-msk](https://github.com/gocloudLa/terraform-aws-wrapper-msk)** - Managed Streaming for Apache Kafka
+- **[terraform-aws-wrapper-apigateway-rest](https://github.com/gocloudLa/terraform-aws-wrapper-apigateway-rest)** - API Gateway REST APIs
 
 ## 🚀 Usage
 
@@ -121,6 +122,10 @@ module "project" {
   msk_parameters = {
     # MSK cluster configuration
   }
+
+  apigateway_rest_parameters = {
+    # API Gateway REST configuration
+  }
 }
 ```
 
@@ -183,6 +188,7 @@ locals {
 | kinesis_stream_parameters | Kinesis Stream configuration | `object` | `{}` | no |
 | cognito_parameters | Cognito user pool configuration | `object` | `{}` | no |
 | msk_parameters | MSK cluster configuration | `object` | `{}` | no |
+| apigateway_rest_parameters | API Gateway REST configuration | `object` | `{}` | no |
 
 ## 🏷️ Resource Naming Convention
 
