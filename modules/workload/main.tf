@@ -36,7 +36,7 @@ module "wrapper_batch_job" {
 
 module "wrapper_lambda" {
   source  = "gocloudLa/wrapper-lambda/aws"
-  version = "1.0.1"
+  version = "1.1.0"
 
   metadata = var.metadata
 
