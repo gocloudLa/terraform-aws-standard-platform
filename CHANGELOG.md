@@ -1,5 +1,39 @@
 # Changelog
 
+## [0.39.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.38.0...v0.39.0) (2026-07-14)
+
+
+### Features
+
+* **project/wrapper-apigateway-rest:** (0.1.0→0.2.0) decouple custom domains from route53 dns_records ([#116](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/116)) ([7486e19](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7486e19a45843763f9421cb12aead88a8ec41154))
+
+## [0.38.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.1...v0.38.0) (2026-07-14)
+
+
+### Features
+
+* **module:** add apigateway-rest module ([#115](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/115)) ([8b3969b](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8b3969b98a4d902a2b6da8bad81367e3211d477e))
+* **workload/wrapper-lambda:** (1.0.1→1.1.0) add apigateway rest support ([#113](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/113)) ([e68c317](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/e68c3176219870efa214411e1ded9435828203d7))
+
+## [0.37.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.0...v0.37.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* **workload/wrapper-static-site:** (1.0.5→1.0.6) change OAC key ([#111](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/111)) ([abc9255](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/abc92558b28755d18ae9246e219b72eb5bfed724))
+
+## [0.37.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.36.0...v0.37.0) (2026-07-07)
+
+
+### Features
+
+* **workload/wrapper-batch-job:** (1.0.4→1.1.0) add ephemeral_storage_size_in_gib support ([#104](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/104)) ([5af65d4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/5af65d484bedba4f8937ec1ff65c1bae6212dcf3))
+
+
+### Bug Fixes
+
+* **workload/wrapper-static-site:** (1.0.4→1.0.5) change origin access name ([#107](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/107)) ([a31b507](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/a31b507a118fcc4c11700274fab291348be2802b))
+
 ## [0.36.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.35.0...v0.36.0) (2026-06-28)
 
 

@@ -187,3 +187,13 @@ module "wrapper_msk" {
   msk_parameters = var.msk_parameters
   msk_defaults   = var.msk_defaults
 }
+
+module "wrapper_apigateway_rest" {
+  source  = "gocloudLa/wrapper-apigateway-rest/aws"
+  version = "0.2.0"
+
+  metadata = var.metadata
+
+  apigateway_rest_parameters = var.apigateway_rest_parameters
+  apigateway_rest_defaults   = var.apigateway_rest_defaults
+}
