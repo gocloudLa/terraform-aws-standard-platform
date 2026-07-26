@@ -1,6 +1,6 @@
 module "wrapper_vpc" {
   source  = "gocloudLa/wrapper-vpc/aws"
-  version = "1.2.1"
+  version = "2.0.0"
 
   metadata = var.metadata
 
@@ -8,28 +8,65 @@ module "wrapper_vpc" {
   vpc_defaults   = var.vpc_defaults
 }
 
+module "wrapper_peering" {
+  source  = "gocloudLa/wrapper-peering/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  peering_parameters = var.peering_parameters
+  peering_defaults   = var.peering_defaults
+
+  vpc_parameter = module.wrapper_vpc
+}
+
+module "wrapper_tgw" {
+  source  = "gocloudLa/wrapper-tgw/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  tgw_parameters = var.tgw_parameters
+  tgw_defaults   = var.tgw_defaults
+
+  vpc_parameter = module.wrapper_vpc
+}
+
+module "wrapper_vpn" {
+  source  = "gocloudLa/wrapper-vpn/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  vpn_parameters = var.vpn_parameters
+  vpn_defaults   = var.vpn_defaults
+
+  vpc_parameter = module.wrapper_vpc
+  tgw_parameter = module.wrapper_tgw
+}
+
 module "wrapper_route53" {
   source  = "gocloudLa/wrapper-route53-zone/aws"
-  version = "1.0.0"
+  version = "2.1.0"
 
   metadata = var.metadata
 
   route53_parameters = var.route53_parameters
   route53_defaults   = var.route53_defaults
 
-  vpc_id = module.wrapper_vpc.vpc.vpc_id
+  vpc_parameter = module.wrapper_vpc
 }
 
 module "wrapper_cloudmap" {
   source  = "gocloudLa/wrapper-cloudmap/aws"
-  version = "1.0.0"
+  version = "2.0.0"
 
   metadata = var.metadata
 
   cloudmap_parameters = var.cloudmap_parameters
   cloudmap_defaults   = var.cloudmap_defaults
 
-  vpc_id = module.wrapper_vpc.vpc.vpc_id
+  vpc_parameter = module.wrapper_vpc
 }
 
 module "wrapper_notifications" {

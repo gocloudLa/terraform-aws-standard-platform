@@ -23,6 +23,53 @@ variable "vpc_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* Peering | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+variable "peering_parameters" {
+  type        = any
+  description = "VPC Peering parameters to configure VPC Peering module"
+  default     = {}
+}
+
+variable "peering_defaults" {
+  type        = any
+  description = "VPC Peering default parameters to configure VPC Peering module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
+/* TGW | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "tgw_parameters" {
+  type        = any
+  description = "TGW parameters to configure TGW module"
+  default     = {}
+}
+
+variable "tgw_defaults" {
+  type        = any
+  description = "TGW default parameters to configure TGW module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
+/* VPN | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "vpn_parameters" {
+  type        = any
+  description = "VPN parameters to configure VPN module"
+  default     = {}
+}
+
+variable "vpn_defaults" {
+  type        = any
+  description = "VPN default parameters to configure VPN module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* Route53 | Variable Definition                                        */
 /*----------------------------------------------------------------------*/
 variable "route53_parameters" {
