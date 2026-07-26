@@ -9,9 +9,8 @@ module "wrapper_vpc" {
 }
 
 module "wrapper_peering" {
-  # source  = "gocloudLa/wrapper-peering/aws"
-  # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-peering.git?ref=main"
+  source  = "gocloudLa/wrapper-peering/aws"
+  version = "0.1.0"
 
   metadata = var.metadata
 
@@ -22,9 +21,8 @@ module "wrapper_peering" {
 }
 
 module "wrapper_tgw" {
-  # source  = "gocloudLa/wrapper-tgw/aws"
-  # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-tgw.git?ref=main"
+  source  = "gocloudLa/wrapper-tgw/aws"
+  version = "0.1.0"
 
   metadata = var.metadata
 
@@ -35,9 +33,8 @@ module "wrapper_tgw" {
 }
 
 module "wrapper_vpn" {
-  # source  = "gocloudLa/wrapper-vpn/aws"
-  # version = "1.0.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpn.git?ref=main"
+  source  = "gocloudLa/wrapper-vpn/aws"
+  version = "0.1.0"
 
   metadata = var.metadata
 
@@ -50,7 +47,7 @@ module "wrapper_vpn" {
 
 module "wrapper_route53" {
   source  = "gocloudLa/wrapper-route53-zone/aws"
-  version = "2.0.0"
+  version = "2.1.0"
 
   metadata = var.metadata
 
