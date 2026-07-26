@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.39.0...v1.0.0) (2026-07-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **base:** full networking upgrade ([#118](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/118))
+
+### Features
+
+* **base:** full networking upgrade ([#118](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/118)) ([d4d066c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/d4d066c790a43990bbe6275fbf2668852e078fc1))
+
 ## [0.39.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.38.0...v0.39.0) (2026-07-14)
 
 
