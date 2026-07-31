@@ -80,7 +80,7 @@ module "wrapper_rds" {
 
 module "wrapper_rds_aurora" {
   source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.4.1"
+  version = "1.4.2"
 
   metadata = var.metadata
 
