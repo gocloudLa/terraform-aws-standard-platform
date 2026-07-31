@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.1.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.0.0...v1.1.0) (2026-07-31)
+
+
+### Features
+
+* **foundation/wrapper-service-scheduler:** (1.1.3→1.2.0) add scheduler actions for rds ([#122](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/122)) ([abcb14c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/abcb14ca7f398a08a4853fe99cec49bfc3df701c))
+* **foundation/wrapper-vpc:** (2.0.0→2.1.0) add seconday cidr variable ([#123](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/123)) ([22c05d0](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/22c05d0dbf9e0777b2121ff1c47dd086e33ca1b5))
+* **project/wrapper-memorydb:** (1.2.2→1.3.0) add custom description for alarms ([#127](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/127)) ([c49b7c6](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/c49b7c684d8c799c6333474d5499adee41577634))
+* **project/wrapper-rds:** (1.3.1→1.4.0) add custom alarm description ([#129](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/129)) ([7d57861](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7d578617b839760d3a96794d47d29574ea011c30))
+* **workload/wrapper-ecs-service:** (1.4.3→1.5.0) add custom alarm description ([#125](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/125)) ([285184a](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/285184ad16d4745631e56d583adc4edf0e39cba4))
+
+
+### Bug Fixes
+
+* **project/wrapper-elasticache:** (1.6.2→1.6.3) change default description for custom alarms ([#126](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/126)) ([63b6415](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/63b6415a002b7679bdfc7917833c46c5d64c3bc8))
+* **project/wrapper-rds-aurora:** (1.4.0→1.4.1) change type in for each s3_dump_objects module ([#120](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/120)) ([c04ca3d](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/c04ca3dc1d662b5bbba14ecea6201f4119961f8f))
+* **project/wrapper-rds-aurora:** (1.4.1→1.4.2) change default description for defaults alarms ([#128](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/128)) ([0df754a](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/0df754ae7fbc51132b16461acbb8907a211a9463))
+* **project/wrapper-rds:** (1.3.0→1.3.1) change type in for each s3_dump_objects module ([#121](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/121)) ([2b9a881](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2b9a8813f2587325e8ecc909f9c4cf6bb7db3cd8))
+
 ## [1.0.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.39.0...v1.0.0) (2026-07-26)
 
 
