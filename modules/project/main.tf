@@ -70,7 +70,7 @@ module "wrapper_documentdb" {
 
 module "wrapper_rds" {
   source  = "gocloudLa/wrapper-rds/aws"
-  version = "1.3.1"
+  version = "1.4.0"
 
   metadata = var.metadata
 
