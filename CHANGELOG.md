@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.1.0...v1.2.0) (2026-08-14)
+
+
+### Features
+
+* **project/wrapper-rds-aurora:** (1.4.2→1.5.0) add custom security group name ([#131](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/131)) ([2803cc6](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2803cc6506f173d2b71c9d73b5836e1b920cdd77))
+* **project/wrapper-rds:** (1.4.0→1.5.0) update version and add database insights in readme ([#132](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/132)) ([5bcc0e5](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/5bcc0e5f9e44d4236b88bd3766eab09d61da5e96))
+* **workload/wrapper-ec2-instance:** (0.2.1→0.3.0) add custom security group name ([#130](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/130)) ([308bc58](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/308bc5801f8e2f7b3112c6531e3e482f839c4ce8))
+
 ## [1.1.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.0.0...v1.1.0) (2026-07-31)
 
 
