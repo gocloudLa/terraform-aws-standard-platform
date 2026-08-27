@@ -85,6 +85,21 @@ variable "route53_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* Route53 Resolver | Variable Definition                                        */
+/*----------------------------------------------------------------------*/
+variable "route53_resolver_parameters" {
+  type        = any
+  description = "Route53 Resolver parameters to configure Route53 Resolver module"
+  default     = {}
+}
+
+variable "route53_resolver_defaults" {
+  type        = any
+  description = "Route53 Resolver default parameters to configure Route53 Resolver module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* CloudMap | Variable Definition                                       */
 /*----------------------------------------------------------------------*/
 variable "cloudmap_parameters" {
