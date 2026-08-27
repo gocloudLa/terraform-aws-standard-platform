@@ -57,6 +57,17 @@ module "wrapper_route53" {
   vpc_parameter = module.wrapper_vpc
 }
 
+module "wrapper_route53_resolver" {
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-route53-resolver.git?ref=feature/initial-release"
+  
+  metadata = var.metadata
+
+  route53_resolver_parameters = var.route53_resolver_parameters
+  route53_resolver_defaults   = var.route53_resolver_defaults
+
+  vpc_parameter = module.wrapper_vpc
+}
+
 module "wrapper_cloudmap" {
   source  = "gocloudLa/wrapper-cloudmap/aws"
   version = "2.0.0"
