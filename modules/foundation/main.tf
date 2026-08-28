@@ -57,7 +57,7 @@ module "wrapper_ses" {
 
 module "wrapper_pritunl" {
   source  = "gocloudLa/wrapper-pritunl/aws"
-  version = "1.0.2"
+  version = "1.1.0"
 
   metadata = var.metadata
 
