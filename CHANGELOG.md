@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.2.0...v1.3.0) (2026-08-28)
+
+
+### Features
+
+* **foundation/wrapper-pritunl:** (1.0.2→1.1.0) add custom rules support ([#134](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/134)) ([8c21751](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8c217515d721be0573bfa7c9a2968c6946195349))
+
 ## [1.2.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.1.0...v1.2.0) (2026-08-14)
 
 
