@@ -58,7 +58,8 @@ module "wrapper_route53" {
 }
 
 module "wrapper_route53_resolver" {
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-route53-resolver.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-route53-resolver/aws"
+  version = "0.1.0"
   
   metadata = var.metadata
 
