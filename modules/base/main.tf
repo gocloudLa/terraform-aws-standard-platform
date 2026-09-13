@@ -60,7 +60,7 @@ module "wrapper_route53" {
 module "wrapper_route53_resolver" {
   source  = "gocloudLa/wrapper-route53-resolver/aws"
   version = "0.1.0"
-  
+
   metadata = var.metadata
 
   route53_resolver_parameters = var.route53_resolver_parameters
