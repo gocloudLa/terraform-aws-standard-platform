@@ -57,6 +57,18 @@ module "wrapper_route53" {
   vpc_parameter = module.wrapper_vpc
 }
 
+module "wrapper_route53_resolver" {
+  source  = "gocloudLa/wrapper-route53-resolver/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  route53_resolver_parameters = var.route53_resolver_parameters
+  route53_resolver_defaults   = var.route53_resolver_defaults
+
+  vpc_parameter = module.wrapper_vpc
+}
+
 module "wrapper_cloudmap" {
   source  = "gocloudLa/wrapper-cloudmap/aws"
   version = "2.0.0"
