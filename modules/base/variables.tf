@@ -85,7 +85,7 @@ variable "route53_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
-/* Route53 Resolver | Variable Definition                                        */
+/* Route53 Resolver | Variable Definition                               */
 /*----------------------------------------------------------------------*/
 variable "route53_resolver_parameters" {
   type        = any
