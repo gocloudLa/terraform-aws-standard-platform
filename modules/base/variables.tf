@@ -23,6 +23,53 @@ variable "vpc_defaults" {
 }
 
 /*----------------------------------------------------------------------*/
+/* Peering | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+variable "peering_parameters" {
+  type        = any
+  description = "VPC Peering parameters to configure VPC Peering module"
+  default     = {}
+}
+
+variable "peering_defaults" {
+  type        = any
+  description = "VPC Peering default parameters to configure VPC Peering module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
+/* TGW | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "tgw_parameters" {
+  type        = any
+  description = "TGW parameters to configure TGW module"
+  default     = {}
+}
+
+variable "tgw_defaults" {
+  type        = any
+  description = "TGW default parameters to configure TGW module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
+/* VPN | Variable Definition                                            */
+/*----------------------------------------------------------------------*/
+
+variable "vpn_parameters" {
+  type        = any
+  description = "VPN parameters to configure VPN module"
+  default     = {}
+}
+
+variable "vpn_defaults" {
+  type        = any
+  description = "VPN default parameters to configure VPN module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* Route53 | Variable Definition                                        */
 /*----------------------------------------------------------------------*/
 variable "route53_parameters" {
@@ -34,6 +81,21 @@ variable "route53_parameters" {
 variable "route53_defaults" {
   type        = any
   description = "Route53 default parameters to configure Route53 module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
+/* Route53 Resolver | Variable Definition                               */
+/*----------------------------------------------------------------------*/
+variable "route53_resolver_parameters" {
+  type        = any
+  description = "Route53 Resolver parameters to configure Route53 Resolver module"
+  default     = {}
+}
+
+variable "route53_resolver_defaults" {
+  type        = any
+  description = "Route53 Resolver default parameters to configure Route53 Resolver module"
   default     = {}
 }
 

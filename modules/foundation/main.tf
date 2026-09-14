@@ -57,7 +57,7 @@ module "wrapper_ses" {
 
 module "wrapper_pritunl" {
   source  = "gocloudLa/wrapper-pritunl/aws"
-  version = "1.0.2"
+  version = "1.1.0"
 
   metadata = var.metadata
 
@@ -79,7 +79,7 @@ module "wrapper_route53" {
 
 module "wrapper_service_scheduler" {
   source  = "gocloudLa/wrapper-service-scheduler/aws"
-  version = "1.1.3"
+  version = "1.2.0"
 
   metadata = var.metadata
 
@@ -115,7 +115,7 @@ module "wrapper_health_events" {
 
 module "wrapper_cost_control" {
   source  = "gocloudLa/wrapper-cost-control/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   metadata = var.metadata
 

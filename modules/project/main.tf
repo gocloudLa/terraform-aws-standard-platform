@@ -50,7 +50,7 @@ module "wrapper_eks" {
 
 module "wrapper_elasticache" {
   source  = "gocloudLa/wrapper-elasticache/aws"
-  version = "1.6.2"
+  version = "1.7.0"
 
   metadata = var.metadata
 
@@ -70,7 +70,7 @@ module "wrapper_documentdb" {
 
 module "wrapper_rds" {
   source  = "gocloudLa/wrapper-rds/aws"
-  version = "1.1.2"
+  version = "1.5.0"
 
   metadata = var.metadata
 
@@ -80,7 +80,7 @@ module "wrapper_rds" {
 
 module "wrapper_rds_aurora" {
   source  = "gocloudLa/wrapper-rds-aurora/aws"
-  version = "1.3.0"
+  version = "1.5.0"
 
   metadata = var.metadata
 
@@ -130,7 +130,7 @@ module "wrapper_efs" {
 
 module "wrapper_memorydb" {
   source  = "gocloudLa/wrapper-memorydb/aws"
-  version = "1.2.2"
+  version = "1.3.0"
 
   metadata = var.metadata
 
@@ -166,4 +166,34 @@ module "wrapper_kinesis_stream" {
 
   kinesis_stream_parameters = var.kinesis_stream_parameters
   kinesis_stream_defaults   = var.kinesis_stream_defaults
+}
+
+module "wrapper_cognito" {
+  source  = "gocloudLa/wrapper-cognito/aws"
+  version = "1.0.0"
+
+  metadata = var.metadata
+
+  cognito_parameters = var.cognito_parameters
+  cognito_defaults   = var.cognito_defaults
+}
+
+module "wrapper_msk" {
+  source  = "gocloudLa/wrapper-msk/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  msk_parameters = var.msk_parameters
+  msk_defaults   = var.msk_defaults
+}
+
+module "wrapper_apigateway_rest" {
+  source  = "gocloudLa/wrapper-apigateway-rest/aws"
+  version = "0.2.0"
+
+  metadata = var.metadata
+
+  apigateway_rest_parameters = var.apigateway_rest_parameters
+  apigateway_rest_defaults   = var.apigateway_rest_defaults
 }

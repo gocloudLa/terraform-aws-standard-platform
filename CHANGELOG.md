@@ -1,5 +1,171 @@
 # Changelog
 
+## [1.5.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.4.0...v1.5.0) (2026-09-14)
+
+
+### Features
+
+* **project/wrapper-elasticache:** (1.6.3→1.7.0) add engine variable ([#139](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/139)) ([33c753e](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/33c753e5eda45fbec7c7c2cc5f2caaddb9460e65))
+
+## [1.4.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.3.0...v1.4.0) (2026-09-14)
+
+
+### Features
+
+* **base:** add route53-resolver module ([#136](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/136)) ([8f02ffe](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8f02ffeddaa00d064691f53e41c89b5770ae99f6))
+* **foundation/wrapper-cost-control:** (1.0.0→1.1.0) add metrics and filter_expression support ([#138](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/138)) ([9ef7998](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/9ef79984e9291215b89a31d0e4adbaa1722d8460))
+
+## [1.3.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.2.0...v1.3.0) (2026-08-28)
+
+
+### Features
+
+* **foundation/wrapper-pritunl:** (1.0.2→1.1.0) add custom rules support ([#134](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/134)) ([8c21751](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8c217515d721be0573bfa7c9a2968c6946195349))
+
+## [1.2.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.1.0...v1.2.0) (2026-08-14)
+
+
+### Features
+
+* **project/wrapper-rds-aurora:** (1.4.2→1.5.0) add custom security group name ([#131](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/131)) ([2803cc6](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2803cc6506f173d2b71c9d73b5836e1b920cdd77))
+* **project/wrapper-rds:** (1.4.0→1.5.0) update version and add database insights in readme ([#132](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/132)) ([5bcc0e5](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/5bcc0e5f9e44d4236b88bd3766eab09d61da5e96))
+* **workload/wrapper-ec2-instance:** (0.2.1→0.3.0) add custom security group name ([#130](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/130)) ([308bc58](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/308bc5801f8e2f7b3112c6531e3e482f839c4ce8))
+
+## [1.1.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.0.0...v1.1.0) (2026-07-31)
+
+
+### Features
+
+* **foundation/wrapper-service-scheduler:** (1.1.3→1.2.0) add scheduler actions for rds ([#122](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/122)) ([abcb14c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/abcb14ca7f398a08a4853fe99cec49bfc3df701c))
+* **foundation/wrapper-vpc:** (2.0.0→2.1.0) add seconday cidr variable ([#123](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/123)) ([22c05d0](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/22c05d0dbf9e0777b2121ff1c47dd086e33ca1b5))
+* **project/wrapper-memorydb:** (1.2.2→1.3.0) add custom description for alarms ([#127](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/127)) ([c49b7c6](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/c49b7c684d8c799c6333474d5499adee41577634))
+* **project/wrapper-rds:** (1.3.1→1.4.0) add custom alarm description ([#129](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/129)) ([7d57861](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7d578617b839760d3a96794d47d29574ea011c30))
+* **workload/wrapper-ecs-service:** (1.4.3→1.5.0) add custom alarm description ([#125](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/125)) ([285184a](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/285184ad16d4745631e56d583adc4edf0e39cba4))
+
+
+### Bug Fixes
+
+* **project/wrapper-elasticache:** (1.6.2→1.6.3) change default description for custom alarms ([#126](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/126)) ([63b6415](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/63b6415a002b7679bdfc7917833c46c5d64c3bc8))
+* **project/wrapper-rds-aurora:** (1.4.0→1.4.1) change type in for each s3_dump_objects module ([#120](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/120)) ([c04ca3d](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/c04ca3dc1d662b5bbba14ecea6201f4119961f8f))
+* **project/wrapper-rds-aurora:** (1.4.1→1.4.2) change default description for defaults alarms ([#128](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/128)) ([0df754a](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/0df754ae7fbc51132b16461acbb8907a211a9463))
+* **project/wrapper-rds:** (1.3.0→1.3.1) change type in for each s3_dump_objects module ([#121](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/121)) ([2b9a881](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2b9a8813f2587325e8ecc909f9c4cf6bb7db3cd8))
+
+## [1.0.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.39.0...v1.0.0) (2026-07-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **base:** full networking upgrade ([#118](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/118))
+
+### Features
+
+* **base:** full networking upgrade ([#118](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/118)) ([d4d066c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/d4d066c790a43990bbe6275fbf2668852e078fc1))
+
+## [0.39.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.38.0...v0.39.0) (2026-07-14)
+
+
+### Features
+
+* **project/wrapper-apigateway-rest:** (0.1.0→0.2.0) decouple custom domains from route53 dns_records ([#116](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/116)) ([7486e19](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7486e19a45843763f9421cb12aead88a8ec41154))
+
+## [0.38.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.1...v0.38.0) (2026-07-14)
+
+
+### Features
+
+* **module:** add apigateway-rest module ([#115](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/115)) ([8b3969b](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8b3969b98a4d902a2b6da8bad81367e3211d477e))
+* **workload/wrapper-lambda:** (1.0.1→1.1.0) add apigateway rest support ([#113](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/113)) ([e68c317](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/e68c3176219870efa214411e1ded9435828203d7))
+
+## [0.37.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.37.0...v0.37.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* **workload/wrapper-static-site:** (1.0.5→1.0.6) change OAC key ([#111](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/111)) ([abc9255](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/abc92558b28755d18ae9246e219b72eb5bfed724))
+
+## [0.37.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.36.0...v0.37.0) (2026-07-07)
+
+
+### Features
+
+* **workload/wrapper-batch-job:** (1.0.4→1.1.0) add ephemeral_storage_size_in_gib support ([#104](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/104)) ([5af65d4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/5af65d484bedba4f8937ec1ff65c1bae6212dcf3))
+
+
+### Bug Fixes
+
+* **workload/wrapper-static-site:** (1.0.4→1.0.5) change origin access name ([#107](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/107)) ([a31b507](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/a31b507a118fcc4c11700274fab291348be2802b))
+
+## [0.36.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.35.0...v0.36.0) (2026-06-28)
+
+
+### Features
+
+* **project:** add msk module ([#102](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/102)) ([f6750fc](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/f6750fc36796192d82c20a05aa4a8461cf774502))
+
+## [0.35.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.34.0...v0.35.0) (2026-06-19)
+
+
+### Features
+
+* **project:** add cognito module ([#100](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/100)) ([82859ca](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/82859caa426477c595ddb7d22a6cf68c25734f39))
+
+## [0.34.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.33.0...v0.34.0) (2026-06-14)
+
+
+### Features
+
+* **project/wrapper-rds-aurora:** (1.3.1→1.4.0) add parameter store tier variable ([#97](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/97)) ([948127a](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/948127ae0fb4c9f5b91b5a780c96716ab5ee4df8))
+* **project/wrapper-rds:** (1.2.1→1.3.0) add parameter store tier variable ([#98](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/98)) ([03c3647](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/03c3647149329c8dd126e3183220efb9636d4fba))
+
+
+### Bug Fixes
+
+* **foundation/wrapper-notifications:** (1.4.0→1.4.1) add multiple embeds for long discord messages ([#96](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/96)) ([1373f90](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/1373f90873f42f3d03e738a4301fac4d0e15af47))
+
+## [0.33.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.32.0...v0.33.0) (2026-06-08)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.3.0→1.4.0) add alarm link in cw alarms notifications ([#93](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/93)) ([4167fab](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/4167fabb08a3efa747d96615470afbf199cff586))
+
+## [0.32.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.1...v0.32.0) (2026-06-02)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.2.0→1.3.0) update status code for teams messages ([#91](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/91)) ([1eb10d4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/1eb10d4f317af8c702a65835731a6a5cee171d14))
+
+## [0.31.1](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.31.0...v0.31.1) (2026-05-18)
+
+
+### Bug Fixes
+
+* **project/wrapper-rds:** (1.2.0→1.2.1) update final_snapshot_identifier_prefix variable ([#89](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/89)) ([35f30f9](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/35f30f9d99fd75b9f07f97cb44ebe75098fd87de))
+* **workload/wrapper-ec2-instance:** (0.2.0→0.2.1) update custom policy to avoid deprecated message ([#88](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/88)) ([6d58798](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/6d58798e54f6c760256cc9e88cea9961da348c68))
+
+## [0.31.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.30.0...v0.31.0) (2026-05-04)
+
+
+### Features
+
+* **foundation/wrapper-notifications:** (1.1.4→1.2.0) add cost anomaly alarm & fix unknown message process ([#85](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/85)) ([dd04b97](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/dd04b97ffcc3b04ed2fa44af4001cc4167e9b14b))
+* **workload/wrapper-ec2-instance:** (0.1.4→0.2.0) update examples, readme & add loadbalancer integration ([#84](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/84)) ([2a117d0](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2a117d055c72cff51a3a42f004ea604269dfb0fe))
+
+## [0.30.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.29.0...v0.30.0) (2026-04-24)
+
+
+### Features
+
+* **project:** update rds module v1.2.0 ([#73](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/73)) ([8fb4146](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8fb4146f2070ad1bf8dbfabcb5d100731183d67c))
+
+## [0.29.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.28.0...v0.29.0) (2026-04-21)
+
+
+### Features
+
+* **modules:** update modules ecs-service, rds, rds-aurora ([#71](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/71)) ([579043e](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/579043ea4439850bf0eea22362dd9221674e0d3d))
+
 ## [0.28.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v0.27.0...v0.28.0) (2026-04-09)
 
 
