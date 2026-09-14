@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.4.0...v1.5.0) (2026-09-14)
+
+
+### Features
+
+* **project/wrapper-elasticache:** (1.6.3→1.7.0) add engine variable ([#139](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/139)) ([33c753e](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/33c753e5eda45fbec7c7c2cc5f2caaddb9460e65))
+
 ## [1.4.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.3.0...v1.4.0) (2026-09-14)
 
 
