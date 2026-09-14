@@ -1,7 +1,6 @@
 module "wrapper_cloudtrail" {
-  # source  = "gocloudLa/wrapper-cloudtrail/aws"
-  # version = "0.1.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-cloudtrail.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-cloudtrail/aws"
+  version = "0.1.0"
 
   providers = {
     aws.org = aws.org

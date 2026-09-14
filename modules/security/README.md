@@ -26,7 +26,8 @@ module "security" {
   # version = "{tag_specific_version}"
 
   providers = {
-    aws     = aws
+    aws.org = aws
+    aws.sec = aws
     aws.log = aws
     aws.kms = aws
   }
@@ -71,6 +72,8 @@ locals {
 | Name | Version |
 |------|---------|
 | aws | >= 6.0 |
+| aws.org | >= 6.0 |
+| aws.sec | >= 6.0 |
 | aws.log | >= 6.0 |
 | aws.kms | >= 6.0 |
 

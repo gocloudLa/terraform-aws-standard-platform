@@ -31,9 +31,8 @@ module "wrapper_s3_backend" {
 }
 
 module "wrapper_service_delegation" {
-  # source  = "gocloudLa/wrapper-service-delegation/aws"
-  # version = "0.1.0"
-  source = "git@github.com:gocloudLa/terraform-aws-wrapper-service-delegation.git?ref=feature/initial-release"
+  source  = "gocloudLa/wrapper-service-delegation/aws"
+  version = "0.1.0"
 
   metadata = var.metadata
 
