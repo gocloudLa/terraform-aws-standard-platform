@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.3.0...v1.4.0) (2026-09-14)
+
+
+### Features
+
+* **base:** add route53-resolver module ([#136](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/136)) ([8f02ffe](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/8f02ffeddaa00d064691f53e41c89b5770ae99f6))
+* **foundation/wrapper-cost-control:** (1.0.0→1.1.0) add metrics and filter_expression support ([#138](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/138)) ([9ef7998](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/9ef79984e9291215b89a31d0e4adbaa1722d8460))
+
 ## [1.3.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.2.0...v1.3.0) (2026-08-28)
 
 
