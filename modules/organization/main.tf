@@ -29,3 +29,13 @@ module "wrapper_s3_backend" {
   s3_backend_defaults   = var.s3_backend_defaults
 
 }
+
+module "wrapper_service_delegation" {
+  source  = "gocloudLa/wrapper-service-delegation/aws"
+  version = "0.1.0"
+
+  metadata = var.metadata
+
+  service_delegation_parameters = var.service_delegation_parameters
+
+}

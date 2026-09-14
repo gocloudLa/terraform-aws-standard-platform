@@ -15,9 +15,37 @@ module "wrapper_organization" {
     }
   }
 
-  organization_parameters    = {}
-  identity_center_parameters = {}
-  s3_backend_parameters      = {}
+  organization_parameters       = {}
+  identity_center_parameters    = {}
+  s3_backend_parameters         = {}
+  service_delegation_parameters = {}
+}
+
+module "wrapper_security" {
+  source = "../../modules/security"
+
+  providers = {
+    aws.org = aws
+    aws.sec = aws
+    aws.log = aws
+    aws.kms = aws
+  }
+
+  metadata = {
+    aws_region     = "us-east-1"
+    environment    = "Production"
+    public_domain  = "democorp.cloud"
+    private_domain = "democorp"
+
+    key = {
+      company = "dmc"
+      region  = "use1"
+      env     = "prd"
+      layer   = "security"
+    }
+  }
+
+  cloudtrail_parameters = {}
 }
 
 module "wrapper_base" {

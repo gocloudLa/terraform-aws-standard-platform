@@ -37,3 +37,13 @@ variable "s3_backend_defaults" {
   description = "S3 Backend default parameters to configure Terraform state storage"
   default     = {}
 }
+
+/*----------------------------------------------------------------------*/
+/* Service delegation | Variable Definition                             */
+/*----------------------------------------------------------------------*/
+
+variable "service_delegation_parameters" {
+  type        = any
+  description = "Service delegation parameters to register delegated administrators."
+  default     = {}
+}

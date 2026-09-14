@@ -12,7 +12,7 @@ Built by GoCloud's team of AWS experts, this platform provides everything you ne
 
 ### ✨ Why Choose Our Standard Platform?
 
-- **🏗️ Layered Architecture**: Five distinct layers (Organization → Base → Foundation → Project → Workload) for maximum flexibility and governance
+- **🏗️ Layered Architecture**: Six distinct layers (Organization → Security → Base → Foundation → Project → Workload) for maximum flexibility and governance
 - **🔧 50+ AWS Services**: Pre-configured integrations with all major AWS services through our battle-tested wrapper modules
 - **🛡️ Security by Design**: Enterprise-grade security controls, compliance standards, and best practices built-in
 - **📊 Cost Optimized**: Built-in cost control, monitoring, and optimization features
@@ -31,7 +31,7 @@ Please refer to the AWS published [Well-Architected Framework](https://aws.amazo
 
 ### Organization Layer
 
-Creates AWS Organizations management, Identity Center (SSO), and S3 backend for Terraform state. Module instantiation is once per organization.
+Creates AWS Organizations management, Identity Center (SSO), S3 backend for Terraform state, and optional delegated administration for security services (GuardDuty, Security Hub, CloudTrail). Module instantiation is once per organization.
 
 📖 **[View Organization Module Documentation](modules/organization/README.md)**
 
@@ -51,6 +51,34 @@ module "organization" {
 
   s3_backend_parameters = {
     # S3 Backend configuration
+  }
+
+  service_delegation_parameters = {
+    # Delegated administrator configuration
+  }
+}
+```
+
+### Security Layer
+
+Creates centralized security and audit services—starting with AWS CloudTrail—typically deployed in a log or security account, separate from general operational services in Foundation.
+
+📖 **[View Security Module Documentation](modules/security/README.md)**
+
+```hcl
+module "security" {
+  source = "gocloudLa/standard-platform/aws//modules/security"
+
+  providers = {
+    aws     = aws
+    aws.log = aws
+    aws.kms = aws
+  }
+
+  metadata = local.metadata
+
+  cloudtrail_parameters = {
+    # CloudTrail configuration
   }
 }
 ```
