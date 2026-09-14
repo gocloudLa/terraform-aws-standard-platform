@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.5.0...v1.6.0) (2026-09-14)
+
+
+### Features
+
+* **sec:** add security layer & cloudtrail wrapper ([#141](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/141)) ([02cd961](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/02cd9617f2f342959c0938b42cf0c804620272ea))
+
 ## [1.5.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.4.0...v1.5.0) (2026-09-14)
 
 
