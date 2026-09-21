@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.6.0...v1.7.0) (2026-09-21)
+
+
+### Features
+
+* **project/wrapper-eks:** (1.0.1→1.1.0) improve addons & add pod identity ([#143](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/143)) ([239970c](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/239970c584648d8a89ec772999c4e2c5e2e7ac47))
+* **project/wrapper-eks:** (1.1.0→1.2.0) add manifiest & helm charts deployment support ([#145](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/145)) ([9700b40](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/9700b40dc356afe10c3150abffcc35b73436bbc7))
+
 ## [1.6.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.5.0...v1.6.0) (2026-09-14)
 
 
