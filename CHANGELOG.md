@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.7.0...v1.8.0) (2026-09-23)
+
+
+### Features
+
+* **foundation/wrapper-acm:** (1.1.1→1.2.0) add import & self-signed certificate support ([#147](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/147)) ([e6c23dc](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/e6c23dc323faba27a249182a6c26be75c56948e5))
+
 ## [1.7.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.6.0...v1.7.0) (2026-09-21)
 
 
