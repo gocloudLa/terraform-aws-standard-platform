@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.8.0...v1.9.0) (2026-09-25)
+
+
+### Features
+
+* **foundation/wrapper-iam:** (0.1.2→0.2.0) add IAM user module support ([#149](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/149)) ([004ac69](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/004ac699075ec601e48375ecc36e1339b78f2293))
+
 ## [1.8.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.7.0...v1.8.0) (2026-09-23)
 
 
