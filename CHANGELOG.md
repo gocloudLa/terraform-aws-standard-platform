@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.10.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.9.0...v1.10.0) (2026-09-26)
+
+
+### Features
+
+* **foundation/wrapper-cost-control:** (1.1.0→2.0.0) refactor notifications alerts creations ([#153](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/153)) ([7971a43](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/7971a43c58c2c502b7899e89db4fce02c4f162e5))
+
+
+### Bug Fixes
+
+* **foundation/wrapper-service-scheduler:** (1.2.0→1.2.1) change scan for rds stop & add variable for rds-re-stop ([#155](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/155)) ([3cf1156](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/3cf1156c63ce6eeeea22b88be6e188b878f2679a))
+
 ## [1.9.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.8.0...v1.9.0) (2026-09-25)
 
 
