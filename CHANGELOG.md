@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.9.0...v2.0.0) (2026-09-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **foundation/wrapper-cost-control:** (1.1.0→2.0.0) refactor notifications alerts creations ([#151](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/151))
+
+### Features
+
+* **foundation/wrapper-cost-control:** (1.1.0→2.0.0) refactor notifications alerts creations ([#151](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/151)) ([2aa7028](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/2aa702845c5152eb34d8dbb62abf80e23afc5c50))
+
 ## [1.9.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.8.0...v1.9.0) (2026-09-25)
 
 
