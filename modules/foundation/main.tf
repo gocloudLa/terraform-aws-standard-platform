@@ -115,7 +115,7 @@ module "wrapper_health_events" {
 
 module "wrapper_cost_control" {
   source  = "gocloudLa/wrapper-cost-control/aws"
-  version = "1.1.0"
+  version = "2.0.0"
 
   metadata = var.metadata
 
