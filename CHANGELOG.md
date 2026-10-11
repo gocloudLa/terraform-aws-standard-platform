@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.10.0...v1.11.0) (2026-10-11)
+
+
+### Features
+
+* **workload/wrapper-ecs-service:** (1.5.0→1.6.0) add _null_ dns record support ([#156](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/156)) ([f035399](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/f0353998a09585c0d6044a530bf3db9c15f8d49b))
+
 ## [1.10.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.9.0...v1.10.0) (2026-09-26)
 
 
