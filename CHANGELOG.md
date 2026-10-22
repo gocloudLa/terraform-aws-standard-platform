@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.12.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.11.0...v1.12.0) (2026-10-22)
+
+
+### Features
+
+* **foundation/wrapper-service-scheduler:** (1.2.1→1.3.0) add individual power-on-rds action ([#158](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/158)) ([c73f207](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/c73f2077c73435c42a9ed35af4ac3942e64e5889))
+* **foundation:** add github-runner ([#160](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/160)) ([80c54fd](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/80c54fd5d7c67692006ac9e305323753d158b45e))
+
 ## [1.11.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.10.0...v1.11.0) (2026-10-11)
 
 
