@@ -33,8 +33,9 @@ module "wrapper_tgw" {
 }
 
 module "wrapper_vpn" {
-  source  = "gocloudLa/wrapper-vpn/aws"
-  version = "0.1.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpn.git?ref=feature/customer-gateway-reference"
+  # source  = "gocloudLa/wrapper-vpn/aws"
+  # version = "0.1.0"
 
   metadata = var.metadata
 
