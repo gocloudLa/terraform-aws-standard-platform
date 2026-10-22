@@ -94,6 +94,7 @@ module "wrapper_foundation" {
 
   acm_parameters               = {}
   gitlab_runner_parameters     = {}
+  github_runner_parameters     = {}
   iam_parameters               = {}
   aws_backup_parameters        = {}
   ses_parameters               = {}

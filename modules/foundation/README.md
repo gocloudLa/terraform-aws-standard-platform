@@ -10,6 +10,7 @@ This layer includes the following GoCloud wrapper modules:
 
 - **[terraform-aws-wrapper-acm](https://github.com/gocloudLa/terraform-aws-wrapper-acm)** - SSL/TLS certificate management and validation
 - **[terraform-aws-wrapper-gitlab-runner](https://github.com/gocloudLa/terraform-aws-wrapper-gitlab-runner)** - CI/CD infrastructure for automated deployments
+- **[terraform-aws-wrapper-github-runner](https://github.com/gocloudLa/terraform-aws-wrapper-github-runner)** - Self-hosted GitHub Actions runners for CI/CD workflows
 - **[terraform-aws-wrapper-iam](https://github.com/gocloudLa/terraform-aws-wrapper-iam)** - IAM roles and OIDC provider management for secure access control
 - **[terraform-aws-wrapper-aws-backup](https://github.com/gocloudLa/terraform-aws-wrapper-aws-backup)** - Centralized backup and disaster recovery
 - **[terraform-aws-wrapper-ses](https://github.com/gocloudLa/terraform-aws-wrapper-ses)** - Email delivery and management
@@ -44,6 +45,10 @@ module "foundation" {
 
   gitlab_runner_parameters = {
     # GitLab Runner configuration
+  }
+
+  github_runner_parameters = {
+    # GitHub Runner configuration
   }
 
   iam_parameters = {
@@ -125,6 +130,8 @@ locals {
 | metadata | Common metadata for all resources | `object` | n/a | yes |
 | acm_parameters | ACM certificate configuration | `object` | `{}` | no |
 | gitlab_runner_parameters | GitLab runner configuration | `object` | `{}` | no |
+| github_runner_parameters | GitHub runner configuration | `object` | `{}` | no |
+| github_runner_defaults | GitHub runner default configuration | `object` | `{}` | no |
 | iam_parameters | IAM role / oidc_provider configuration | `object` | `{}` | no |
 | aws_backup_parameters | AWS Backup configuration | `object` | `{}` | no |
 | ses_parameters | SES email service configuration | `object` | `{}` | no |
