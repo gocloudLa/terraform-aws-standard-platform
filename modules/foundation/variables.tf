@@ -16,6 +16,21 @@ variable "gitlab_runner_parameters" {
 }
 
 /*----------------------------------------------------------------------*/
+/* GitHub | Variable Definition                                         */
+/*----------------------------------------------------------------------*/
+variable "github_runner_parameters" {
+  type        = any
+  description = "GitHub runner parameters to configure GitHub runner module"
+  default     = {}
+}
+
+variable "github_runner_defaults" {
+  type        = any
+  description = "GitHub runner default parameters to configure GitHub runner module"
+  default     = {}
+}
+
+/*----------------------------------------------------------------------*/
 /* IAM | Variable Definition                                            */
 /*----------------------------------------------------------------------*/
 variable "iam_parameters" {

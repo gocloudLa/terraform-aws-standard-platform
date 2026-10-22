@@ -115,7 +115,7 @@ module "base" {
 
 ### Foundation Layer
 
-Creates security, compliance, backup, and operational services including ACM certificates, GitLab Runner, IAM, AWS Backup, SES, VPN, WAF, and monitoring.
+Creates security, compliance, backup, and operational services including ACM certificates, GitLab Runner, GitHub Runner, IAM, AWS Backup, SES, VPN, WAF, and monitoring.
 
 📖 **[View Foundation Module Documentation](modules/foundation/README.md)**
 
@@ -131,6 +131,10 @@ module "foundation" {
 
   gitlab_runner_parameters = {
     # GitLab Runner configuration
+  }
+
+  github_runner_parameters = {
+    # GitHub Runner configuration
   }
 
   iam_parameters = {
