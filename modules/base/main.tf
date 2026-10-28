@@ -21,8 +21,9 @@ module "wrapper_peering" {
 }
 
 module "wrapper_tgw" {
-  source  = "gocloudLa/wrapper-tgw/aws"
-  version = "0.1.0"
+  source = "git@github.com:gocloudLa/terraform-aws-wrapper-vpn.git?ref=feature/named-route-tables"
+  # source  = "gocloudLa/wrapper-tgw/aws"
+  # version = "0.1.0"
 
   metadata = var.metadata
 
