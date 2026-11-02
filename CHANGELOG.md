@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.13.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.12.0...v1.13.0) (2026-11-02)
+
+
+### Features
+
+* **foundation/wrapper-tgw:** (0.1.0→0.2.0) add named TGW route tables, RAM share, and attachment discovery ([#163](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/163)) ([70a8ff4](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/70a8ff43a2c3797e8a7ecf59cbc4648eba4bf4f9))
+* **foundation/wrapper-vpn:** (0.1.0→0.2.0) reuse an existing customer gateway ([#164](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/164)) ([4ce85c6](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/4ce85c6a0acd033263fee3465341f38cb642c39c))
+* **sec:** add guardduty / securityhub / config ([#161](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/161)) ([57714b1](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/57714b1e036054d98a41524bcfedf30147d73a74))
+
 ## [1.12.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.11.0...v1.12.0) (2026-10-22)
 
 
