@@ -34,7 +34,7 @@ module "wrapper_tgw" {
 
 module "wrapper_vpn" {
   source  = "gocloudLa/wrapper-vpn/aws"
-  version = "0.1.0"
+  version = "0.2.0"
 
   metadata = var.metadata
 
