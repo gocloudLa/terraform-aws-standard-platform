@@ -1,6 +1,7 @@
 module "wrapper_organization" {
+  # source = "../../../terraform-aws-wrapper-organization"
   source  = "gocloudLa/wrapper-organization/aws"
-  version = "1.1.0"
+  version = "1.2.0"
 
   metadata = var.metadata
 
@@ -31,8 +32,9 @@ module "wrapper_s3_backend" {
 }
 
 module "wrapper_service_delegation" {
+  # source = "../../../terraform-aws-wrapper-service-delegation"
   source  = "gocloudLa/wrapper-service-delegation/aws"
-  version = "0.1.0"
+  version = "0.2.0"
 
   metadata = var.metadata
 
