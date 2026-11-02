@@ -32,7 +32,7 @@ module "wrapper_s3_backend" {
 }
 
 module "wrapper_service_delegation" {
-  source = "../../../terraform-aws-wrapper-service-delegation"
+  # source = "../../../terraform-aws-wrapper-service-delegation"
   source  = "gocloudLa/wrapper-service-delegation/aws"
   version = "0.2.0"
 
