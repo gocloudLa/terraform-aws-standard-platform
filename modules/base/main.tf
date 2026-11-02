@@ -22,7 +22,7 @@ module "wrapper_peering" {
 
 module "wrapper_tgw" {
   source  = "gocloudLa/wrapper-tgw/aws"
-  version = "0.1.0"
+  version = "0.2.0"
 
   metadata = var.metadata
 
