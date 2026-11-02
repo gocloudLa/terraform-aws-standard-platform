@@ -11,7 +11,7 @@ This layer includes the following GoCloud wrapper modules:
 - **[terraform-aws-wrapper-organization](https://github.com/gocloudLa/terraform-aws-wrapper-organization)** - Manages AWS Organizations, organizational units, and policies
 - **[terraform-aws-wrapper-identity-center](https://github.com/gocloudLa/terraform-aws-wrapper-identity-center)** - Centralized identity and access management
 - **[terraform-aws-wrapper-s3-backend](https://github.com/gocloudLa/terraform-aws-wrapper-s3-backend)** - Terraform state management and remote state storage
-- **[terraform-aws-wrapper-service-delegation](https://github.com/gocloudLa/terraform-aws-wrapper-service-delegation)** - Delegated administration for organization security services (GuardDuty, Security Hub, CloudTrail, and related APIs)
+- **[terraform-aws-wrapper-service-delegation](https://github.com/gocloudLa/terraform-aws-wrapper-service-delegation)** - Delegated administration for organization security services (CloudTrail, GuardDuty, Security Hub, AWS Config, and related APIs)
 
 ## 🚀 Usage
 

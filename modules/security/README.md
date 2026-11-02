@@ -1,21 +1,26 @@
 # Security Layer
 
-The Security layer groups cross-cutting security and audit capabilities that are deployed deliberately (often in a dedicated log or security account), separate from application networking and shared operational services in Foundation.
+The Security layer centralizes organization-wide security, compliance and audit services. It runs from the delegated administrator (security) account, with the log archive account holding the central buckets and keys, and is deployed after the Organization layer.
 
 ## 🎯 Overview
-Today this layer wraps a single GoCloud module for AWS CloudTrail. Additional security wrappers (for example GuardDuty, Security Hub, or detective controls) can be added here over time without mixing them into Foundation or Project.
 
-This layer includes the following GoCloud wrapper module:
+The Security layer centralizes organization-wide security, compliance and audit services. It runs from the delegated administrator (security) account, with the log archive account holding the central buckets and keys, and is deployed after the Organization layer.
 
-- **[terraform-aws-wrapper-cloudtrail](https://github.com/gocloudLa/terraform-aws-wrapper-cloudtrail)** - AWS CloudTrail trails, log delivery, and related audit configuration
+This layer includes the following GoCloud wrapper modules:
+
+- **[terraform-aws-wrapper-guardrails](https://github.com/gocloudLa/terraform-aws-wrapper-guardrails)** - Preventive guardrails (SCP, RCP and declarative policies) attached to the root and OUs
+- **[terraform-aws-wrapper-cloudtrail](https://github.com/gocloudLa/terraform-aws-wrapper-cloudtrail)** - Organization trail with central S3 delivery and CloudWatch Logs
+- **[terraform-aws-wrapper-securityhub](https://github.com/gocloudLa/terraform-aws-wrapper-securityhub)** - Security Hub CSPM central configuration, standards, policies and finding aggregation
+- **[terraform-aws-wrapper-guardduty](https://github.com/gocloudLa/terraform-aws-wrapper-guardduty)** - GuardDuty organization auto-enable, protection plans and findings export
+- **[terraform-aws-wrapper-config](https://github.com/gocloudLa/terraform-aws-wrapper-config)** - AWS Config recorders across the organization, central delivery, aggregator and organization rules
 
 ## 🚀 Usage
 
 ### Prerequisites
 
-- Terraform / OpenTofu >= 1.10
+- Terraform / OpenTofu >= 1.11.1
 - AWS CLI configured with appropriate permissions
-- Organization layer deployed (recommended)
+- Organization layer deployed: delegated administrators, trusted access and policy types enabled (`service_delegation_parameters` and `organization_parameters`)
 
 ### Basic Usage
 
@@ -26,16 +31,32 @@ module "security" {
   # version = "{tag_specific_version}"
 
   providers = {
-    aws.org = aws
-    aws.sec = aws
-    aws.log = aws
-    aws.kms = aws
+    aws.org = aws.org # Organizations management account
+    aws.sec = aws.sec # Delegated administrator (security) account
+    aws.log = aws.log # Log archive account
+    aws.kms = aws.log # Account that owns the KMS keys
   }
 
   metadata = local.metadata
 
+  guardrails_parameters = {
+    # Guardrails configuration
+  }
+
   cloudtrail_parameters = {
     # CloudTrail configuration
+  }
+
+  securityhub_parameters = {
+    # Security Hub configuration
+  }
+
+  guardduty_parameters = {
+    # GuardDuty configuration
+  }
+
+  config_parameters = {
+    # AWS Config configuration
   }
 }
 ```
@@ -64,25 +85,29 @@ locals {
 
 | Name | Version |
 |------|---------|
-| terraform | >= 1.10 |
-| aws | >= 6.0 |
+| terraform | >= 1.11.1 |
+| aws | >= 6.70 |
+| time | >= 0.9 |
 
 ## 🔧 Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 6.0 |
-| aws.org | >= 6.0 |
-| aws.sec | >= 6.0 |
-| aws.log | >= 6.0 |
-| aws.kms | >= 6.0 |
+| aws.org | >= 6.70 |
+| aws.sec | >= 6.70 |
+| aws.log | >= 6.70 |
+| aws.kms | >= 6.70 |
 
 ## 📥 Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | metadata | Common metadata for all resources | `object` | n/a | yes |
-| cloudtrail_parameters | CloudTrail configuration | `object` | `{}` | no |
+| guardrails_parameters | Preventive guardrails (SCP, RCP, declarative policies) | `object` | `{}` | no |
+| cloudtrail_parameters | Organization trail and log delivery | `object` | `{}` | no |
+| securityhub_parameters | Security Hub central configuration and policies | `object` | `{}` | no |
+| guardduty_parameters | GuardDuty organization configuration and findings export | `object` | `{}` | no |
+| config_parameters | AWS Config recorders, aggregator and organization rules | `object` | `{}` | no |
 
 ## 🏷️ Resource Naming Convention
 

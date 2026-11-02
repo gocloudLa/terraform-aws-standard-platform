@@ -31,7 +31,7 @@ Please refer to the AWS published [Well-Architected Framework](https://aws.amazo
 
 ### Organization Layer
 
-Creates AWS Organizations management, Identity Center (SSO), S3 backend for Terraform state, and optional delegated administration for security services (GuardDuty, Security Hub, CloudTrail). Module instantiation is once per organization.
+Creates AWS Organizations management, Identity Center (SSO), S3 backend for Terraform state, and optional delegated administration for security services (CloudTrail, GuardDuty, Security Hub, AWS Config). Module instantiation is once per organization.
 
 📖 **[View Organization Module Documentation](modules/organization/README.md)**
 
@@ -61,24 +61,42 @@ module "organization" {
 
 ### Security Layer
 
-Creates centralized security and audit services—starting with AWS CloudTrail—typically deployed in a log or security account, separate from general operational services in Foundation.
+Creates organization-wide security, compliance and audit services: preventive guardrails, organization CloudTrail, Security Hub, GuardDuty and AWS Config. Runs from the delegated administrator (security) account after the Organization layer. Module instantiation is once per organization.
 
 📖 **[View Security Module Documentation](modules/security/README.md)**
 
 ```hcl
 module "security" {
   source = "gocloudLa/standard-platform/aws//modules/security"
+  # version = "{tag_specific_version}"
 
   providers = {
-    aws     = aws
-    aws.log = aws
-    aws.kms = aws
+    aws.org = aws.org
+    aws.sec = aws.sec
+    aws.log = aws.log
+    aws.kms = aws.log
   }
 
   metadata = local.metadata
 
+  guardrails_parameters = {
+    # Guardrails configuration
+  }
+
   cloudtrail_parameters = {
     # CloudTrail configuration
+  }
+
+  securityhub_parameters = {
+    # Security Hub configuration
+  }
+
+  guardduty_parameters = {
+    # GuardDuty configuration
+  }
+
+  config_parameters = {
+    # AWS Config configuration
   }
 }
 ```
