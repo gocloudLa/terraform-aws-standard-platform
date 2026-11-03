@@ -115,7 +115,7 @@ module "wrapper_waf" {
 
 module "wrapper_health_events" {
   source  = "gocloudLa/wrapper-health-events/aws"
-  version = "1.0.0"
+  version = "1.1.0"
 
   metadata = var.metadata
 
