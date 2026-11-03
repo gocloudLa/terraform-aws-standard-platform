@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.14.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.13.0...v1.14.0) (2026-11-03)
+
+
+### Features
+
+* **foundation/wrapper-health-events:** (1.0.0→1.1.0) add excluded events and services notifications ([#167](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/167)) ([203b159](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/203b159e9de15a420d7a8bc228d0926e69312ebc))
+
+
+### Bug Fixes
+
+* **foundation/wrapper-notifications:** (1.4.1→1.4.2) change health events to notification lambda processing ([#165](https://github.com/gocloudLa/terraform-aws-standard-platform/issues/165)) ([9d6a9db](https://github.com/gocloudLa/terraform-aws-standard-platform/commit/9d6a9db3a4948aa088d4a804580976dcb8f967ce))
+
 ## [1.13.0](https://github.com/gocloudLa/terraform-aws-standard-platform/compare/v1.12.0...v1.13.0) (2026-11-02)
 
 
