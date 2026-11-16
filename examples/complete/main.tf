@@ -45,7 +45,11 @@ module "wrapper_security" {
     }
   }
 
-  cloudtrail_parameters = {}
+  guardrails_parameters  = {}
+  cloudtrail_parameters  = {}
+  securityhub_parameters = {}
+  guardduty_parameters   = {}
+  config_parameters      = {}
 }
 
 module "wrapper_base" {
